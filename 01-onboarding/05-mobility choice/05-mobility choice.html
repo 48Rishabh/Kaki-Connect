@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - Mobility Preference</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#a5c8ff",
+            "surface-container-high": "#eae8e4",
+            "surface-dim": "#dbdad6",
+            "error": "#ba1a1a",
+            "surface-bright": "#fbf9f5",
+            "surface-variant": "#e4e2de",
+            "error-container": "#ffdad6",
+            "on-surface": "#1b1c1a",
+            "tertiary-fixed-dim": "#9fcaff",
+            "tertiary": "#315e8e",
+            "primary-fixed-dim": "#a5c8ff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#424750",
+            "background": "#fbf9f5",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#d4e3ff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-secondary-fixed": "#231b00",
+            "secondary-container": "#ffdd67",
+            "on-tertiary-container": "#fdfcff",
+            "tertiary-container": "#4b77a9",
+            "on-secondary-container": "#766100",
+            "surface-container": "#f0eeea",
+            "tertiary-fixed": "#d2e4ff",
+            "inverse-on-surface": "#f2f0ec",
+            "surface": "#fbf9f5",
+            "secondary-fixed": "#ffe17a",
+            "outline": "#737781",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f5f3ef",
+            "primary": "#2f5d97",
+            "secondary": "#715c00",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#554500",
+            "surface-tint": "#325f99",
+            "on-primary-fixed": "#001c3a",
+            "secondary-fixed-dim": "#e4c451",
+            "surface-container-highest": "#e4e2de",
+            "inverse-surface": "#30312e",
+            "on-background": "#1b1c1a",
+            "on-primary-container": "#fefcff",
+            "on-primary-fixed-variant": "#124780",
+            "primary-container": "#4a76b1",
+            "on-tertiary-fixed": "#001d36",
+            "outline-variant": "#c2c6d1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "gutter-desktop": "1.5rem",
+            "gutter-mobile": "1rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-xl": "2rem",
+            "spacing-sm": "0.75rem",
+            "spacing-xs": "0.5rem",
+            "spacing-md": "1rem",
+            "spacing-3xl": "4rem",
+            "margin-desktop": "2.5rem",
+            "spacing-2xl": "3rem",
+            "spacing-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "caption-hangul": ["10px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(47, 93, 151, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .active-card-shadow {
+      box-shadow: 0 12px 32px -4px rgba(74, 118, 177, 0.22), 0 4px 12px -2px rgba(47, 93, 151, 0.08);
+    }
+  </style>
+<style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="kaki-phone-frame">
+<!-- Linear Flow: TopAppBar as per Shared Components JSON Blueprint -->
+<header class="w-full bg-surface">
+<div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+<button aria-label="Go back" class="text-primary hover:bg-surface-container active:scale-95 transition-transform duration-150 p-spacing-xs rounded-full flex items-center justify-center" onclick="location.href='../04-languages/04-languages.html'" type="button">
+<span class="material-symbols-outlined text-[26px]">arrow_back</span>
+</button>
+<span class="text-headline-sm font-headline-sm text-primary tracking-tight">KakiConnect</span>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button>
+</div>
+</header><div class="w-full bg-slate-200/80 h-1.5 overflow-hidden kaki-progress-track"><div class="bg-primary h-full rounded-full kaki-progress-fill" style="width: 44%;"></div></div>
+<!-- Central Single-Decision Container with Korean Stationery Aesthetic -->
+<main class="w-full max-w-lg mx-auto px-margin-mobile flex-1 flex flex-col justify-start pt-spacing-sm pb-spacing-lg">
+<!-- Step Badge & Audio Assist Row -->
+
+<!-- Clear, Highly Legible Primary Senior Headlines -->
+<div class="mb-spacing-lg">
+
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight leading-snug">
+        Do you need help to walk or go out?
+      </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-spacing-xs">
+        Pick the one that fits you best today.
+      </p>
+</div>
+<!-- The Two Core Decision Cards -->
+<div aria-label="Mobility assistance choice" class="space-y-spacing-md" role="radiogroup">
+<!-- Card 1 (Active by Default): Walk On My Own -->
+<div aria-checked="true" class="group relative bg-surface-container-lowest rounded-[24px] p-spacing-lg active-card-shadow border-2 border-primary transition-all duration-200 cursor-pointer overflow-hidden" id="card-independent" onclick="selectOption('independent')" role="radio" tabindex="0">
+<!-- Post-modern decorative paper corner stamp -->
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary-fixed/40 rounded-bl-[32px] flex items-top justify-end p-2 pointer-events-none">
+<span class="font-caption-hangul text-caption-hangul text-primary font-bold pr-1 pt-0.5">// 01</span>
+</div>
+<div class="flex items-start gap-spacing-md">
+<!-- Tactile Icon Badge (Sky Blue + Cheerful Smile Accent) -->
+<div class="relative shrink-0 w-16 h-16 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">directions_walk</span>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[14px]">sentiment_satisfied</span>
+</span>
+</div>
+<!-- Description & Title -->
+<div class="flex-1 pr-spacing-sm">
+<div class="flex items-center gap-spacing-xs">
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">
+                I can walk on my own
+              </h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-spacing-xs leading-relaxed">
+              I can take MRT, bus, or walk to the coffee shop myself.
+            </p>
+</div>
+<!-- Radio Control Indicator -->
+<div class="shrink-0 pt-1">
+<div class="w-8 h-8 rounded-full border-2 border-primary bg-primary flex items-center justify-center transition-colors" id="radio-dot-independent">
+<div class="w-3.5 h-3.5 rounded-full bg-surface-container-lowest"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Need A Helping Hand -->
+<div aria-checked="false" class="group relative bg-surface-container-lowest rounded-[24px] p-spacing-lg soft-card-shadow border border-outline-variant/40 hover:border-primary/50 transition-all duration-200 cursor-pointer overflow-hidden" id="card-assisted" onclick="selectOption('assisted')" role="radio" tabindex="0">
+<!-- Post-modern decorative corner stamp -->
+<div class="absolute top-0 right-0 w-16 h-16 bg-surface-container rounded-bl-[32px] flex items-top justify-end p-2 pointer-events-none"><div class="flex flex-col items-end pr-1 pt-0.5 gap-1"><span class="font-caption-hangul text-caption-hangul text-outline font-bold">// 02</span><span class="material-symbols-outlined text-outline-variant text-[24px]">radio_button_unchecked</span></div></div>
+<div class="flex items-start gap-spacing-md">
+<!-- Warm Tactile Icon Badge (Sunshine Yellow + Heart Companion) -->
+<div class="relative shrink-0 w-16 h-16 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary-fixed text-primary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[14px]">favorite</span>
+</span>
+</div>
+<!-- Description & Title -->
+<div class="flex-1 pr-spacing-sm">
+<div class="flex items-center gap-spacing-xs">
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">
+                I need a helping hand
+              </h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-spacing-xs leading-relaxed">
+              I use a wheelchair or walking stick. Please pair me with a kind volunteer companion.
+            </p>
+</div>
+<!-- Radio Control Indicator -->
+<div class="shrink-0 pt-1">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center transition-colors" id="radio-dot-assisted">
+<div class="w-3.5 h-3.5 rounded-full bg-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Soft Korean Stationery Decorative Micro-Banner -->
+<div class="mt-spacing-xl bg-surface-container-low rounded-2xl p-spacing-md border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-spacing-sm">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">sentiment_very_satisfied</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Don’t worry! You can change this anytime with your volunteer.</span>
+</div>
+<span class="font-caption-hangul text-caption-hangul text-outline font-semibold tracking-wider">안심 케어</span>
+</div>
+</main>
+<!-- Big Senior-Friendly Primary CTA (Fixed bottom area, No intrusive shell borders) -->
+<footer class="w-full bg-surface/95 backdrop-blur-sm pt-spacing-sm pb-spacing-xl px-margin-mobile">
+<div class="max-w-lg mx-auto">
+<button class="w-full py-spacing-md px-spacing-xl rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-spacing-sm shadow-md hover:bg-tertiary-container active:scale-[0.98] transition-all duration-150 cursor-pointer" onclick="location.href='../06-type of care needed/06-type of care needed.html'" type="button">
+<span class="">Continue</span>
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+<script>
+    function selectOption(choice) {
+      const cardIndependent = document.getElementById('card-independent');
+      const cardAssisted = document.getElementById('card-assisted');
+      const dotIndependent = document.getElementById('radio-dot-independent');
+      const dotAssisted = document.getElementById('radio-dot-assisted');
+
+      if (choice === 'independent') {
+        // Activate Independent
+        cardIndependent.className = "group relative bg-surface-container-lowest rounded-[24px] p-spacing-lg active-card-shadow border-2 border-primary transition-all duration-200 cursor-pointer overflow-hidden";
+        cardIndependent.setAttribute('aria-checked', 'true');
+        dotIndependent.className = "w-8 h-8 rounded-full border-2 border-primary bg-primary flex items-center justify-center transition-colors";
+        dotIndependent.firstElementChild.className = "w-3.5 h-3.5 rounded-full bg-surface-container-lowest";
+
+        // Deactivate Assisted
+        cardAssisted.className = "group relative bg-surface-container-lowest rounded-[24px] p-spacing-lg soft-card-shadow border border-outline-variant/40 hover:border-primary/50 transition-all duration-200 cursor-pointer overflow-hidden";
+        cardAssisted.setAttribute('aria-checked', 'false');
+        dotAssisted.className = "w-8 h-8 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center transition-colors";
+        dotAssisted.firstElementChild.className = "w-3.5 h-3.5 rounded-full bg-transparent";
+      } else {
+        // Activate Assisted
+        cardAssisted.className = "group relative bg-surface-container-lowest rounded-[24px] p-spacing-lg active-card-shadow border-2 border-primary transition-all duration-200 cursor-pointer overflow-hidden";
+        cardAssisted.setAttribute('aria-checked', 'true');
+        dotAssisted.className = "w-8 h-8 rounded-full border-2 border-primary bg-primary flex items-center justify-center transition-colors";
+        dotAssisted.firstElementChild.className = "w-3.5 h-3.5 rounded-full bg-surface-container-lowest";
+
+        // Deactivate Independent
+        cardIndependent.className = "group relative bg-surface-container-lowest rounded-[24px] p-spacing-lg soft-card-shadow border border-outline-variant/40 hover:border-primary/50 transition-all duration-200 cursor-pointer overflow-hidden";
+        cardIndependent.setAttribute('aria-checked', 'false');
+        dotIndependent.className = "w-8 h-8 rounded-full border-2 border-outline-variant bg-surface-container-lowest flex items-center justify-center transition-colors";
+        dotIndependent.firstElementChild.className = "w-3.5 h-3.5 rounded-full bg-transparent";
+      }
+    }
+  </script>
+
+
+
+
+
+
+
+
+</div>
+</body></html>

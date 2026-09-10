@@ -1,0 +1,391 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Volunteer Commitment Plan - KakiConnect</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#4a76b1",
+            "surface-container-highest": "#e4e2de",
+            "on-background": "#1b1c1a",
+            "on-error": "#ffffff",
+            "primary-fixed": "#d4e3ff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#1b1c1a",
+            "tertiary-fixed-dim": "#9fcaff",
+            "secondary-fixed": "#ffe17a",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#124780",
+            "on-tertiary-fixed": "#001d36",
+            "error": "#ba1a1a",
+            "surface-bright": "#fbf9f5",
+            "secondary-fixed-dim": "#e4c451",
+            "on-primary-fixed": "#001c3a",
+            "on-tertiary-fixed-variant": "#154977",
+            "tertiary": "#315e8e",
+            "primary-fixed-dim": "#a5c8ff",
+            "on-secondary-fixed-variant": "#554500",
+            "surface": "#fbf9f5",
+            "primary": "#2f5d97",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f5f3ef",
+            "on-error-container": "#93000a",
+            "surface-dim": "#dbdad6",
+            "surface-variant": "#e4e2de",
+            "on-primary-container": "#fefcff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "outline": "#737781",
+            "on-tertiary-container": "#fdfcff",
+            "outline-variant": "#c2c6d1",
+            "on-secondary-fixed": "#231b00",
+            "on-surface-variant": "#424750",
+            "inverse-on-surface": "#f2f0ec",
+            "on-secondary-container": "#766100",
+            "tertiary-container": "#4b77a9",
+            "secondary-container": "#ffdd67",
+            "secondary": "#715c00",
+            "inverse-surface": "#30312e",
+            "surface-container-high": "#eae8e4",
+            "surface-container": "#f0eeea",
+            "inverse-primary": "#a5c8ff",
+            "background": "#fbf9f5",
+            "surface-tint": "#325f99",
+            "tertiary-fixed": "#d2e4ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-2xl": "3rem",
+            "margin-desktop": "2.5rem",
+            "spacing-md": "1rem",
+            "spacing-3xl": "4rem",
+            "spacing-xs": "0.5rem",
+            "spacing-sm": "0.75rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "gutter-desktop": "1.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "caption-hangul": ["10px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .korean-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .tactile-press:active {
+      transform: scale(0.97);
+      transition: transform 120ms ease-out;
+    }
+    .checker-pattern {
+      background-size: 16px 16px;
+      background-image: 
+        linear-gradient(45deg, rgba(99, 142, 203, 0.04) 25%, transparent 25%), 
+        linear-gradient(-45deg, rgba(99, 142, 203, 0.04) 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, rgba(99, 142, 203, 0.04) 75%), 
+        linear-gradient(-45deg, transparent 75%, rgba(99, 142, 203, 0.04) 75%);
+    }
+  
+    header, nav {
+      max-width: 420px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      left: 0 !important;
+      right: 0 !important;
+    }
+  </style>
+<style id="kaki-phone-frame">
+  html { background: #f8fafc; }
+  body {
+    background: #f8fafc !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+    header, nav {
+      max-width: 420px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      left: 0 !important;
+      right: 0 !important;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="kaki-phone-frame">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant/30 dark:border-outline/20 shadow-sm dark:shadow-none docked full-width top-0 sticky z-40"><div class="flex justify-between items-center w-full px-margin-mobile py-spacing-xs max-w-md mx-auto"><div class="flex items-center gap-2"><a href="../03-volunteer_2_outing_details_route/code.html" aria-label="Go Back" class="flex items-center justify-center p-spacing-xs rounded-full hover:bg-surface-container-high active:scale-95 transition-transform duration-150 ease-out text-primary"><span class="material-symbols-outlined pointer-events-none" data-icon="arrow_back">arrow_back</span></a><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary tracking-tight">KakiConnect</span></div></div><div class="flex items-center gap-3"><div class="bg-surface-container-high text-on-surface-variant font-medium px-3 py-1 rounded-full text-xs flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary-container inline-block border border-secondary/30"></span><span class="">Volunteer Mode</span></div><button aria-label="Notifications" class="flex items-center justify-center p-spacing-xs rounded-full hover:bg-surface-container-high active:scale-95 transition-transform duration-150 ease-out text-primary"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button></div></div></header>
+<!-- Main Canvas Container -->
+<main class="flex-1 w-full max-w-md mx-auto px-margin-mobile pt-spacing-md pb-spacing-3xl">
+<!-- Cheerful Confirmation Banner -->
+<section onclick="location.href='../05-volunteer_4_live_outing_check_in/code.html'" class="cursor-pointer relative overflow-hidden rounded-[24px] bg-secondary-container/30 border border-secondary-fixed-dim/40 p-spacing-lg mb-spacing-lg korean-card-shadow hover:shadow-md transition-shadow">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-secondary-container/50 blur-xl pointer-events-none"></div>
+<!-- Whimsical Japanese/Korean Stationery Micro Badge -->
+<div class="flex items-center justify-between mb-spacing-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/40 shadow-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-wide">CONFIRMED MATCH</span>
+</div>
+<span class="font-caption-hangul text-caption-hangul text-on-surface-variant/70 tracking-widest">// 봉사 동행 완료</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="flex-1">
+<h1 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-1">
+            You're helping Mr Tan join! 🎉
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Thank you for keeping our kampung connected. Mr Tan is looking forward to the stroll.
+          </p>
+</div>
+<!-- Decorative Smiley Token -->
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center border border-secondary/20 shadow-sm shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-2xl" data-icon="sentiment_satisfied" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+</div>
+</div>
+</section>
+<!-- Content Bento Layout -->
+<div class="space-y-spacing-md">
+<!-- Card 1: Essential Meeting Details -->
+<section class="bg-surface-container-lowest rounded-[20px] p-spacing-lg border border-outline-variant/30 korean-card-shadow relative overflow-hidden">
+<!-- Korean Stationery Accent lines in corner -->
+<div class="absolute top-4 right-4 flex items-center gap-1">
+<span class="font-caption-hangul text-caption-hangul text-outline font-medium">MEET // 01</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+</div>
+<div class="flex items-center gap-2 mb-spacing-md">
+<div class="w-7 h-7 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Essential Meeting Details</h2>
+<p class="font-caption-hangul text-caption-hangul text-outline">약속 및 이동 일정</p>
+</div>
+</div>
+<!-- Detail Blocks Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-spacing-sm">
+<!-- Meeting Point -->
+<div class="p-spacing-md rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="pin_drop">pin_drop</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Meeting Point</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">
+              Blk 122 Bedok North Void Deck
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Benches near Lift Lobby B
+            </p>
+</div>
+<!-- Meeting Time -->
+<div class="p-spacing-md rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Meeting Time</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-body-md text-body-md text-on-surface font-bold">Tomorrow · 3:30 PM</span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary font-medium mt-0.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Please arrive 5 mins early
+            </p>
+</div>
+<!-- Destination -->
+<div class="p-spacing-md rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="flag">flag</span>
+<span class="font-label-md text-label-md text-tertiary font-semibold">Destination</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">
+              Bedok Reservoir Jetty
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Sheltered Pavilion A
+            </p>
+</div>
+<!-- Duration -->
+<div class="p-spacing-md rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="timelapse">timelapse</span>
+<span class="font-label-md text-label-md text-tertiary font-semibold">Duration</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">
+              Approx 3 hours
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Return by 6:30 PM
+            </p>
+</div>
+</div>
+</section>
+<!-- Card 2: Family & Caregiver Connection -->
+<section class="bg-surface-container-lowest rounded-[20px] p-spacing-lg border border-outline-variant/30 korean-card-shadow relative">
+<div class="flex items-center justify-between mb-spacing-md">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-xl bg-secondary-container/40 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-lg" data-icon="supervised_user_circle">supervised_user_circle</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Family &amp; Caregiver Connection</h2>
+<p class="font-caption-hangul text-caption-hangul text-outline">가족 및 전담 복지사 연결망</p>
+</div>
+</div>
+<span class="font-caption-hangul text-caption-hangul text-outline font-medium">// CARE 02</span>
+</div>
+<div class="space-y-spacing-sm">
+<!-- Emergency Contact Item -->
+<div class="p-spacing-md rounded-xl bg-surface-container-low/50 border border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="contact_phone">contact_phone</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-outline">Emergency Contact</span>
+<span class="px-2 py-0.2 rounded-full bg-secondary-container/60 text-on-secondary-container font-label-sm text-[10px]">Family</span>
+</div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Daughter Sarah Tan</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="notifications_active">notifications_active</span>
+                  SMS departure &amp; arrival alerts will trigger automatically
+                </p>
+</div>
+</div>
+</div>
+<!-- FSC Care Coordinator Item -->
+<div class="p-spacing-md rounded-xl bg-surface-container-low/50 border border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container/40 flex items-center justify-center text-on-secondary-container shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="medical_services">medical_services</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-outline">FSC Care Coordinator</span>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Sarah Lee <span class="font-normal text-on-surface-variant text-body-sm">(Fei Yue FSC)</span></p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Available during activity hours</p>
+</div>
+</div>
+<!-- Direct Hotline Button -->
+<a class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-surface-container-highest hover:bg-outline-variant/30 text-on-surface font-label-md text-label-md transition-colors tactile-press shrink-0 border border-outline-variant/40" href="tel:67439821">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="call">call</span>
+<span class="">6743-9821</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Card 3: Dignified Privacy Notice -->
+<section class="rounded-[20px] bg-primary/5 border border-primary/20 p-spacing-md relative overflow-hidden">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-label-md text-label-md font-bold text-primary">Privacy Protected</h3>
+<span class="font-caption-hangul text-caption-hangul text-primary/70">개인정보 안심보호</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Senior NRIC and sensitive health history are kept confidential under Singapore PDPA. Only necessary accompaniment notes are shared.
+            </p>
+</div>
+</div>
+</section>
+<!-- Action Buttons Cluster -->
+<section class="pt-spacing-xs space-y-spacing-sm">
+<!-- Primary Button -->
+<button class="w-full h-12 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-sm flex items-center justify-center gap-2 tactile-press transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="event">event</span>
+<span class="">Add to Calendar &amp; View Checklist</span>
+</button>
+<!-- Secondary Button -->
+<button class="w-full h-12 rounded-full bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-2 tactile-press transition-all border border-secondary/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="forum">forum</span>
+<span class="">Message FSC Coordinator</span>
+</button>
+<!-- Subtle Cancellation Link -->
+<div class="text-center pt-spacing-xs">
+<button class="font-body-sm text-body-sm text-on-surface-variant hover:text-error transition-colors underline decoration-outline-variant/60 underline-offset-4 tactile-press inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+<span class="">Cannot attend? Cancel at least 4h prior</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Shared Component with exact specifications) -->
+<!-- Contextual Active Selection: 'Missions' (Commitments) is active -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface-container-low border-t border-outline-variant/20 shadow-lg max-w-md mx-auto right-0 px-gutter-mobile py-spacing-xs pb-safe">
+  <a href="../02-volunteer_2_open_requests_feed/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs hover:bg-surface-container-highest hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]">volunteer_activism</span><span class="font-label-sm text-label-sm">Missions</span></a>
+  <a href="../04-volunteer_3_match_confirmed_meeting_plan/code.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1.5 font-bold shadow-sm active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">how_to_reg</span><span class="font-label-sm text-label-sm font-bold tracking-tight">Check-in</span></a>
+  <a href="../06-volunteer_5_safety_guidelines_protocols/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs hover:bg-surface-container-highest hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]">diversity_1</span><span class="font-label-sm text-label-sm">Community</span></a>
+  <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs hover:bg-surface-container-highest hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm">Profile</span></a>
+</nav>
+
+
+
+
+</div>
+</body></html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - Profile Setup</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a5c8ff",
+            "surface-variant": "#e4e2de",
+            "surface-container-highest": "#e4e2de",
+            "surface-tint": "#325f99",
+            "outline": "#737781",
+            "on-primary-fixed": "#001c3a",
+            "on-surface-variant": "#424750",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-secondary-fixed-variant": "#554500",
+            "on-error": "#ffffff",
+            "secondary": "#715c00",
+            "secondary-container": "#ffdd67",
+            "secondary-fixed": "#ffe17a",
+            "on-primary-fixed-variant": "#124780",
+            "surface-container-high": "#eae8e4",
+            "inverse-primary": "#a5c8ff",
+            "tertiary-fixed": "#d2e4ff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container-low": "#f5f3ef",
+            "on-primary-container": "#fefcff",
+            "inverse-on-surface": "#f2f0ec",
+            "inverse-surface": "#30312e",
+            "surface-container": "#f0eeea",
+            "on-tertiary-fixed": "#001d36",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c2c6d1",
+            "background": "#fbf9f5",
+            "secondary-fixed-dim": "#e4c451",
+            "primary": "#2f5d97",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "primary-fixed": "#d4e3ff",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#fbf9f5",
+            "surface-dim": "#dbdad6",
+            "on-background": "#1b1c1a",
+            "on-surface": "#1b1c1a",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface": "#fbf9f5",
+            "tertiary": "#315e8e",
+            "primary-container": "#4a76b1",
+            "tertiary-container": "#4b77a9",
+            "on-secondary-container": "#766100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-sm": "0.75rem",
+            "spacing-2xl": "3rem",
+            "gutter-mobile": "1rem",
+            "spacing-xs": "0.5rem",
+            "spacing-3xl": "4rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-fixed">
+<div class="kaki-phone-frame">
+<!-- Top App Bar (Task-Focused Setup: Suppress global BottomNav per Semantic Shell rules) -->
+<header class="sticky top-0 z-40 bg-surface border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center w-full px-spacing-md py-spacing-xs max-w-md mx-auto"><button aria-label="Go back" class="p-2 -ml-2 rounded-full hover:bg-surface-container active:scale-95 transition-all text-on-surface flex items-center justify-center" onclick="location.href='../01-splash/01-splash.html'" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col items-center text-center flex-1"><span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</span></div><button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]" type="button"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button></div>
+</header><div class="w-full bg-slate-200/80 h-1.5 overflow-hidden kaki-progress-track"><div class="bg-primary h-full rounded-full kaki-progress-fill" style="width: 11%;"></div></div>
+<!-- Main Onboarding Content Canvas -->
+<main class="w-full max-w-md mx-auto px-margin-mobile pt-spacing-md flex-1 flex flex-col justify-start pb-spacing-md">
+<!-- Step & Accessibility Bar -->
+
+<!-- Friendly Clear Headline Section -->
+<section class="mb-spacing-lg">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-spacing-2xs text-left">
+        What should we call you?
+      </h1>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+        Use your friendly nickname, English name, or casual senior address so nearby Kakis know what to call you.
+      </p>
+</section>
+<!-- Avatar Showcase & Selection Bento Card -->
+<section class="bg-surface-container-lowest rounded-2xl p-spacing-md mb-spacing-lg soft-card-shadow border border-outline-variant/30">
+<div class="flex flex-col items-center text-center">
+<!-- Interactive Avatar Container -->
+<div class="relative mb-spacing-sm">
+<div class="w-28 h-28 rounded-full overflow-hidden p-1 bg-gradient-to-b from-primary-fixed to-secondary-fixed flex items-center justify-center">
+<img class="w-full h-full object-cover rounded-full bg-surface-container-low" data-alt="Warm welcoming digital portrait illustration of a smiling cheerful Southeast Asian grandfather figure wearing a clean pastel knit collar shirt with soft sunny daylight reflections. The background is a comforting gentle cream tone with playful soft round motifs in the peaceful Serene Play visual design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCucO4w8cYyZtCrz6g58xJb3vguyE54naBgvRc3acXq8YKSn5rUfPdYMz9kuK08yRLDyAfCP6jActGtCpBsc6ggYclZZN0Wo5VaGcb2dVPg-ojSjPvGziP7acxBFbAoY4CsFjreNRd2JPvsmKlVImpfHaYMn8whRKnoeyHcPqssDF7eZHaT1tpI10hzTEU3ZN2sL2UDAZCPFFRmod-oQJIWARQzcUqNJr82wRSLUpUmZNkLq79YSpqKLQ">
+</div>
+<!-- Selection Badge -->
+<div class="absolute -bottom-1 right-0 bg-secondary-container text-on-secondary-container p-1 rounded-full border-2 border-surface-container-lowest shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 bg-surface-container-low px-3 py-1 rounded-full mb-spacing-md border border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">face</span>
+<span class="text-label-md font-label-md text-on-surface">Using Uncle Joy avatar</span>
+</div>
+<!-- Big Touch Friendly Action Buttons -->
+<div class="grid grid-cols-2 gap-spacing-sm w-full">
+<button class="flex items-center justify-center gap-2 py-3 px-spacing-sm bg-surface-container text-on-surface rounded-xl font-label-md text-label-md border border-outline-variant/30 hover:bg-surface-variant active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">photo_camera</span>
+<span class="">Take Photo</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-spacing-sm bg-surface-container text-on-surface rounded-xl font-label-md text-label-md border border-outline-variant/30 hover:bg-surface-variant active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">sentiment_satisfied</span>
+<span class="">Choose Avatar</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Name Input Field with Dictation -->
+<section class="mb-spacing-lg">
+<label class="block text-headline-sm font-headline-sm text-on-surface mb-spacing-xs" for="display-name-input">
+        Your Display Name
+      </label>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-lowest border-2 border-primary/40 focus:border-primary focus:ring-4 focus:ring-primary/15 rounded-2xl py-4 pl-4 pr-14 text-headline-sm font-headline-sm text-on-surface transition-all shadow-sm" id="display-name-input" placeholder="e.g. Uncle Raymond" type="text" value="Uncle Tan (Ah Bee)">
+<!-- Large Voice Dictation Trigger -->
+<button aria-label="Speak your name with voice dictation" class="absolute right-2.5 p-2.5 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed active:scale-90 transition-transform flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[24px]">mic</span>
+</button>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+        Tap the yellow mic icon anytime to speak instead of typing.
+      </p>
+</section>
+<!-- Quick Honorific Tap Chips -->
+<section class="mb-spacing-md">
+<span class="block text-label-md font-label-md text-on-surface-variant mb-spacing-xs">
+        Quick Title Shortcut (Tap to add):
+      </span>
+<div class="grid grid-cols-4 gap-spacing-xs">
+<!-- Selected Active Chip -->
+<button class="py-3 px-2 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm flex flex-col items-center justify-center shadow-sm active:scale-95 transition-all" type="button">
+<span class="">Uncle</span>
+<span class="text-label-sm font-label-sm opacity-80">Selected</span>
+</button>
+<!-- Inactive Option Chips -->
+<button class="py-3 px-2 rounded-xl bg-surface-container-lowest text-on-surface border border-outline-variant/40 font-headline-sm text-headline-sm flex flex-col items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="">Auntie</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">+ Add</span>
+</button>
+<button class="py-3 px-2 rounded-xl bg-surface-container-lowest text-on-surface border border-outline-variant/40 font-headline-sm text-headline-sm flex flex-col items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="">Brother</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">+ Add</span>
+</button>
+<button class="py-3 px-2 rounded-xl bg-surface-container-lowest text-on-surface border border-outline-variant/40 font-headline-sm text-headline-sm flex flex-col items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="">Sister</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">+ Add</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Navigation CTA Panel (Linear task view: Focused single action) -->
+<footer class="sticky bottom-0 left-0 w-full bg-surface-container-lowest/95 backdrop-blur-md px-margin-mobile py-spacing-md shadow-lg z-30">
+<div class="max-w-md mx-auto">
+<button class="w-full bg-primary text-on-primary py-4 px-spacing-lg rounded-full font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md hover:bg-primary-container active:scale-[0.98] transition-all" onclick="location.href='../03-age and neighbourhood/03-age and neighbourhood.html'" type="button">
+<span class="">Continue</span>
+<span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+</div>
+</body></html>

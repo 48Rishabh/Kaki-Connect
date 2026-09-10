@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - Welcome</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#1b1c1a",
+            "surface-container-low": "#f5f3ef",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#a5c8ff",
+            "secondary-fixed": "#ffe17a",
+            "primary-container": "#4a76b1",
+            "on-primary-container": "#fefcff",
+            "on-primary-fixed": "#001c3a",
+            "tertiary": "#315e8e",
+            "outline-variant": "#c2c6d1",
+            "on-tertiary-fixed": "#001d36",
+            "inverse-primary": "#a5c8ff",
+            "secondary-container": "#ffdd67",
+            "on-secondary-container": "#766100",
+            "inverse-on-surface": "#f2f0ec",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#424750",
+            "surface-container-highest": "#e4e2de",
+            "inverse-surface": "#30312e",
+            "surface-tint": "#325f99",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#e4c451",
+            "surface": "#fbf9f5",
+            "on-background": "#1b1c1a",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#fbf9f5",
+            "outline": "#737781",
+            "on-secondary-fixed": "#231b00",
+            "surface-variant": "#e4e2de",
+            "error": "#ba1a1a",
+            "primary-fixed": "#d4e3ff",
+            "surface-container-high": "#eae8e4",
+            "tertiary-fixed": "#d2e4ff",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "surface-container": "#f0eeea",
+            "on-primary-fixed-variant": "#124780",
+            "background": "#fbf9f5",
+            "secondary": "#715c00",
+            "on-secondary-fixed-variant": "#554500",
+            "tertiary-fixed-dim": "#9fcaff",
+            "primary": "#2f5d97",
+            "on-secondary-fixed-variant": "#554500",
+            "tertiary-container": "#4b77a9",
+            "on-tertiary-container": "#fdfcff",
+            "surface-dim": "#dbdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "spacing-2xl": "3rem",
+            "spacing-2xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "margin-desktop": "2.5rem",
+            "spacing-sm": "0.75rem",
+            "spacing-lg": "1.5rem",
+            "spacing-xs": "0.5rem",
+            "spacing-3xl": "4rem",
+            "spacing-xl": "2rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-md": "1rem"
+          },
+          "fontFamily": {
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 8px 30px -4px rgba(99, 142, 203, 0.12), 0 2px 8px -2px rgba(34, 38, 47, 0.04);
+    }
+  </style>
+<style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-container">
+<div class="kaki-phone-frame">
+<!-- Top Navigation (TopAppBar Shared Component Anchored) -->
+<header class="w-full bg-surface">
+<div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-md mx-auto">
+<!-- Brand Logo / Headline -->
+<div class="flex items-center gap-spacing-xs">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">mood</span>
+</div>
+<span class="text-headline-sm font-headline-sm text-primary tracking-tight">KakiConnect</span>
+</div>
+<!-- Action: Help Link -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]" type="button" onclick="document.getElementById('audioButton')?.click()"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="w-full max-w-md mx-auto px-margin-mobile flex-1 flex flex-col justify-center py-spacing-md">
+<!-- Top Badge / Pill -->
+
+<!-- Core Hero Squircle Card (Inspired by playful Korean stationery aesthetic) -->
+<div class="bg-surface-container-lowest rounded-[28px] p-6 md:p-8 soft-card-shadow border border-primary-fixed/20 relative overflow-hidden text-center">
+<!-- Minimalist Graphic Accents: Checkerboard corner & slash marks -->
+<div class="absolute top-4 right-5 text-outline-variant/60 font-caption-hangul text-label-sm tracking-widest pointer-events-none select-none">
+        // 01
+      </div>
+<!-- Friendly 3 Cheerful Circular Icons Row (Kopi, Smiling Face, Heart) -->
+<div class="flex items-center justify-center gap-4 mb-spacing-lg mt-2">
+<!-- 1. Kopi Cup -->
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/50 border border-secondary-container flex flex-col items-center justify-center text-on-secondary-container shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="local_cafe" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+<span class="text-[11px] font-semibold mt-0.5">Kopi</span>
+</div>
+<!-- 2. Smiling Kaki Face -->
+<div class="w-20 h-20 rounded-full bg-primary-fixed flex flex-col items-center justify-center text-primary shadow-sm ring-4 ring-surface-container-lowest hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="sentiment_satisfied" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+<span class="text-[11px] font-bold mt-0.5">Kaki</span>
+</div>
+<!-- 3. Warm Heart -->
+<div class="w-16 h-16 rounded-2xl bg-[#ffdcd9] border border-[#ffdad6] flex flex-col items-center justify-center text-error shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[11px] font-semibold mt-0.5">Care</span>
+</div>
+</div>
+<!-- Main Welcome Headline -->
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-spacing-xs tracking-tight">
+        Welcome to KakiConnect! ☕
+      </h1>
+<!-- Hangul Style Subtitle Label for Graphic Warmth -->
+<p class="text-caption-hangul font-caption-hangul text-outline uppercase tracking-wider mb-spacing-md">
+        우리 동네 좋은 친구 • Kampung Companions
+      </p>
+<!-- Friendly Subheading in Senior-Accessible Sizing -->
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-sm mx-auto leading-relaxed mb-spacing-xl">
+        A friendly Singapore community to make kakis, share a warm cup of kopi downstairs, or find caring neighbourhood companions.
+      </p>
+<!-- Accessible Multi-Language Audio Greeting Button -->
+<button aria-label="Listen to voice greeting" class="w-full py-3.5 px-4 rounded-xl bg-surface-container border border-surface-variant hover:bg-surface-container-high active:scale-[0.98] transition-all flex items-center justify-center gap-3 group text-left" id="audioButton" type="button">
+<div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="volume_up" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-label-md font-label-md text-primary group-hover:underline flex items-center gap-1.5">
+<span class="">Tap to listen to greeting</span>
+<span class="text-xs bg-primary-fixed text-on-primary-fixed px-1.5 py-0.5 rounded">Voice</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant truncate">
+            Hokkien • English • Mandarin • Malay
+          </div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-xl shrink-0" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+<!-- Reassurance Micro-Banner -->
+<div class="mt-spacing-md">
+<div class="bg-surface-container-low border border-secondary-container/60 rounded-full py-2.5 px-4 flex items-center justify-center gap-2 text-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg shrink-0" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-label-md font-label-md text-on-surface leading-tight">
+          100% Free &amp; Safe for seniors and families
+        </span>
+</div>
+</div>
+</main>
+<!-- Bottom CTA Area (Pill Button & Step Reassurance) -->
+<footer class="w-full max-w-md mx-auto px-margin-mobile pb-spacing-xl pt-spacing-sm">
+<div class="flex flex-col items-center">
+<!-- Big High-Contrast Action Pill Button (Min-h-16 for Senior Accessibility) -->
+<a class="w-full min-h-[64px] rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center gap-3 text-headline-sm font-headline-sm shadow-md active:scale-[0.98] transition-all focus:outline-none focus:ring-4 focus:ring-primary-fixed" href="../02-intro name and photo/02-intro name and photo.html">
+<span class="">Get Started</span>
+<span class="material-symbols-outlined text-2xl" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<!-- Reassuring Step Caption -->
+<div class="flex items-center gap-2 mt-spacing-sm text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="schedule" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<span class="">Takes only 1 minute • Very easy step-by-step</span>
+</div>
+</div>
+</footer>
+<!-- Simple Audio Playback Feedback Notification -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-full text-label-md font-label-md shadow-lg opacity-0 pointer-events-none transition-opacity duration-200 z-50 flex items-center gap-2" id="toast">
+<span class="material-symbols-outlined text-secondary-fixed text-lg" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+<span class="">Playing greeting in English &amp; Hokkien...</span>
+</div>
+<script>
+    const audioBtn = document.getElementById('audioButton');
+    const toast = document.getElementById('toast');
+    let isPlaying = false;
+
+    audioBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        toast.classList.remove('opacity-0');
+        setTimeout(() => {
+          toast.classList.add('opacity-0');
+          isPlaying = false;
+        }, 3200);
+      }
+    });
+  </script>
+
+
+</div>
+</body></html>

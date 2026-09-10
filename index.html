@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Date - Select Role</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style id="kaki-phone-frame">
+      html { background: #e8eaf0; }
+      body {
+        background: #e8eaf0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        min-height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .kaki-phone-frame {
+        width: 100% !important;
+        max-width: 420px !important;
+        min-height: 100vh !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+        box-sizing: border-box !important;
+        background-color: #fbf9f5;
+        display: flex;
+        flex-direction: column;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body>
+    <div class="kaki-phone-frame">
+        <div class="flex-1 px-6 py-10 flex flex-col justify-center items-center">
+            
+            <!-- Branding -->
+            <div class="text-center mb-10 w-full flex flex-col items-center">
+                <div class="w-16 h-16 bg-[#2f5d97] text-white rounded-2xl flex items-center justify-center shadow-md mb-4">
+                    <span class="material-symbols-outlined text-4xl">favorite</span>
+                </div>
+                <h1 class="text-3xl font-bold text-[#2f5d97] tracking-tight">KakiConnect</h1>
+                <p class="text-gray-500 mt-2 text-sm font-medium tracking-wide uppercase">Community Companion App</p>
+            </div>
+            
+            <h2 class="text-xl font-bold text-gray-800 text-center mb-6 w-full">Who do you want to signup as?</h2>
+            
+            <div class="flex flex-col gap-4 w-full">
+                <!-- Elderly Card -->
+                <button onclick="location.href='./01-onboarding/01-splash/01-splash.html'" class="w-full bg-white border border-gray-200 hover:border-[#2f5d97] hover:shadow-lg transition-all py-5 px-5 rounded-2xl flex items-center justify-between group cursor-pointer text-left">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#eaf1f8] text-[#2f5d97] flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[26px]">elderly</span>
+                        </div>
+                        <div>
+                            <span class="block text-lg font-bold text-gray-800 group-hover:text-[#2f5d97] transition-colors">Elderly</span>
+                            <span class="block text-sm text-gray-500 mt-0.5">Find activities and kakis</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 group-hover:text-[#2f5d97] transition-all transform group-hover:translate-x-1">arrow_forward_ios</span>
+                </button>
+                
+                <!-- Volunteer Card -->
+                <button onclick="location.href='./04-volunteer/01-volunteer_1_welcome_overview/code.html'" class="w-full bg-white border border-gray-200 hover:border-[#715c00] hover:shadow-lg transition-all py-5 px-5 rounded-2xl flex items-center justify-between group cursor-pointer text-left">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-[#fdf8e6] text-[#715c00] flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[26px]">volunteer_activism</span>
+                        </div>
+                        <div>
+                            <span class="block text-lg font-bold text-gray-800 group-hover:text-[#715c00] transition-colors">Volunteer</span>
+                            <span class="block text-sm text-gray-500 mt-0.5">Help seniors stay connected</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 group-hover:text-[#715c00] transition-all transform group-hover:translate-x-1">arrow_forward_ios</span>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

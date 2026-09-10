@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KakiConnect - Coordinated Activity</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#e4e2de",
+            "surface-container-highest": "#e4e2de",
+            "outline-variant": "#c2c6d1",
+            "on-tertiary-fixed-variant": "#154977",
+            "surface-dim": "#dbdad6",
+            "surface-tint": "#325f99",
+            "on-primary-container": "#fefcff",
+            "inverse-primary": "#a5c8ff",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container": "#f0eeea",
+            "tertiary": "#315e8e",
+            "primary-container": "#4a76b1",
+            "surface": "#fbf9f5",
+            "primary-fixed": "#d4e3ff",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#001d36",
+            "primary": "#2f5d97",
+            "on-secondary-fixed-variant": "#554500",
+            "on-primary-fixed": "#001c3a",
+            "on-surface": "#1b1c1a",
+            "surface-container-high": "#eae8e4",
+            "outline": "#737781",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#30312e",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#d2e4ff",
+            "on-background": "#1b1c1a",
+            "secondary-fixed": "#ffe17a",
+            "on-tertiary-container": "#fdfcff",
+            "background": "#fbf9f5",
+            "secondary": "#715c00",
+            "tertiary-container": "#4b77a9",
+            "secondary-fixed-dim": "#e4c451",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f5f3ef",
+            "on-surface-variant": "#424750",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#a5c8ff",
+            "on-primary-fixed-variant": "#124780",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#ffdd67",
+            "inverse-on-surface": "#f2f0ec",
+            "surface-bright": "#fbf9f5",
+            "on-secondary-container": "#766100",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-xs": "0.5rem",
+            "spacing-2xl": "3rem",
+            "margin-mobile": "1.25rem",
+            "spacing-3xl": "4rem",
+            "gutter-desktop": "1.5rem",
+            "gutter-mobile": "1rem",
+            "spacing-sm": "0.75rem",
+            "spacing-md": "1rem",
+            "margin-desktop": "2.5rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .soft-elevated-shadow {
+      box-shadow: 0 8px 24px -4px rgba(99, 142, 203, 0.16);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-44 selection:bg-secondary-container">
+<!-- TopAppBar Component (from Shared Components JSON) -->
+<header class="sticky top-0 z-40 bg-surface w-full">
+<div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+<!-- Leading Back Button with generous tap target -->
+<button aria-label="Go back" class="flex items-center justify-center w-11 h-11 rounded-full text-primary hover:bg-surface-container-high transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-headline-sm" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Headline Logo Anchor -->
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</h1>
+<!-- Trailing SOS Action Pill Button -->
+<button class="flex items-center gap-spacing-2xs bg-error-container text-error px-spacing-md py-spacing-xs rounded-full font-label-md text-label-md shadow-sm active:scale-95 transition-transform font-bold" type="button">
+<span class="material-symbols-outlined text-base" data-icon="sos">sos</span>
+<span class="">SOS</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas Content Area -->
+<main class="max-w-lg mx-auto px-margin-mobile pt-spacing-xs pb-spacing-lg">
+<!-- Sub-banner: Step & Context Pill -->
+
+<!-- Hero Card: Coordinated Activity -->
+<article class="bg-surface-container-lowest rounded-[20px] overflow-hidden soft-card-shadow border border-outline-variant/30 mb-spacing-lg">
+<!-- Activity Visual -->
+<div class="relative w-full h-48 sm:h-52 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A warm, sunlit scene of smiling elderly Singaporean companions leisurely strolling beside the calm waters of Bedok Reservoir Jetty during golden hour sunset. The environment is safe, shaded, and peaceful, showcasing active senior friendship with soft blue skies and warm sunlight accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpklTqbulsu2q8l3kvM4KWGrVQ956wALNN9nJNIW7OvEAmDZb1jcrfJ6r0S7xGx16mWgSvEO6yN5-YbVvhJ-GH5OOXIvU3vLEv2sOEPTZH7PozDusIg18Dtd0eJi50bqc97tzNjqAXWvsGslLOpDQFD9IMaxD4__hlPPqrhn4P8Xp6q-JaMTpObVxJx9dR7tDA70Is4ep7cvJEcIRWyUV0luyhM5TcGJ3SvRk3_XgqX18ZYpLD6twHeg">
+<!-- Tonal Overlays and Status Floating Tag -->
+<div class="absolute top-spacing-sm left-spacing-sm">
+<span class="inline-flex items-center gap-1.5 bg-surface-container-lowest/95 backdrop-blur-sm px-spacing-md py-1 rounded-full text-primary font-label-md text-label-md font-bold shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+            Confirmed • 4 Kakis &amp; 1 Volunteer
+          </span>
+</div>
+</div>
+<!-- Activity Details Body -->
+<div class="p-spacing-md">
+<div class="flex items-start justify-between gap-spacing-sm mb-spacing-xs">
+<div>
+<span class="inline-block font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold mb-1">Upcoming Activity</span>
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold">Sunset Fishing &amp; Kopi Gathering</h2>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-headline-sm" data-icon="phishing">phishing</span>
+</div>
+</div>
+<div class="space-y-spacing-xs pt-spacing-2xs border-t border-surface-container mt-spacing-xs">
+<div class="flex items-center gap-spacing-xs text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="location_on">location_on</span>
+<span class="font-medium text-on-surface">Bedok Reservoir Jetty</span>
+</div>
+<div class="flex items-center gap-spacing-xs text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="schedule">schedule</span>
+<span class="">Tomorrow <strong class="font-semibold text-on-surface">4:00 PM – 6:00 PM</strong></span>
+</div>
+</div>
+</div>
+</article>
+<!-- Section Header for Collapsed Accordion Modules -->
+<div class="flex items-center justify-between mb-spacing-sm px-1">
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Matching &amp; Comfort Overview</h3>
+<span class="font-label-sm text-label-sm text-primary font-semibold">View 1 of 3 (Overview)</span>
+</div>
+<!-- 3 Clean Single-Line Collapsed Accordion Cards -->
+<div class="space-y-spacing-sm mb-spacing-md">
+<!-- Accordion 1: Support Match (Collapsed) -->
+<div class="bg-surface-container-lowest rounded-2xl soft-card-shadow border border-outline-variant/30 hover:border-primary/40 transition-colors p-spacing-sm">
+<div class="flex items-center justify-between gap-spacing-xs">
+<!-- Left: Avatar and Identity preview -->
+<div class="flex items-center gap-spacing-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-body-lg">
+                RL
+              </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-secondary rounded-full border-2 border-surface-container-lowest" title="Available"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-spacing-2xs flex-wrap">
+<span class="font-body-lg text-body-lg font-bold text-on-surface truncate">Rachel Lin</span>
+<span class="bg-primary-fixed/50 text-on-primary-fixed-variant text-[11px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">1-to-1 Support</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant truncate">Volunteer Companion • Certified First Aider</p>
+</div>
+</div>
+<!-- Right: Clear Expand Action Indicator -->
+<button class="flex-shrink-0 flex items-center gap-1 text-primary hover:text-primary-container px-2.5 py-1.5 rounded-xl bg-surface-container-low transition-all active:scale-95" type="button">
+<span class="font-label-md text-label-md font-bold hidden sm:inline">Expand / View Details</span>
+<span class="font-label-md text-label-md font-bold sm:hidden">Details</span>
+<span class="material-symbols-outlined text-base font-bold" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Accordion 2: Social Match (Collapsed) -->
+<div class="bg-surface-container-lowest rounded-2xl soft-card-shadow border border-outline-variant/30 hover:border-primary/40 transition-colors p-spacing-sm">
+<div class="flex items-center justify-between gap-spacing-xs">
+<!-- Left: Overlapping avatars and Summary -->
+<div class="flex items-center gap-spacing-sm min-w-0">
+<!-- 3 Overlapping Avatar Badges -->
+<div class="flex -space-x-3.5 flex-shrink-0 items-center pl-1">
+<div class="w-9 h-9 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center font-bold text-xs text-on-secondary-fixed">
+                A
+              </div>
+<div class="w-9 h-9 rounded-full bg-primary-fixed border-2 border-surface-container-lowest flex items-center justify-center font-bold text-xs text-on-primary-fixed">
+                S
+              </div>
+<div class="w-9 h-9 rounded-full bg-surface-variant border-2 border-surface-container-lowest flex items-center justify-center font-bold text-xs text-on-surface">
+                T
+              </div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-body-lg text-body-lg font-bold text-on-surface truncate">3 Kaki Friends</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant hidden md:inline">• Ahmad, Susan, Mr Tan</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant truncate">East-side morning kopi kakis</p>
+</div>
+</div>
+<!-- Right: Clear Expand Action Indicator -->
+<button class="flex-shrink-0 flex items-center gap-1 text-primary hover:text-primary-container px-2.5 py-1.5 rounded-xl bg-surface-container-low transition-all active:scale-95" type="button">
+<span class="font-label-md text-label-md font-bold hidden sm:inline">Expand / View Details</span>
+<span class="font-label-md text-label-md font-bold sm:hidden">Details</span>
+<span class="material-symbols-outlined text-base font-bold" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Accordion 3: Accessibility & Dignity Guarantee (Collapsed) -->
+<div class="bg-surface-container-lowest rounded-2xl soft-card-shadow border border-outline-variant/30 hover:border-primary/40 transition-colors p-spacing-sm">
+<div class="flex items-center justify-between gap-spacing-xs">
+<!-- Left: Shield Icon and Accessibility Highlights -->
+<div class="flex items-center gap-spacing-sm min-w-0">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-headline-sm" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-lg text-body-lg font-bold text-on-surface truncate">Accessibility &amp; Dignity Guarantee</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant truncate">Step-free route, shaded benches, accessible restroom</p>
+</div>
+</div>
+<!-- Right: Clear Expand Action Indicator -->
+<button class="flex-shrink-0 flex items-center gap-1 text-primary hover:text-primary-container px-2.5 py-1.5 rounded-xl bg-surface-container-low transition-all active:scale-95" type="button">
+<span class="font-label-md text-label-md font-bold hidden sm:inline">Expand / View Details</span>
+<span class="font-label-md text-label-md font-bold sm:hidden">Details</span>
+<span class="material-symbols-outlined text-base font-bold" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Senior Friendly Helper Notice Banner -->
+<div class="flex items-center gap-spacing-xs bg-surface-container-low border border-outline-variant/40 rounded-xl p-spacing-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary flex-shrink-0 text-xl" data-icon="info">info</span>
+<p class="font-body-sm text-body-sm">Tap any section above to see full details, voice notes, and meeting instructions.</p>
+</div>
+</main>
+<!-- Sticky Bottom CTAs Section -->
+<div class="fixed bottom-[64px] left-0 right-0 z-30 bg-surface/95 backdrop-blur-md px-margin-mobile py-spacing-xs max-w-lg mx-auto border-t border-surface-container">
+<div class="flex flex-col gap-2">
+<!-- Primary CTA: 56px Periwinkle prominent button -->
+<button class="w-full h-[56px] bg-primary text-on-primary rounded-full font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-spacing-xs shadow-md active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="check_circle">check_circle</span>
+<span class="">Join Activity</span>
+</button>
+<!-- Secondary Soft Button -->
+<button class="w-full h-11 bg-surface-container-low text-primary border border-outline-variant/60 rounded-full font-label-md text-label-md font-bold flex items-center justify-center gap-spacing-xs hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span class="">Message Rachel or Group</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Docked Full Width Bottom) -->
+<nav class="fixed bottom-0 left-0 w-full z-40 bg-surface-container-lowest flex justify-around items-center px-margin-mobile py-spacing-2xs shadow-sm max-w-lg mx-auto right-0">
+<!-- Activities -->
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-spacing-md py-spacing-xs min-h-[52px] shadow-sm" type="button"><span class="material-symbols-outlined text-xl" data-icon="event" style="font-variation-settings: 'FILL' 1;">event</span><span class="font-label-sm text-label-sm font-bold mt-0.5">Activities</span></button>
+<!-- Matches (ACTIVE HIGHLIGHTED) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs min-h-[52px] hover:bg-surface-container-low rounded-xl" type="button"><span class="material-symbols-outlined text-xl" data-icon="group">group</span><span class="font-label-sm text-label-sm mt-0.5">Buddies</span></button>
+<!-- Care Hub -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs min-h-[52px] hover:bg-surface-container-low rounded-xl" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-sm text-label-sm mt-0.5">Care Hub</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs min-h-[52px] hover:bg-surface-container-low rounded-xl" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="account_circle">account_circle</span>
+<span class="font-label-sm text-label-sm mt-0.5">Profile</span>
+</button>
+</nav>
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - You're All Set!</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#001d36",
+            "surface-container-low": "#f5f3ef",
+            "on-secondary-fixed-variant": "#554500",
+            "on-surface-variant": "#424750",
+            "on-secondary-container": "#766100",
+            "surface-container-high": "#eae8e4",
+            "error": "#ba1a1a",
+            "surface-container": "#f0eeea",
+            "surface-tint": "#325f99",
+            "background": "#fbf9f5",
+            "secondary-container": "#ffdd67",
+            "surface": "#fbf9f5",
+            "inverse-surface": "#30312e",
+            "on-surface": "#1b1c1a",
+            "surface-variant": "#e4e2de",
+            "tertiary-container": "#4b77a9",
+            "primary-fixed-dim": "#a5c8ff",
+            "surface-bright": "#fbf9f5",
+            "on-background": "#1b1c1a",
+            "secondary": "#715c00",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e4e2de",
+            "on-tertiary-container": "#fdfcff",
+            "on-secondary-fixed": "#231b00",
+            "primary-container": "#4a76b1",
+            "on-primary-fixed-variant": "#124780",
+            "error-container": "#ffdad6",
+            "outline": "#737781",
+            "secondary-fixed": "#ffe17a",
+            "on-error-container": "#93000a",
+            "tertiary": "#315e8e",
+            "tertiary-fixed-dim": "#9fcaff",
+            "on-primary-fixed": "#001c3a",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#fefcff",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#f2f0ec",
+            "primary": "#2f5d97",
+            "inverse-primary": "#a5c8ff",
+            "tertiary-fixed": "#d2e4ff",
+            "on-tertiary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c2c6d1",
+            "surface-dim": "#dbdad6",
+            "primary-fixed": "#d4e3ff",
+            "secondary-fixed-dim": "#e4c451",
+            "on-tertiary-fixed-variant": "#154977"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-2xs": "0.25rem",
+            "spacing-md": "1rem",
+            "gutter-mobile": "1rem",
+            "spacing-sm": "0.75rem",
+            "spacing-xs": "0.5rem",
+            "spacing-lg": "1.5rem",
+            "margin-desktop": "2.5rem",
+            "spacing-xl": "2rem",
+            "spacing-2xl": "3rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-3xl": "4rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .pill-shadow {
+      box-shadow: 0 8px 24px -4px rgba(99, 142, 203, 0.16);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+
+<!-- Mobile Viewport Container -->
+<body class="min-h-screen flex flex-col"><div class="kaki-phone-frame w-full max-w-md min-h-screen bg-primary flex flex-col justify-between relative p-spacing-md overflow-hidden"><header class="w-full z-40 flex flex-col items-center"><div class="relative flex items-center justify-center w-full max-w-md mx-auto min-h-[44px]"><button aria-label="Go Back" class="absolute left-0 w-11 h-11 flex items-center justify-center rounded-full hover:bg-white/10 active:scale-95 transition-all text-white" onclick="location.href='../10-text size/10-text size.html'" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="text-center"><span class="font-headline-sm text-headline-sm font-bold text-white tracking-tight">KakiConnect</span></div></div><div class="mt-spacing-xs pb-1 flex justify-center"><button class="inline-flex items-center gap-2 px-4 py-2 bg-white/15 text-white rounded-full font-label-md text-label-md hover:bg-white/25 active:scale-95 transition-all border border-white/20 shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">volume_up</span><span class="">Read Aloud</span></button></div></header><main class="flex-1 flex flex-col justify-center my-auto w-full max-w-md py-4"><section class="bg-surface-container-lowest rounded-3xl p-spacing-lg soft-card-shadow border border-outline-variant/30 text-center relative overflow-hidden"><div class="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-secondary-container/30 pointer-events-none"></div><div class="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-primary-fixed/30 pointer-events-none"></div><div class="relative z-10 flex flex-col items-center"><div class="relative mb-spacing-sm"><div class="w-20 h-20 rounded-full border-4 border-secondary-container bg-surface-container flex items-center justify-center shadow-inner overflow-hidden"><span class="material-symbols-outlined text-primary text-[44px]" style="font-variation-settings: 'FILL' 1;">face_retouching_natural</span></div><div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center border-2 border-surface-container-lowest shadow-sm"><span class="material-symbols-outlined text-[20px] font-bold" style="font-variation-settings: 'FILL' 1;">check_circle</span></div></div><span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-full mb-2">Profile Activated</span><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-2">You're all set, Uncle Tan!</h1><p class="font-body-md text-body-md text-on-surface-variant max-w-xs mx-auto leading-relaxed">Your profile is ready. Friendly Kakis in Bedok are excited to meet you!</p></div></section></main><div class="w-full pt-2 pb-3"><button class="w-full min-h-[58px] rounded-full bg-secondary-container text-neutral-900 font-headline-sm text-headline-sm font-bold px-6 py-3 flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg hover:bg-yellow-400" onclick="location.href='../../02-discovery/discovery.html'" type="button"><span class="">Get Started</span><span class="material-symbols-outlined text-[24px] font-bold">arrow_forward</span></button></div></div>
+
+
+</body></html>

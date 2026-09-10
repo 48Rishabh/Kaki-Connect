@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Live Video Call - KakiConnect</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#554500",
+            "secondary-fixed-dim": "#e4c451",
+            "primary": "#2f5d97",
+            "on-secondary-container": "#766100",
+            "on-surface-variant": "#424750",
+            "surface-container-low": "#f5f3ef",
+            "background": "#fbf9f5",
+            "outline-variant": "#c2c6d1",
+            "surface-tint": "#325f99",
+            "tertiary-container": "#4b77a9",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#231b00",
+            "inverse-on-surface": "#f2f0ec",
+            "surface-variant": "#e4e2de",
+            "surface-dim": "#dbdad6",
+            "on-surface": "#1b1c1a",
+            "inverse-surface": "#30312e",
+            "on-tertiary-container": "#fdfcff",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "primary-container": "#4a76b1",
+            "on-primary-fixed-variant": "#124780",
+            "on-tertiary-fixed": "#001d36",
+            "on-tertiary-fixed-variant": "#154977",
+            "primary-fixed-dim": "#a5c8ff",
+            "error": "#ba1a1a",
+            "inverse-primary": "#a5c8ff",
+            "tertiary": "#315e8e",
+            "surface-container-high": "#eae8e4",
+            "on-background": "#1b1c1a",
+            "outline": "#737781",
+            "surface": "#fbf9f5",
+            "surface-bright": "#fbf9f5",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#715c00",
+            "on-primary": "#ffffff",
+            "secondary-container": "#ffdd67",
+            "secondary-fixed": "#ffe17a",
+            "primary-fixed": "#d4e3ff",
+            "surface-container-highest": "#e4e2de",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#d2e4ff",
+            "on-primary-fixed": "#001c3a",
+            "on-primary-container": "#fefcff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container": "#f0eeea"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-desktop": "1.5rem",
+            "gutter-mobile": "1rem",
+            "spacing-2xl": "3rem",
+            "spacing-xs": "0.5rem",
+            "spacing-lg": "1.5rem",
+            "margin-desktop": "2.5rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-3xl": "4rem",
+            "margin-mobile": "1.25rem",
+            "spacing-md": "1rem",
+            "spacing-xl": "2rem",
+            "spacing-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "caption-hangul": ["10px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.12), 0 2px 6px -1px rgba(34, 38, 47, 0.04);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col justify-between select-none">
+<!-- Main Container: Linear / Task-focused Call Shell -->
+<main class="relative w-full max-w-md mx-auto min-h-screen flex flex-col justify-between bg-surface-container-lowest overflow-hidden shadow-2xl">
+<!-- Video Stream Background (Full Canvas) -->
+<div class="absolute inset-0 z-0 bg-surface-dim overflow-hidden">
+<!-- Main Feed: Uncle Raymond with Coffee Mug -->
+<img class="w-full h-full object-cover object-center" data-alt="A warm, brightly lit video call frame of a friendly smiling Singaporean senior man named Uncle Raymond in his late 60s holding a ceramic coffee mug. He is laughing heartily in a cozy sunlit living room with lush indoor potted plants and warm wooden furnishings. The lighting is soft and natural, emphasizing high warmth, genuine connection, and clean Korean stationery aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDLFcHilz-xiHCa-cDPY8Xlpz4NhWugYYX0jQkkqsbX-X82ziWfOLFZrdESiN45qv0J7TheBdea8eN0zcW-4w8pV2k8LtAN8jHyZBY5j5OY9lvTQsZcx_4VDrjv70JjZ734JYKtTG5n-GuA4vLZ1kxbWwF3jxSlpyA6xSnKrq4MJP2aPAVPu8qMSxSdApF09ONjuJiXj25GK4BEa-EnuQViT9mdr_-pcrMVsLzqvCCQK8rCt8qcfpwQ">
+<!-- Subtle Gradient Scrims for Senior Readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-inverse-surface/60 via-transparent to-inverse-surface/85 pointer-events-none"></div>
+</div>
+<!-- Header Overlay & PIP Stream -->
+<header class="relative z-10 w-full px-spacing-md pt-spacing-md flex flex-col gap-spacing-xs">
+<!-- Top Status Bar & Emergency Action -->
+<div class="flex items-center justify-between">
+<!-- Caller Info Pill -->
+<div class="flex items-center gap-spacing-xs bg-surface-container-lowest/90 backdrop-blur-md px-spacing-md py-spacing-xs rounded-full custom-shadow border border-outline-variant/30">
+<span aria-hidden="true" class="w-3 h-3 rounded-full bg-secondary animate-pulse"></span>
+<div class="flex flex-col">
+<h1 class="text-headline-sm font-headline-sm text-on-surface font-bold leading-tight">Uncle Raymond</h1>
+<div class="flex items-center gap-1">
+<span class="text-body-sm font-body-sm text-primary font-bold">04:15</span>
+<span class="text-body-sm font-body-sm text-outline">• Good Signal</span>
+</div>
+</div>
+</div>
+<!-- SOS / Help Trigger (Shared Token & Safety Feature) -->
+<button aria-label="Emergency SOS button" class="bg-error text-on-error hover:bg-error/90 active:scale-95 transition-transform px-spacing-md py-spacing-xs rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-wider">SOS</span>
+</button>
+</div>
+<!-- Picture-In-Picture Self-Preview Window (Floating Top-Right) -->
+<div class="self-end mt-spacing-xs w-28 h-36 sm:w-32 sm:h-40 rounded-2xl overflow-hidden border-2 border-surface-container-lowest shadow-xl relative group">
+<img class="w-full h-full object-cover" data-alt="A small, crisp front-facing selfie camera preview of a cheerful elderly Singaporean man wearing lightweight spectacles, nodding kindly with a warm smile. Natural domestic lighting fills the background softly, creating a calm, safe, and comfortable atmosphere in a gentle light pastel environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQV1k83ENmOzWAB6pyzEfJqbnz-6v9_ci3nyNBASgMGIk8ip2hbwMy9t-A-Y6zxIHRbAJdfsr300uFrKi2cX79XEkjO_dt62Flad-BM4sEg568GPynHYtojrOWiSR2Tti4zsdg71xl0ZpkUGlzNSd4oqRWrc57DcjseQUk8P17RN6kJsRSDqenIlh6DoMfYOy7ITlehcxqhkLUnielxKogRYCzyatkDilB7EJwXP1AbeKPjBbjBbYVzA">
+<div class="absolute bottom-1 right-1 bg-surface-container-lowest/80 backdrop-blur-sm text-on-surface px-1.5 py-0.5 rounded-full text-caption-hangul font-caption-hangul font-bold">
+          You
+        </div>
+</div>
+</header>
+<!-- Mid-Screen Floating Prompt Pill (AI Conversation Nudge) -->
+<section class="relative z-10 px-spacing-md my-auto flex flex-col items-center">
+<aside class="bg-secondary-container text-on-secondary-container px-spacing-md py-spacing-sm rounded-full custom-shadow flex items-center gap-spacing-xs max-w-[90%] border border-secondary/20 active:scale-98 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div class="flex flex-col">
+<span class="text-caption-hangul font-caption-hangul text-secondary uppercase tracking-wider font-bold">Conversation Starter</span>
+<p class="text-body-md font-body-md font-bold text-on-secondary-container">Ask Uncle Raymond about his home garden plants!</p>
+</div>
+</aside>
+</section>
+<!-- Bottom Action & Captions Container -->
+<footer class="relative z-10 w-full flex flex-col gap-spacing-md pb-spacing-lg px-spacing-md">
+<!-- High-Contrast Closed Captions Bar for Senior Accessibility -->
+<article class="bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-md rounded-2xl p-spacing-md border border-surface-variant/20 shadow-md">
+<div class="flex items-center gap-spacing-xs mb-1">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">subtitles</span>
+<span class="text-label-sm font-label-sm text-secondary-fixed font-bold">Live Subtitles (English / Singlish)</span>
+</div>
+<p class="text-headline-sm font-headline-sm font-semibold tracking-wide text-inverse-on-surface leading-snug">
+<span class="text-secondary-container font-bold">Raymond:</span> “Wah, today the weather very good ah! Did you water your plants already?”
+        </p>
+</article>
+<!-- Giant Ergonomic Call Control Buttons (Minimum target > 64px) -->
+<nav aria-label="Video Call Controls" class="grid grid-cols-4 gap-spacing-xs bg-surface-container-lowest/95 backdrop-blur-lg p-spacing-xs rounded-full border border-outline-variant/30 shadow-2xl items-center">
+<!-- Microphone Button -->
+<button aria-label="Toggle Microphone" class="flex flex-col items-center justify-center min-h-[64px] rounded-full hover:bg-surface-container active:scale-95 transition-transform text-on-surface">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-primary text-[26px]">mic</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold">Mic On</span>
+</button>
+<!-- Speaker Button -->
+<button aria-label="Toggle Loudspeaker" class="flex flex-col items-center justify-center min-h-[64px] rounded-full hover:bg-surface-container active:scale-95 transition-transform text-on-surface">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-primary text-[26px]" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold">Speaker</span>
+</button>
+<!-- Call Family / Helper Support -->
+<button aria-label="Ask Family to Join Call" class="flex flex-col items-center justify-center min-h-[64px] rounded-full hover:bg-surface-container active:scale-95 transition-transform text-on-surface">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-secondary text-[26px]">group_add</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold">Add Kin</span>
+</button>
+<!-- Big Red End Call Button -->
+<button aria-label="End Video Call" class="flex flex-col items-center justify-center min-h-[64px] rounded-full hover:opacity-95 active:scale-95 transition-transform text-error">
+<div class="w-12 h-12 rounded-full bg-error text-on-error flex items-center justify-center shadow-md mb-1">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">call_end</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-error">End Call</span>
+</button>
+</nav>
+</footer>
+</main>
+</body></html>

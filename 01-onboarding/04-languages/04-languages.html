@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - Step 3: Languages &amp; Dialects</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a5c8ff",
+            "surface-variant": "#e4e2de",
+            "surface-container-highest": "#e4e2de",
+            "surface-tint": "#325f99",
+            "outline": "#737781",
+            "on-primary-fixed": "#001c3a",
+            "on-surface-variant": "#424750",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-secondary-fixed-variant": "#554500",
+            "on-error": "#ffffff",
+            "secondary": "#715c00",
+            "secondary-container": "#ffdd67",
+            "secondary-fixed": "#ffe17a",
+            "on-primary-fixed-variant": "#124780",
+            "surface-container-high": "#eae8e4",
+            "inverse-primary": "#a5c8ff",
+            "tertiary-fixed": "#d2e4ff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container-low": "#f5f3ef",
+            "on-primary-container": "#fefcff",
+            "inverse-on-surface": "#f2f0ec",
+            "inverse-surface": "#30312e",
+            "surface-container": "#f0eeea",
+            "on-tertiary-fixed": "#001d36",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c2c6d1",
+            "background": "#fbf9f5",
+            "secondary-fixed-dim": "#e4c451",
+            "primary": "#2f5d97",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "primary-fixed": "#d4e3ff",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#fbf9f5",
+            "surface-dim": "#dbdad6",
+            "on-background": "#1b1c1a",
+            "on-surface": "#1b1c1a",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface": "#fbf9f5",
+            "tertiary": "#315e8e",
+            "primary-container": "#4a76b1",
+            "tertiary-container": "#4b77a9",
+            "on-secondary-container": "#766100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-sm": "0.75rem",
+            "spacing-2xl": "3rem",
+            "gutter-mobile": "1rem",
+            "spacing-xs": "0.5rem",
+            "spacing-3xl": "4rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex justify-center selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Mobile Viewport Frame (Linear Onboarding Journey: Navigation Shell Suppressed as mandated) -->
+<main class="kaki-phone-frame w-full max-w-md bg-surface min-h-screen flex flex-col justify-between relative shadow-sm">
+<!-- Top App Bar (Shared Component Anchored) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-spacing-md py-spacing-xs shadow-sm">
+<div class="flex justify-between items-center w-full max-w-md mx-auto">
+<!-- Back Action button -->
+<button aria-label="Go back to previous step" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container active:scale-95 transition-transform duration-150 text-on-surface" type="button" onclick="location.href='../03-age and neighbourhood/03-age and neighbourhood.html'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Brand Name Anchor -->
+<div class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight flex items-center gap-1.5">
+<span class="">KakiConnect</span>
+
+</div>
+<!-- Emergency / SOS Action -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button>
+</div>
+</header><div class="w-full bg-slate-200/80 h-1.5 overflow-hidden kaki-progress-track"><div class="bg-primary h-full rounded-full kaki-progress-fill" style="width: 33%;"></div></div>
+<!-- Main Content Area -->
+<div class="flex-1 px-spacing-md pt-spacing-sm pb-spacing-xl space-y-6">
+<!-- Progress Tracking & Read Aloud Audio Assist -->
+
+<!-- Step Header Information -->
+<section class="space-y-2">
+
+<h1 class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">
+          What languages do you speak?
+        </h1>
+<p class="text-body-md font-body-md text-on-surface-variant">
+          Select all that you feel comfortable chatting, joking, or having kopi with.
+        </p>
+</section>
+<!-- Interactive Big Touch-Target Language Selector Grid -->
+<section aria-label="Selectable language list" class="space-y-3">
+<!-- Hokkien (Selected - Sunny Butter Accent Signature) -->
+<button class="w-full min-h-[56px] px-spacing-md py-3.5 rounded-2xl bg-surface-container-lowest text-primary border-2 border-primary shadow-sm flex items-center justify-between active:scale-[0.98] transition-transform duration-150" type="button">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">
+              H
+            </span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Hokkien</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</button>
+<!-- English (Selected) -->
+<button class="w-full min-h-[56px] px-spacing-md py-3.5 rounded-2xl bg-surface-container-lowest text-primary border-2 border-primary shadow-sm flex items-center justify-between active:scale-[0.98] transition-transform duration-150" type="button">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">
+              EN
+            </span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">English</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</button>
+<!-- Mandarin (Selected) -->
+<button class="w-full min-h-[56px] px-spacing-md py-3.5 rounded-2xl bg-surface-container-lowest text-primary border-2 border-primary shadow-sm flex items-center justify-between active:scale-[0.98] transition-transform duration-150" type="button">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">
+              CN
+            </span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Mandarin</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</button>
+<!-- Teochew (Selected) -->
+<button class="w-full min-h-[56px] px-spacing-md py-3.5 rounded-2xl bg-surface-container-lowest text-primary border-2 border-primary shadow-sm flex items-center justify-between active:scale-[0.98] transition-transform duration-150" type="button">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">
+              TC
+            </span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Teochew</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</button>
+<!-- Cantonese (Unselected) -->
+<button class="w-full min-h-[56px] px-spacing-md py-3.5 rounded-2xl bg-surface-container-lowest text-on-surface border border-outline-variant/50 hover:border-primary/40 shadow-xs flex items-center justify-between active:scale-[0.98] transition-all duration-150" type="button">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-medium text-xs">
+              CT
+            </span>
+<span class="text-headline-sm font-headline-sm font-medium text-on-surface">Cantonese</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant/60 flex items-center justify-center"></div>
+</button>
+<!-- Malay (Unselected) -->
+<button class="w-full min-h-[56px] px-spacing-md py-3.5 rounded-2xl bg-surface-container-lowest text-on-surface border border-outline-variant/50 hover:border-primary/40 shadow-xs flex items-center justify-between active:scale-[0.98] transition-all duration-150" type="button">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-medium text-xs">
+              MY
+            </span>
+<span class="text-headline-sm font-headline-sm font-medium text-on-surface">Malay</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant/60 flex items-center justify-center"></div>
+</button>
+<!-- Tamil (Unselected) -->
+<button class="w-full min-h-[56px] px-spacing-md py-3.5 rounded-2xl bg-surface-container-lowest text-on-surface border border-outline-variant/50 hover:border-primary/40 shadow-xs flex items-center justify-between active:scale-[0.98] transition-all duration-150" type="button">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant font-medium text-xs">
+              TM
+            </span>
+<span class="text-headline-sm font-headline-sm font-medium text-on-surface">Tamil</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant/60 flex items-center justify-center"></div>
+</button>
+</section>
+<!-- Reassurance Warm Card -->
+<section class="rounded-2xl p-4 bg-surface-container-lowest border border-outline-variant/25 shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="coffee">coffee</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-1.5 text-primary font-bold text-label-md font-label-md">
+<span class="">Helpful Tip</span>
+<span class="text-xs text-outline">• No worries!</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Speaking local dialects helps us pair you with Kakis who love the same banter!
+            </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Actions Sticky Deck (Task-specific Footer) -->
+<footer class="sticky bottom-0 bg-surface/95 backdrop-blur-md px-spacing-md pt-3 pb-6 border-t border-outline-variant/20 shadow-lg">
+<div class="flex items-center gap-3 max-w-md mx-auto">
+<!-- Secondary Action: Back -->
+
+<!-- Primary High-Contrast Call to Action -->
+<button class="flex-1 min-h-[52px] px-6 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold shadow-md flex items-center justify-center gap-2 active:scale-95 transition-transform duration-150 hover:bg-primary-container" onclick="location.href='../05-mobility choice/05-mobility choice.html'" type="button">
+<span class="">Continue&nbsp;</span>
+<span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</footer>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - Support Preferences</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#fbf9f5",
+            "surface-container": "#f0eeea",
+            "on-primary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#001d36",
+            "tertiary": "#315e8e",
+            "primary-container": "#4a76b1",
+            "on-secondary-fixed": "#231b00",
+            "inverse-primary": "#a5c8ff",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#e4e2de",
+            "on-error-container": "#93000a",
+            "secondary-container": "#ffdd67",
+            "error-container": "#ffdad6",
+            "background": "#fbf9f5",
+            "on-primary-container": "#fefcff",
+            "surface-variant": "#e4e2de",
+            "inverse-surface": "#30312e",
+            "on-tertiary-container": "#fdfcff",
+            "tertiary-container": "#4b77a9",
+            "inverse-on-surface": "#f2f0ec",
+            "primary-fixed-dim": "#a5c8ff",
+            "surface-tint": "#325f99",
+            "on-tertiary-fixed-variant": "#154977",
+            "tertiary-fixed": "#d2e4ff",
+            "secondary": "#715c00",
+            "on-background": "#1b1c1a",
+            "surface-container-high": "#eae8e4",
+            "surface-bright": "#fbf9f5",
+            "on-surface-variant": "#424750",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#ffe17a",
+            "on-surface": "#1b1c1a",
+            "secondary-fixed-dim": "#e4c451",
+            "primary": "#2f5d97",
+            "primary-fixed": "#d4e3ff",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#001c3a",
+            "surface-dim": "#dbdad6",
+            "on-secondary-fixed-variant": "#554500",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#124780",
+            "surface-container-low": "#f5f3ef",
+            "outline-variant": "#c2c6d1",
+            "tertiary-fixed-dim": "#9fcaff",
+            "outline": "#737781",
+            "on-secondary-container": "#766100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "margin-desktop": "2.5rem",
+            "spacing-3xl": "4rem",
+            "spacing-2xs": "0.25rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-xl": "2rem",
+            "spacing-md": "1rem",
+            "spacing-lg": "1.5rem",
+            "spacing-xs": "0.5rem",
+            "spacing-sm": "0.75rem",
+            "gutter-mobile": "1rem",
+            "spacing-2xl": "3rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(47, 93, 151, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+  </style>
+<style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex justify-center selection:bg-secondary-container">
+<!-- Mobile Container for Singapore Seniors -->
+<div class="kaki-phone-frame w-full max-w-md bg-surface min-h-screen flex flex-col relative pb-32">
+<!-- Top Bar Navigation (Shared Component Style Mapping: TopAppBar) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin-mobile py-spacing-xs flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<button aria-label="Go back" class="w-12 h-12 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high active:scale-95 transition-transform duration-150" onclick="location.href='../05-mobility choice/05-mobility choice.html'" type="button">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">KakiConnect</span>
+</div>
+<!-- Audio / Read Aloud Accessibility Pill for Seniors -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button>
+</header>
+<!-- Linear Step Indicator -->
+<div class="px-margin-mobile pt-spacing-sm pb-spacing-xs">
+
+<!-- Progress Bar (60%) -->
+<div class="w-full bg-slate-200/80 h-1.5 overflow-hidden kaki-progress-track"><div class="bg-primary h-full rounded-full kaki-progress-fill" style="width: 56%;"></div></div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 px-margin-mobile pt-spacing-sm">
+<!-- Serene & Friendly Header Section -->
+<section class="mb-spacing-lg">
+<div class="inline-flex items-center gap-1.5 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full mb-2">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span class="font-label-sm text-label-sm font-semibold">Your Comfort Matters</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold mb-2">
+          What kind of support is most helpful?
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Choose what feels right for you. We will match you with a friendly kaki or volunteer who understands.
+        </p>
+</section>
+<!-- Selection Options: Touch-first Accessible Cards (>56px minimum touch target) -->
+<form class="space-y-3.5" id="support-form" onsubmit="event.preventDefault();">
+<!-- Option 1: Wheelchair & Ramp Assistance -->
+<label class="group relative flex items-start p-4 rounded-2xl bg-surface-container-lowest border-2 border-outline-variant/30 soft-card-shadow cursor-pointer transition-all duration-150 active:scale-[0.98] hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-[#f4f7fb]">
+<div class="pt-0.5 mr-3.5 flex items-center justify-center">
+<input class="w-7 h-7 rounded-lg text-primary border-2 border-outline focus:ring-0 focus:ring-offset-0 cursor-pointer" name="support_choice" type="checkbox" value="wheelchair">
+</div>
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Wheelchair &amp; Ramp Assistance</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Step-free routes, lift access, and gentle guidance</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">accessible</span>
+</div>
+</label>
+<!-- Option 2: Arm-Hold & Steady Walking (Selected as default example) -->
+<label class="group relative flex items-start p-4 rounded-2xl bg-surface-container-lowest border-2 border-primary bg-[#f4f7fb] soft-card-shadow cursor-pointer transition-all duration-150 active:scale-[0.98] has-[:checked]:border-primary has-[:checked]:bg-[#f4f7fb]">
+<div class="pt-0.5 mr-3.5 flex items-center justify-center">
+<input checked="" class="w-7 h-7 rounded-lg text-primary border-2 border-outline focus:ring-0 focus:ring-offset-0 cursor-pointer" name="support_choice" type="checkbox" value="arm_hold">
+</div>
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Arm-Hold &amp; Steady Walking</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">A patient buddy to walk beside you at your own pace</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">assist_walker</span>
+</div>
+</label>
+<!-- Option 3: Door-to-Door Transport -->
+<label class="group relative flex items-start p-4 rounded-2xl bg-surface-container-lowest border-2 border-outline-variant/30 soft-card-shadow cursor-pointer transition-all duration-150 active:scale-[0.98] hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-[#f4f7fb]">
+<div class="pt-0.5 mr-3.5 flex items-center justify-center">
+<input class="w-7 h-7 rounded-lg text-primary border-2 border-outline focus:ring-0 focus:ring-offset-0 cursor-pointer" name="support_choice" type="checkbox" value="transport">
+</div>
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Door-to-Door Transport</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Help booking and boarding taxis or community rides</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_taxi</span>
+</div>
+</label>
+<!-- Option 4: Dialect Speaking Kaki -->
+<label class="group relative flex items-start p-4 rounded-2xl bg-surface-container-lowest border-2 border-outline-variant/30 soft-card-shadow cursor-pointer transition-all duration-150 active:scale-[0.98] hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-[#f4f7fb]">
+<div class="pt-0.5 mr-3.5 flex items-center justify-center">
+<input class="w-7 h-7 rounded-lg text-primary border-2 border-outline focus:ring-0 focus:ring-offset-0 cursor-pointer" name="support_choice" type="checkbox" value="dialect">
+</div>
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Dialect Speaking Kaki</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Someone who speaks Hokkien, Teochew, or Cantonese comfortably</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">record_voice_over</span>
+</div>
+</label>
+<!-- Option 5: None needed -->
+<label class="group relative flex items-start p-4 rounded-2xl bg-surface-container-lowest border-2 border-outline-variant/30 soft-card-shadow cursor-pointer transition-all duration-150 active:scale-[0.98] hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-[#f4f7fb]">
+<div class="pt-0.5 mr-3.5 flex items-center justify-center">
+<input class="w-7 h-7 rounded-lg text-primary border-2 border-outline focus:ring-0 focus:ring-offset-0 cursor-pointer" name="support_choice" type="checkbox" value="none">
+</div>
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">None needed</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Just a friendly walking kaki</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">sentiment_satisfied</span>
+</div>
+</label>
+</form>
+<!-- Reassurance Banner -->
+<div class="mt-6 mb-4 flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0">info</span>
+<p class="font-body-md text-body-md leading-normal">
+          You can change your support preferences at any time.
+        </p>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-margin-mobile bg-surface/95 backdrop-blur-md shadow-[0_-4px_20px_-2px_rgba(47,93,151,0.08)]">
+<button class="w-full h-14 bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold rounded-full flex items-center justify-center gap-2 shadow-md hover:bg-primary-container active:scale-[0.98] transition-transform" onclick="location.href='../07-favorite activity/07-favorite activity.html'" type="button">
+<span class="">Continue&nbsp;</span>
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - Step 2: Age &amp; Neighbourhood</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a5c8ff",
+            "surface-variant": "#e4e2de",
+            "surface-container-highest": "#e4e2de",
+            "surface-tint": "#325f99",
+            "outline": "#737781",
+            "on-primary-fixed": "#001c3a",
+            "on-surface-variant": "#424750",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-secondary-fixed-variant": "#554500",
+            "on-error": "#ffffff",
+            "secondary": "#715c00",
+            "secondary-container": "#ffdd67",
+            "secondary-fixed": "#ffe17a",
+            "on-primary-fixed-variant": "#124780",
+            "surface-container-high": "#eae8e4",
+            "inverse-primary": "#a5c8ff",
+            "tertiary-fixed": "#d2e4ff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container-low": "#f5f3ef",
+            "on-primary-container": "#fefcff",
+            "inverse-on-surface": "#f2f0ec",
+            "inverse-surface": "#30312e",
+            "surface-container": "#f0eeea",
+            "on-tertiary-fixed": "#001d36",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c2c6d1",
+            "background": "#fbf9f5",
+            "secondary-fixed-dim": "#e4c451",
+            "primary": "#2f5d97",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "primary-fixed": "#d4e3ff",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#fbf9f5",
+            "surface-dim": "#dbdad6",
+            "on-background": "#1b1c1a",
+            "on-surface": "#1b1c1a",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface": "#fbf9f5",
+            "tertiary": "#315e8e",
+            "primary-container": "#4a76b1",
+            "tertiary-container": "#4b77a9",
+            "on-secondary-container": "#766100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-sm": "0.75rem",
+            "spacing-2xl": "3rem",
+            "gutter-mobile": "1rem",
+            "spacing-xs": "0.5rem",
+            "spacing-3xl": "4rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "caption-hangul": ["10px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .subtle-border {
+      border: 1px solid rgba(99, 142, 203, 0.16);
+    }
+    .selected-border {
+      border: 2px solid #2f5d97;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Semantic Outer Shell Wrapper (Mobile Centered Frame) -->
+<div class="kaki-phone-frame w-full max-w-md mx-auto flex flex-col min-h-screen bg-background relative shadow-sm">
+<!-- TopAppBar (From Shared Component JSON) -->
+<header class="bg-surface sticky top-0 z-40 shadow-sm flex justify-between items-center w-full px-spacing-md py-spacing-xs max-w-md mx-auto">
+<button aria-label="Go back" class="p-spacing-xs text-primary rounded-full hover:bg-surface-container active:scale-95 transition-all flex items-center justify-center" onclick="location.href='../02-intro name and photo/02-intro name and photo.html'" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</span>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button>
+</header><div class="w-full bg-slate-200/80 h-1.5 overflow-hidden kaki-progress-track"><div class="bg-primary h-full rounded-full kaki-progress-fill" style="width: 22%;"></div></div>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-spacing-md pt-spacing-sm pb-spacing-3xl flex flex-col gap-spacing-lg">
+<!-- Progress Indicator & Audio Assist Header -->
+
+<!-- Headline & Reassuring Intro Block -->
+<section class="flex flex-col gap-spacing-xs">
+<div class="flex items-center gap-2">
+
+<h1 class="text-headline-md font-headline-md text-on-surface tracking-tight">Where do you live &amp; your age group?</h1>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+          This helps find friendly Kakis within walking distance or a short bus ride.
+        </p>
+</section>
+<!-- Age Group Selection (Large, High Contrast Touch Cards) -->
+<section class="flex flex-col gap-spacing-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-label-md text-label-md text-on-surface tracking-wide uppercase">Your Age Group</h2>
+<span class="text-label-sm font-label-sm text-primary font-medium">Confidential &amp; safe</span>
+</div>
+<div class="grid grid-cols-2 gap-spacing-sm">
+<!-- Age Card 1: 60 - 64 yrs -->
+<label class="group relative flex flex-col justify-between p-spacing-md bg-surface-container-lowest rounded-xl subtle-border soft-card-shadow cursor-pointer transition-all hover:bg-surface-container active:scale-95 min-h-[96px]">
+<div class="flex items-center justify-between">
+<span class="w-6 h-6 rounded-full border border-outline-variant bg-surface flex items-center justify-center group-hover:border-primary"></span>
+<span class="font-label-sm text-label-sm text-outline">Kaki Tier</span>
+</div>
+<div class="mt-spacing-sm">
+<span class="font-headline-sm text-on-surface font-semibold block">60 – 64 yrs</span>
+</div>
+<input class="sr-only" name="age_bracket" type="radio" value="60-64">
+</label>
+<!-- Age Card 2: 65 - 69 yrs (SELECTED STATE) -->
+<label class="relative flex flex-col justify-between p-spacing-md bg-primary-fixed/30 rounded-xl selected-border soft-card-shadow cursor-pointer transition-all active:scale-95 min-h-[96px]">
+<div class="flex items-center justify-between">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</span>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold">Selected</span>
+</div>
+<div class="mt-spacing-sm">
+<span class="font-headline-sm text-primary font-bold block">65 – 69 yrs</span>
+</div>
+<input checked="" class="sr-only" name="age_bracket" type="radio" value="65-69">
+</label>
+<!-- Age Card 3: 70 - 74 yrs -->
+<label class="group relative flex flex-col justify-between p-spacing-md bg-surface-container-lowest rounded-xl subtle-border soft-card-shadow cursor-pointer transition-all hover:bg-surface-container active:scale-95 min-h-[96px]">
+<div class="flex items-center justify-between">
+<span class="w-6 h-6 rounded-full border border-outline-variant bg-surface flex items-center justify-center group-hover:border-primary"></span>
+<span class="font-label-sm text-label-sm text-outline">Kaki Tier</span>
+</div>
+<div class="mt-spacing-sm">
+<span class="font-headline-sm text-on-surface font-semibold block">70 – 74 yrs</span>
+</div>
+<input class="sr-only" name="age_bracket" type="radio" value="70-74">
+</label>
+<!-- Age Card 4: 75+ yrs & above -->
+<label class="group relative flex flex-col justify-between p-spacing-md bg-surface-container-lowest rounded-xl subtle-border soft-card-shadow cursor-pointer transition-all hover:bg-surface-container active:scale-95 min-h-[96px]">
+<div class="flex items-center justify-between">
+<span class="w-6 h-6 rounded-full border border-outline-variant bg-surface flex items-center justify-center group-hover:border-primary"></span>
+<span class="font-label-sm text-label-sm text-outline">Golden</span>
+</div>
+<div class="mt-spacing-sm">
+<span class="font-headline-sm text-on-surface font-semibold block">75+ yrs &amp; above</span>
+</div>
+<input class="sr-only" name="age_bracket" type="radio" value="75+">
+</label>
+</div>
+</section>
+<!-- Neighbourhood Section -->
+<section class="flex flex-col gap-spacing-sm pt-spacing-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface tracking-wide uppercase" for="neighbourhood-select">Your Estate / Town</label>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="location_on" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">location_on</span>
+<span class="font-label-sm text-label-sm font-semibold">East Region</span>
+</div>
+</div>
+<!-- Accessible Large Dropdown Selector -->
+<div class="relative w-full">
+<div class="flex items-center justify-between w-full min-h-[58px] px-spacing-md bg-surface-container-lowest rounded-xl subtle-border soft-card-shadow">
+<div class="flex items-center gap-spacing-sm">
+<span class="p-2 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="home_pin" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">home_pin</span>
+</span>
+<div class="flex flex-col text-left">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Selected Location</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">Bedok / East Coast</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Native hidden accessible select -->
+<select aria-label="Select your neighbourhood estate" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer" id="neighbourhood-select">
+<option value="Bedok">Bedok / East Coast</option>
+<option value="Toa Payoh">Toa Payoh</option>
+<option value="Ang Mo Kio">Ang Mo Kio</option>
+<option value="Tampines">Tampines</option>
+<option value="Jurong East">Jurong East</option>
+<option value="Clementi">Clementi</option>
+<option value="Woodlands">Woodlands</option>
+</select>
+</div>
+<!-- Quick 1-Tap Pills for Seniors -->
+<div class="flex flex-col gap-spacing-xs mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tap to pick popular estates:</span>
+<div class="flex flex-wrap gap-2 pt-1">
+<!-- Bedok (Selected) -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+              Bedok
+            </button>
+<!-- Toa Payoh -->
+<button class="flex items-center px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface subtle-border font-label-md text-label-md font-medium hover:bg-surface-container active:scale-95 transition-transform" type="button">
+              Toa Payoh
+            </button>
+<!-- Ang Mo Kio -->
+<button class="flex items-center px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface subtle-border font-label-md text-label-md font-medium hover:bg-surface-container active:scale-95 transition-transform" type="button">
+              Ang Mo Kio
+            </button>
+<!-- Tampines -->
+<button class="flex items-center px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface subtle-border font-label-md text-label-md font-medium hover:bg-surface-container active:scale-95 transition-transform" type="button">
+              Tampines
+            </button>
+<!-- Jurong East -->
+<button class="flex items-center px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface subtle-border font-label-md text-label-md font-medium hover:bg-surface-container active:scale-95 transition-transform" type="button">
+              Jurong East
+            </button>
+</div>
+</div>
+</section>
+<!-- Gentle Micro-tip Banner -->
+<section class="mt-spacing-xs p-spacing-md rounded-xl bg-secondary-fixed/30 border border-secondary-fixed-dim/40 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="volunteer_activism" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">volunteer_activism</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-secondary text-sm font-bold">14 Kakis are active in Bedok!</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Morning tai chi, coffee chats, and supermarket buddies are looking for new friends nearby.</span>
+</div>
+</section>
+</main>
+<!-- Linear Flow Bottom Navigation & CTA (Suppressed BottomNavBar for Focused Step Journey) -->
+<footer class="sticky bottom-0 left-0 w-full bg-surface-container-lowest subtle-border border-t-0 p-spacing-md shadow-lg z-50">
+<div class="flex items-center gap-spacing-sm max-w-md mx-auto">
+<!-- Back action -->
+
+<!-- Prominent primary step CTA (>52px height) -->
+<button class="flex-1 flex items-center justify-center gap-2 min-h-[54px] rounded-full bg-primary text-on-primary font-headline-sm text-base tracking-wide shadow-md hover:bg-primary-container active:scale-95 transition-all" onclick="location.href='../04-languages/04-languages.html'" type="button">
+<span class=""><b>Continue</b>&nbsp;</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+<script>
+    // Lightweight tactile click handler for pills
+    document.querySelectorAll('.flex-wrap button').forEach(pill => {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('.flex-wrap button').forEach(btn => {
+          btn.className = "flex items-center px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface subtle-border font-label-md text-label-md font-medium hover:bg-surface-container active:scale-95 transition-transform";
+          if (btn.querySelector('.material-symbols-outlined')) {
+            btn.querySelector('.material-symbols-outlined').remove();
+          }
+        });
+        this.className = "flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm active:scale-95 transition-transform";
+        this.insertAdjacentHTML('afterbegin', '<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>');
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

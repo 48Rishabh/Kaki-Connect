@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Size Choice - Ultra Simple</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f5fc',
+              100: '#e1ecf9',
+              200: '#c5daf4',
+              300: '#9ec1ed',
+              400: '#638ecb',
+              500: '#3d6ea8',
+              600: '#2b5387',
+              700: '#24436e',
+              800: '#20395c',
+              900: '#1e314d',
+            },
+            amberSoft: '#fdf6e2',
+            amberAccent: '#eab308',
+            surfaceBg: '#fbf9f5',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fbf9f5;
+      color: #1e293b;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .touch-target {
+      min-height: 48px;
+    }
+    .option-card {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .option-card:active {
+      transform: scale(0.985);
+    }
+  </style>
+<style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="min-h-screen bg-[#fbf9f5] flex flex-col justify-between text-slate-800 antialiased selection:bg-brand-200">
+<div class="kaki-phone-frame">
+<!-- Top App Bar -->
+<header class="w-full bg-[#fbf9f5]/90 backdrop-blur sticky top-0 z-20 px-4 pt-3 pb-2.5 border-b border-slate-200/60 flex items-center justify-between">
+<button aria-label="Go back" class="w-11 h-11 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm active:scale-95 transition-transform touch-target" onclick="location.href='../09-voice message/09-voice message.html'" type="button">
+<span class="material-symbols-outlined text-2xl leading-none">arrow_back</span>
+</button>
+<div class="text-center">
+<h1 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-1.5 justify-center">
+<span class="w-2.5 h-2.5 rounded-full bg-brand-400 inline-block"></span>
+        KakiConnect
+      </h1>
+
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button>
+</header><div class="w-full bg-slate-200/80 h-1.5 overflow-hidden kaki-progress-track"><div class="bg-primary h-full rounded-full kaki-progress-fill" style="width: 100%;"></div></div>
+<!-- Main Content Container -->
+<main class="w-full max-w-md mx-auto px-4 pt-4 pb-6 flex-1 flex flex-col justify-between">
+<!-- Title and Read Aloud Helper -->
+<div>
+
+<h2 class="text-2xl font-extrabold text-slate-900 leading-tight tracking-tight">
+        Make text comfortable to read
+      </h2>
+<p class="text-sm font-medium text-slate-600 mt-1.5 leading-relaxed">
+        Choose the size that feels easiest on your eyes. You can always change this later in settings.
+      </p>
+<!-- Options Container with min 64px tap targets -->
+<div aria-label="Text Size Selection" class="mt-5 space-y-3" role="radiogroup">
+<!-- Standard Option -->
+<div class="option-card cursor-pointer rounded-2xl border-2 border-slate-200 bg-white p-3.5 flex items-center justify-between shadow-sm hover:border-brand-300 min-h-[64px] touch-target" id="option-standard" onclick="selectSize('standard')">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center font-bold text-slate-700 text-lg border border-slate-200 flex-shrink-0">
+              Aa
+            </div>
+<div>
+<div class="text-base font-bold text-slate-900">Standard</div>
+<div class="text-xs text-slate-500 font-medium">Default compact layout</div>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center bg-white flex-shrink-0">
+<div class="dot w-3 h-3 rounded-full bg-brand-400 hidden"></div>
+</div>
+</div>
+<!-- Comfortable Option (Default Selected) -->
+<div class="option-card cursor-pointer rounded-2xl border-2 border-brand-400 bg-brand-50/60 p-3.5 flex items-center justify-between shadow-md ring-2 ring-brand-400/20 relative min-h-[64px] touch-target" id="option-comfortable" onclick="selectSize('comfortable')">
+<div class="absolute -top-2.5 right-4 bg-amber-400 text-slate-900 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full shadow-sm tracking-wide">
+            RECOMMENDED
+          </div>
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center font-extrabold text-brand-700 text-xl border border-brand-200 flex-shrink-0">
+              A+
+            </div>
+<div>
+<div class="text-lg font-bold text-brand-900 leading-snug">Comfortable</div>
+<div class="text-xs text-brand-700 font-medium">Popular with most seniors</div>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 rounded-full border-2 border-brand-500 flex items-center justify-center bg-brand-500 flex-shrink-0">
+<span class="material-symbols-outlined text-white text-base font-bold">check</span>
+</div>
+</div>
+<!-- Extra Large Option -->
+<div class="option-card cursor-pointer rounded-2xl border-2 border-slate-200 bg-white p-3.5 flex items-center justify-between shadow-sm hover:border-brand-300 min-h-[64px] touch-target" id="option-large" onclick="selectSize('large')">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center font-black text-slate-800 text-2xl border border-slate-200 flex-shrink-0">
+              A++
+            </div>
+<div>
+<div class="text-xl font-black text-slate-900 leading-snug">Extra Large</div>
+<div class="text-xs text-slate-500 font-medium">Clear, high magnification</div>
+</div>
+</div>
+<div class="radio-indicator w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center bg-white flex-shrink-0">
+<div class="dot w-3 h-3 rounded-full bg-brand-400 hidden"></div>
+</div>
+</div>
+</div>
+<!-- Live Dynamic Preview Box -->
+<div class="mt-5 rounded-2xl bg-white border border-slate-200 p-3.5 shadow-sm">
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+<div class="flex items-center gap-1.5 text-xs font-bold text-brand-600">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            LIVE PREVIEW
+          </div>
+<span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider" id="previewTag">Comfortable Size</span>
+</div>
+<div class="p-3 bg-slate-50 rounded-xl border border-slate-100 transition-all duration-200" id="previewContainer">
+<h4 class="text-lg font-bold text-slate-900 leading-snug" id="previewHeadline">
+            Hello! Today is a bright day for a walk.
+          </h4>
+<p class="text-sm font-medium text-slate-600 mt-1 leading-relaxed" id="previewBody">
+            Your neighborhood kakis are ready to join you for kopi and a gentle stroll.
+          </p>
+</div>
+</div>
+</div>
+<!-- Bottom Action Area -->
+<div class="pt-5 pb-2">
+<button class="w-full touch-target h-14 bg-brand-600 hover:bg-brand-700 active:scale-[0.98] text-white font-bold text-base rounded-full shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2 transition-all" onclick="location.href='../11-all set/11-all set.html'" type="button">
+<span class="">Continue&nbsp;</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+<p class="text-center text-xs font-medium text-slate-500 mt-2.5 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm text-green-600">check_circle</span>
+        Adjustable at any time in App Settings
+      </p>
+</div>
+</main>
+<!-- Interactive script for dynamic selection and size toggling -->
+<script>
+    const sizes = {
+      standard: {
+        headlineClass: 'text-base font-bold text-slate-900 leading-normal',
+        bodyClass: 'text-xs font-medium text-slate-600 mt-1 leading-normal',
+        tag: 'Standard Size'
+      },
+      comfortable: {
+        headlineClass: 'text-lg font-bold text-slate-900 leading-snug',
+        bodyClass: 'text-sm font-medium text-slate-600 mt-1 leading-relaxed',
+        tag: 'Comfortable Size'
+      },
+      large: {
+        headlineClass: 'text-xl font-extrabold text-slate-900 leading-snug',
+        bodyClass: 'text-base font-semibold text-slate-700 mt-1.5 leading-relaxed',
+        tag: 'Extra Large Size'
+      }
+    };
+
+    function selectSize(selected) {
+      const options = ['standard', 'comfortable', 'large'];
+      
+      options.forEach(opt => {
+        const el = document.getElementById('option-' + opt);
+        const radio = el.querySelector('.radio-indicator');
+        
+        if (opt === selected) {
+          el.className = 'option-card cursor-pointer rounded-2xl border-2 border-brand-400 bg-brand-50/60 p-4 flex items-center justify-between shadow-md ring-2 ring-brand-400/20 relative';
+          radio.className = 'radio-indicator w-6 h-6 rounded-full border-2 border-brand-500 flex items-center justify-center bg-brand-500';
+          radio.innerHTML = '<span class="material-symbols-outlined text-white text-base font-bold">check</span>';
+        } else {
+          el.className = 'option-card cursor-pointer rounded-2xl border-2 border-slate-200 bg-white p-4 flex items-center justify-between shadow-sm hover:border-brand-300 relative';
+          radio.className = 'radio-indicator w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center bg-white';
+          radio.innerHTML = '<div class="dot w-3 h-3 rounded-full bg-brand-400 hidden"></div>';
+        }
+      });
+
+      // Update preview
+      const previewHeadline = document.getElementById('previewHeadline');
+      const previewBody = document.getElementById('previewBody');
+      const previewTag = document.getElementById('previewTag');
+
+      previewHeadline.className = sizes[selected].headlineClass;
+      previewBody.className = sizes[selected].bodyClass;
+      previewTag.textContent = sizes[selected].tag;
+    }
+
+    // Read aloud simulator
+    const readBtn = document.getElementById('readAloudBtn');
+    readBtn.addEventListener('click', () => {
+      const originalText = readBtn.innerHTML;
+      readBtn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">refresh</span><span>Playing...</span>';
+      readBtn.classList.add('bg-amber-300');
+      setTimeout(() => {
+        readBtn.innerHTML = originalText;
+        readBtn.classList.remove('bg-amber-300');
+      }, 2000);
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+</div>
+</body></html>

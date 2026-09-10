@@ -1,0 +1,474 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KakiConnect - Volunteer Guidelines &amp; Safety Protocol</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#4a76b1",
+            "surface-container-highest": "#e4e2de",
+            "on-background": "#1b1c1a",
+            "on-error": "#ffffff",
+            "primary-fixed": "#d4e3ff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#1b1c1a",
+            "tertiary-fixed-dim": "#9fcaff",
+            "secondary-fixed": "#ffe17a",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#124780",
+            "on-tertiary-fixed": "#001d36",
+            "error": "#ba1a1a",
+            "surface-bright": "#fbf9f5",
+            "secondary-fixed-dim": "#e4c451",
+            "on-primary-fixed": "#001c3a",
+            "on-tertiary-fixed-variant": "#154977",
+            "tertiary": "#315e8e",
+            "primary-fixed-dim": "#a5c8ff",
+            "on-secondary-fixed-variant": "#554500",
+            "surface": "#fbf9f5",
+            "primary": "#2f5d97",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f5f3ef",
+            "on-error-container": "#93000a",
+            "surface-dim": "#dbdad6",
+            "surface-variant": "#e4e2de",
+            "on-primary-container": "#fefcff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "outline": "#737781",
+            "on-tertiary-container": "#fdfcff",
+            "outline-variant": "#c2c6d1",
+            "on-secondary-fixed": "#231b00",
+            "on-surface-variant": "#424750",
+            "inverse-on-surface": "#f2f0ec",
+            "on-secondary-container": "#766100",
+            "tertiary-container": "#4b77a9",
+            "secondary-container": "#ffdd67",
+            "secondary": "#715c00",
+            "inverse-surface": "#30312e",
+            "surface-container-high": "#eae8e4",
+            "surface-container": "#f0eeea",
+            "inverse-primary": "#a5c8ff",
+            "background": "#fbf9f5",
+            "surface-tint": "#325f99",
+            "tertiary-fixed": "#d2e4ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-2xl": "3rem",
+            "margin-desktop": "2.5rem",
+            "spacing-md": "1rem",
+            "spacing-3xl": "4rem",
+            "spacing-xs": "0.5rem",
+            "spacing-sm": "0.75rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "gutter-desktop": "1.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "caption-hangul": ["10px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-aura-card {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .floating-pill-shadow {
+      box-shadow: 0 8px 24px -4px rgba(99, 142, 203, 0.16);
+    }
+    .korean-grid-pattern {
+      background-image: radial-gradient(rgba(47, 93, 151, 0.08) 1px, transparent 0);
+      background-size: 16px 16px;
+    }
+  
+    header, nav {
+      max-width: 420px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      left: 0 !important;
+      right: 0 !important;
+    }
+  </style>
+<style id="kaki-phone-frame">
+  html { background: #f8fafc; }
+  body {
+    background: #f8fafc !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+    header, nav {
+      max-width: 420px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      left: 0 !important;
+      right: 0 !important;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="kaki-phone-frame">
+<!-- TopAppBar (from Shared Components JSON with custom shell mapping) -->
+<header class="sticky top-0 z-40 bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none"><div class="flex justify-between items-center w-full px-margin-mobile py-spacing-xs max-w-md mx-auto">
+  <a href="../05-volunteer_4_live_outing_check_in/code.html" aria-label="Go Back" class="w-10 h-10 rounded-full flex items-center justify-center text-primary dark:text-inverse-primary hover:bg-surface-container-high dark:hover:bg-surface-container active:scale-95 transition-transform duration-150 ease-out">
+    <span class="material-symbols-outlined pointer-events-none">arrow_back</span>
+  </a>
+  <div class="flex items-center gap-2">
+    <span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary">KakiConnect</span>
+    <div class="bg-surface-container-high text-on-surface-variant font-medium px-3 py-1 rounded-full text-xs flex items-center gap-1.5">
+      <span class="w-2 h-2 rounded-full bg-secondary-container inline-block"></span>
+      <span class="">Volunteer Mode</span>
+    </div>
+  </div>
+  <button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container active:scale-95 transition-transform duration-150 ease-out" type="button">
+    <span class="material-symbols-outlined">notifications</span>
+  </button>
+</div></header>
+<!-- Main Canvas -->
+<main class="flex-1 max-w-md w-full mx-auto px-margin-mobile pt-spacing-md space-y-spacing-xl pb-28">
+<!-- Hero Header Block -->
+<section class="relative bg-surface-container-lowest rounded-3xl p-spacing-lg border border-primary/10 custom-aura-card overflow-hidden">
+<!-- Playful stationery motif accent -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-secondary-container/30 rounded-full blur-2xl pointer-events-none"></div>
+
+
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mb-2">
+        Kaki Volunteer Guidelines · Safe &amp; Dignified Companionship
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Companionship is rooted in patience, mutual respect, and safe boundaries. Use this guide to ensure every outing feels comforting, empowering, and secure for our neighborhood seniors.
+      </p>
+</section>
+<!-- Card 1: 3 Golden Rules of Companionship -->
+<section class="space-y-spacing-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">3 Golden Rules of Companionship</h2>
+</div>
+
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-spacing-md">
+<!-- Rule 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-spacing-md border border-outline-variant/30 custom-aura-card flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary"></div>
+<div>
+<div class="flex items-center justify-between mb-spacing-xs pl-2">
+<span class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-label-md">01</span>
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="directions_walk">directions_walk</span>
+</div>
+<div class="pl-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Walk at Their Rhythm</h3>
+<p class="font-caption-hangul text-caption-hangul text-primary mb-2">어르신의 걸음에 맞추기</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Never rush curbs, road crossings, or MRT gantries. Match the senior's natural gait and take shaded pauses whenever needed.
+              </p>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container pl-2 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="pace">pace</span>
+<span class="">Patience over speed</span>
+</div>
+</div>
+<!-- Rule 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-spacing-md border border-outline-variant/30 custom-aura-card flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary-fixed-dim"></div>
+<div>
+<div class="flex items-center justify-between mb-spacing-xs pl-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-label-md">02</span>
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="forum">forum</span>
+</div>
+<div class="pl-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Listen with Empathy</h3>
+<p class="font-caption-hangul text-caption-hangul text-secondary mb-2">마음으로 경청하기</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Older adults love sharing nostalgic neighborhood stories (e.g. 1970s kampung days). Give them plenty of room to speak and reminisce.
+              </p>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container pl-2 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+<span class="">Warm, non-judgmental presence</span>
+</div>
+</div>
+<!-- Rule 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-spacing-md border border-outline-variant/30 custom-aura-card flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"></div>
+<div>
+<div class="flex items-center justify-between mb-spacing-xs pl-2">
+<span class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-label-md">03</span>
+<span class="material-symbols-outlined text-primary-container text-[22px]" data-icon="handshake">handshake</span>
+</div>
+<div class="pl-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Preserve Agency &amp; Dignity</h3>
+<p class="font-caption-hangul text-caption-hangul text-primary-container mb-2">존엄과 자율성 존중</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Ask <em class="text-on-surface font-medium not-italic">"Would you like an arm to hold?"</em> rather than grabbing. Let the senior make choices about snacks and seating.
+              </p>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container pl-2 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="accessibility_new">accessibility_new</span>
+<span class="">Choice creates empowerment</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Card 2: Clear Scope of Support (Critical Safety Protocol) -->
+<section class="space-y-spacing-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Scope of Support &amp; Boundaries</h2>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+          Safety Matrix
+        </span>
+</div>
+<div class="bg-surface-container-lowest rounded-3xl p-spacing-lg border border-outline-variant/30 custom-aura-card">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-spacing-lg">
+<!-- Column A: Allowed (General Volunteer) -->
+<div class="bg-surface-container-low/70 rounded-2xl p-spacing-md border border-primary/15 relative">
+<div class="flex items-center gap-2 mb-spacing-md">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Allowed</h3>
+<p class="font-caption-hangul text-caption-hangul text-on-surface-variant">일반 자원봉사자 역할 (General Volunteer)</p>
+</div>
+</div>
+<ul class="space-y-spacing-sm font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0" data-icon="nordic_walking">nordic_walking</span>
+<div class="">
+<strong class="font-semibold text-on-surface">Walking companionship:</strong> Strolling leisurely around the void deck, parks, and wet markets.
+                </div>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0" data-icon="directions_subway">directions_subway</span>
+<div class="">
+<strong class="font-semibold text-on-surface">Transit assistance:</strong> Taking public bus and MRT together, finding priority seating, tapping cards.
+                </div>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0" data-icon="chair">chair</span>
+<div class="">
+<strong class="font-semibold text-on-surface">Hawker navigation:</strong> Scouting safe table seating and clearing space before senior sits down.
+                </div>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0" data-icon="menu_book">menu_book</span>
+<div class="">
+<strong class="font-semibold text-on-surface">Communication support:</strong> Reading out menu stall boards, prices, and event posters clearly.
+                </div>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0" data-icon="chat_bubble">chat_bubble</span>
+<div class="">
+<strong class="font-semibold text-on-surface">Heartful conversation:</strong> Active sharing, listening to memories, and keeping spirits joyful.
+                </div>
+</li>
+</ul>
+</div>
+<!-- Column B: Not Allowed (Requires Trained Caregiver) -->
+<div class="bg-error-container/20 rounded-2xl p-spacing-md border border-error/20 relative">
+<div class="flex items-center gap-2 mb-spacing-md">
+<div class="w-7 h-7 rounded-full bg-error flex items-center justify-center text-on-error">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-error font-bold">Not Allowed</h3>
+<p class="font-caption-hangul text-caption-hangul text-on-surface-variant">전문 간병인 전용 (Trained Caregiver Required)</p>
+</div>
+</div>
+<ul class="space-y-spacing-sm font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm border-l-2 border-error">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5 shrink-0" data-icon="medication">medication</span>
+<div class="">
+<strong class="font-semibold text-error">Medication administration:</strong> Never dose, dispense, or handle prescriptions directly.
+                </div>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm border-l-2 border-error">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5 shrink-0" data-icon="transfer_within_a_station">transfer_within_a_station</span>
+<div class="">
+<strong class="font-semibold text-error">Physical lifting &amp; transfers:</strong> Avoid hoisting from bed to chair without formal occupational training.
+                </div>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm border-l-2 border-error">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5 shrink-0" data-icon="payments">payments</span>
+<div class="">
+<strong class="font-semibold text-error">Money &amp; banking handling:</strong> Do not touch ATM PINs, bank books, cash cards, or large sums.
+                </div>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded-xl shadow-sm border-l-2 border-error">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5 shrink-0" data-icon="medical_services">medical_services</span>
+<div class="">
+<strong class="font-semibold text-error">Clinical treatments:</strong> No wound dressing, medical diagnostics, or catheter assistance.
+                </div>
+</li>
+</ul>
+<div class="mt-4 p-3 bg-error-container/40 rounded-xl flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-error text-[18px]" data-icon="info">info</span>
+<span class="">If asked for restricted support, politely decline and alert FSC coordinators.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Card 3: Emergency & Support Network -->
+<section class="space-y-spacing-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-error"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Emergency &amp; Support Network</h2>
+</div>
+<span class="font-caption-hangul text-caption-hangul text-error font-medium tracking-wide">비상 연락망 24/7</span>
+</div>
+<div class="bg-surface-container-lowest rounded-3xl p-spacing-lg border border-outline-variant/30 custom-aura-card space-y-spacing-md">
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Tap any hotline to directly place a call. Stay on the line with the operator and remain with the senior until verified help arrives.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-spacing-md">
+<!-- Contact 1: Fei Yue FSC -->
+<a class="flex flex-col justify-between p-spacing-md rounded-2xl bg-surface-container-low border border-outline-variant/40 hover:border-primary transition-all duration-200 group active:scale-[0.98]" href="tel:67439821">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]" data-icon="support_agent">support_agent</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-semibold">24/7 Priority</span>
+</div>
+<div class="mt-4">
+<span class="font-label-sm text-label-sm text-primary font-bold">Fei Yue FSC Befriender</span>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight mt-0.5">6743-9821</div>
+<p class="font-caption-hangul text-caption-hangul text-on-surface-variant mt-1">Direct Volunteer Coordinator Desk</p>
+</div>
+</a>
+<!-- Contact 2: Ambulance / SCDF -->
+<a class="flex flex-col justify-between p-spacing-md rounded-2xl bg-error-container/25 border border-error/30 hover:border-error transition-all duration-200 group active:scale-[0.98]" href="tel:995">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-full bg-error flex items-center justify-center text-on-error">
+<span class="material-symbols-outlined text-[22px]" data-icon="ambulance">ambulance</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error text-label-sm font-label-sm font-semibold">Life-Threatening</span>
+</div>
+<div class="mt-4">
+<span class="font-label-sm text-label-sm text-error font-bold">Ambulance / SCDF</span>
+<div class="font-headline-md text-headline-md font-bold text-error tracking-tight mt-0.5">995</div>
+<p class="font-caption-hangul text-caption-hangul text-on-surface-variant mt-1">Severe injury, falls, breathlessness</p>
+</div>
+</a>
+<!-- Contact 3: Police -->
+<a class="flex flex-col justify-between p-spacing-md rounded-2xl bg-surface-container-low border border-outline-variant/40 hover:border-on-surface transition-all duration-200 group active:scale-[0.98]" href="tel:999">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-full bg-inverse-surface flex items-center justify-center text-inverse-on-surface">
+<span class="material-symbols-outlined text-[22px]" data-icon="local_police">local_police</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-semibold">Emergency</span>
+</div>
+<div class="mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">Singapore Police Force</span>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight mt-0.5">999</div>
+<p class="font-caption-hangul text-caption-hangul text-on-surface-variant mt-1">Missing senior or safety threats</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Reassurance Note Banner -->
+<section class="p-spacing-md rounded-2xl bg-primary-fixed/40 border border-primary/20 flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="sentiment_very_satisfied">sentiment_very_satisfied</span>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md text-primary font-bold">You are never alone on duty</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">When in doubt about a senior's safety or comfort, pause the stroll and phone the Fei Yue team immediately.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component JSON faithfully rendered with Guidelines/Missions intent mapping) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface-container-low border-t border-outline-variant/20 shadow-lg max-w-md mx-auto right-0 px-gutter-mobile py-spacing-xs pb-safe">
+  <a href="../02-volunteer_2_open_requests_feed/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs hover:bg-surface-container-highest hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]">volunteer_activism</span><span class="font-label-sm text-label-sm">Missions</span></a>
+  <a href="../04-volunteer_3_match_confirmed_meeting_plan/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs hover:bg-surface-container-highest hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]">how_to_reg</span><span class="font-label-sm text-label-sm">Check-in</span></a>
+  <a href="../06-volunteer_5_safety_guidelines_protocols/code.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1.5 font-bold shadow-sm active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">diversity_1</span><span class="font-label-sm text-label-sm font-bold tracking-tight">Community</span></a>
+  <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-sm py-spacing-2xs hover:bg-surface-container-highest hover:text-on-surface active:scale-95 transition-transform duration-150 ease-out"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm">Profile</span></a>
+</nav>
+
+
+
+
+</div>
+</body></html>

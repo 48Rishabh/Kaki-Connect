@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KakiConnect - Step 4: Voice Greeting &amp; Finish</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a5c8ff",
+            "surface-variant": "#e4e2de",
+            "surface-container-highest": "#e4e2de",
+            "surface-tint": "#325f99",
+            "outline": "#737781",
+            "on-primary-fixed": "#001c3a",
+            "on-surface-variant": "#424750",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-secondary-fixed-variant": "#554500",
+            "on-error": "#ffffff",
+            "secondary": "#715c00",
+            "secondary-container": "#ffdd67",
+            "secondary-fixed": "#ffe17a",
+            "on-primary-fixed-variant": "#124780",
+            "surface-container-high": "#eae8e4",
+            "inverse-primary": "#a5c8ff",
+            "tertiary-fixed": "#d2e4ff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container-low": "#f5f3ef",
+            "on-primary-container": "#fefcff",
+            "inverse-on-surface": "#f2f0ec",
+            "inverse-surface": "#30312e",
+            "surface-container": "#f0eeea",
+            "on-tertiary-fixed": "#001d36",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c2c6d1",
+            "background": "#fbf9f5",
+            "secondary-fixed-dim": "#e4c451",
+            "primary": "#2f5d97",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "primary-fixed": "#d4e3ff",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#fbf9f5",
+            "surface-dim": "#dbdad6",
+            "on-background": "#1b1c1a",
+            "on-surface": "#1b1c1a",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface": "#fbf9f5",
+            "tertiary": "#315e8e",
+            "primary-container": "#4a76b1",
+            "tertiary-container": "#4b77a9",
+            "on-secondary-container": "#766100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-sm": "0.75rem",
+            "spacing-2xl": "3rem",
+            "gutter-mobile": "1rem",
+            "spacing-xs": "0.5rem",
+            "spacing-3xl": "4rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .pill-shadow {
+      box-shadow: 0 8px 24px -4px rgba(99, 142, 203, 0.16);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style id="kaki-phone-frame">
+  /* ── Desktop backdrop ───────────────────────────────────── */
+  html { background: #e8eaf0; }
+  body {
+    background: #e8eaf0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ── Phone frame: applied via class on the outer wrapper ── */
+  .kaki-phone-frame {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Progress bar: always exactly 6px, never expands ────── */
+  .kaki-progress-track {
+    width: 100% !important;
+    height: 6px !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    background-color: #E2E8F0 !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    flex: none !important;
+    flex-shrink: 0 !important;
+  }
+  .kaki-progress-fill {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 6px !important;
+    border-radius: 9999px !important;
+    background-color: #2f5d97 !important;
+    display: block !important;
+    flex: none !important;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Mobile Screen Canvas Wrapper (max-w-md for focused senior-friendly mobile ergonomics) -->
+<div class="kaki-phone-frame w-full max-w-md min-h-screen bg-surface-container-low flex flex-col relative pb-spacing-xl">
+<!-- TopAppBar from Shared Components Specification (docked full-width top) -->
+<header class="sticky top-0 z-40 bg-surface shadow-sm">
+<div class="flex justify-between items-center w-full px-spacing-md py-spacing-xs max-w-md mx-auto min-h-[64px]">
+<!-- Leading Icon Action: Back Arrow -->
+<button aria-label="Go back" class="p-spacing-xs rounded-full hover:bg-surface-container active:scale-95 transition-transform duration-150 flex items-center justify-center text-primary" onclick="location.href='../08-emergency contact/08-emergency contact.html'" type="button">
+<span class="material-symbols-outlined text-[28px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<!-- Brand Headline Logo (Centered / Strong Anchor) -->
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">
+          KakiConnect
+        </h1>
+<!-- Trailing Action: Senior SOS Trigger -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#fde047] text-neutral-900 font-bold text-sm shadow-sm hover:bg-[#facc15] transition-all min-h-[44px]"><span class="material-symbols-outlined text-[20px]">volume_up</span><span class="">Listen</span></button>
+</div>
+</header><div class="w-full bg-slate-200/80 h-1.5 overflow-hidden kaki-progress-track"><div class="bg-primary h-full rounded-full kaki-progress-fill" style="width: 89%;"></div></div>
+<!-- Main Content Canvas (Onboarding Step 4: Voice Greeting & Finish) -->
+<main class="flex-1 px-margin-mobile pt-spacing-md flex flex-col gap-spacing-md">
+<!-- Progress Bar & Read Aloud Audio Assist Chip Bar -->
+
+<!-- Step Headline & Explanatory Subtext -->
+<section class="mt-1">
+<h2 class="text-headline-lg font-headline-lg text-on-surface text-balance font-bold tracking-tight">
+          Say a quick hello! <span class="text-primary font-normal text-headline-sm block sm:inline">(Optional)</span>
+</h2>
+<p class="mt-2 text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+          A short 10-second voice note makes fellow Kakis feel welcome and at ease.
+        </p>
+</section>
+<!-- Tactile Voice Recording Card: Warm Butter Yellow Container -->
+<section class="bg-[#FFF8E7] rounded-[24px] p-5 border border-secondary-fixed-dim/50 soft-shadow flex flex-col relative overflow-hidden mt-1">
+<!-- Header status inside card -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="text-label-md font-label-md text-on-secondary-fixed font-bold tracking-wide">Voice Note Recorded</span>
+</div>
+<span class="text-label-md font-label-md font-bold text-on-secondary-fixed px-2.5 py-1 bg-secondary-container rounded-full">
+            0:10 / 0:10
+          </span>
+</div>
+<!-- Waveform Visualizer & Central Audio Interaction -->
+<div class="bg-surface-container-lowest/90 rounded-2xl p-4 border border-secondary-fixed/40 flex flex-col items-center justify-center gap-3">
+<!-- Tactile Waveform Bars -->
+<div aria-label="Voice audio waveform preview" class="flex items-center justify-center gap-1.5 w-full h-12 px-2">
+<span class="w-1.5 h-4 bg-primary/40 rounded-full"></span>
+<span class="w-1.5 h-7 bg-primary/60 rounded-full"></span>
+<span class="w-1.5 h-10 bg-primary rounded-full"></span>
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+<span class="w-1.5 h-11 bg-secondary rounded-full"></span>
+<span class="w-1.5 h-8 bg-secondary rounded-full"></span>
+<span class="w-1.5 h-12 bg-primary rounded-full"></span>
+<span class="w-1.5 h-9 bg-primary rounded-full"></span>
+<span class="w-1.5 h-5 bg-primary/70 rounded-full"></span>
+<span class="w-1.5 h-11 bg-primary rounded-full"></span>
+<span class="w-1.5 h-7 bg-secondary rounded-full"></span>
+<span class="w-1.5 h-4 bg-primary/50 rounded-full"></span>
+<span class="w-1.5 h-8 bg-primary/60 rounded-full"></span>
+<span class="w-1.5 h-3 bg-primary/40 rounded-full"></span>
+</div>
+<!-- Play & Re-record Action Cluster -->
+<div class="flex items-center justify-center gap-3 w-full pt-1">
+<button class="flex-1 py-3 px-4 bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed rounded-full flex items-center justify-center gap-2 font-headline-sm text-sm font-bold active:scale-95 transition-transform duration-150 shadow-sm border border-secondary-fixed-dim/60" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="">Play My Greeting</span>
+</button>
+<button aria-label="Record again" class="p-3 bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded-full flex items-center justify-center active:scale-95 transition-transform duration-150 border border-outline-variant/40" title="Record again" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="refresh">refresh</span>
+</button>
+</div>
+</div>
+<!-- Prompt suggestion card / Warm micro-moment -->
+<div class="mt-4 bg-surface-container-lowest/70 rounded-xl p-3.5 border border-secondary-fixed-dim/30 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5" data-icon="lightbulb" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div class="flex-1">
+<p class="text-label-sm font-label-sm font-bold text-secondary">Example prompt to say:</p>
+<p class="text-body-md font-body-md text-on-surface italic mt-0.5 font-medium">
+              "Hello! I am Uncle Tan, love morning kopi and brisk walks!"
+            </p>
+</div>
+</div>
+</section>
+<!-- Privacy & Dignity Guarantee Card: Reassuring Soft Cornflower Blue -->
+<section class="bg-tertiary-fixed/35 rounded-[20px] p-4 border border-tertiary-fixed-dim/40 soft-shadow flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-full bg-primary/15 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex-1">
+<h3 class="text-headline-sm text-sm font-headline-sm font-bold text-primary tracking-tight">
+            Privacy &amp; Dignity Guarantee
+          </h3>
+<p class="mt-1 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Your phone number and exact address remain <strong class="text-on-surface font-semibold">100% private</strong>. Only your call name and estate are visible to fellow seniors.
+          </p>
+</div>
+</section>
+<!-- Safe Space Anchor / Subtle Friendly Graphic Ornament -->
+<div class="flex items-center justify-center gap-2 py-1 text-on-surface-variant/70">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-label-sm font-label-sm">Designed for simple, safe, and joyful senior connections</span>
+</div>
+</main>
+<!-- Sticky Bottom Primary CTA Dock -->
+<footer class="mt-auto px-margin-mobile pt-3 pb-spacing-lg bg-surface-container-low/95 backdrop-blur-sm">
+<button class="w-full min-h-[60px] bg-primary text-on-primary hover:bg-primary-container active:scale-[0.98] transition-all duration-150 rounded-full shadow-lg flex items-center justify-center gap-2.5 px-6 font-headline-sm font-bold text-[18px]" onclick="location.href='../10-text size/10-text size.html'" type="button">
+<span class="">Complete</span>
+<span class="material-symbols-outlined text-[24px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Safe skip option -->
+<div class="text-center mt-2.5">
+<button class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1 px-3 underline underline-offset-4" type="button">
+          Skip voice greeting for now
+        </button>
+</div>
+</footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body></html>

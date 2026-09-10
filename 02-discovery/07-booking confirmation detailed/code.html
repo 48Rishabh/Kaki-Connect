@@ -1,0 +1,477 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KakiConnect - Dual-Match Outing Ready</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#fbf9f5",
+            "surface-container-low": "#f5f3ef",
+            "secondary-fixed": "#ffe17a",
+            "primary-fixed": "#d4e3ff",
+            "error": "#ba1a1a",
+            "on-background": "#1b1c1a",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-primary-fixed": "#001c3a",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#e4c451",
+            "primary-container": "#4a76b1",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "tertiary-fixed": "#d2e4ff",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e4e2de",
+            "on-secondary-container": "#766100",
+            "inverse-on-surface": "#f2f0ec",
+            "inverse-surface": "#30312e",
+            "on-secondary-fixed-variant": "#554500",
+            "secondary-container": "#ffdd67",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#c2c6d1",
+            "surface-dim": "#dbdad6",
+            "primary": "#2f5d97",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e4e2de",
+            "surface-container": "#f0eeea",
+            "on-surface": "#1b1c1a",
+            "background": "#fbf9f5",
+            "surface-container-high": "#eae8e4",
+            "inverse-primary": "#a5c8ff",
+            "on-tertiary-container": "#fdfcff",
+            "on-error": "#ffffff",
+            "tertiary": "#315e8e",
+            "secondary": "#715c00",
+            "on-primary-container": "#fefcff",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#4b77a9",
+            "surface-tint": "#325f99",
+            "on-primary-fixed-variant": "#124780",
+            "on-tertiary-fixed": "#001d36",
+            "primary-fixed-dim": "#a5c8ff",
+            "on-surface-variant": "#424750",
+            "surface-bright": "#fbf9f5",
+            "outline": "#737781"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-2xs": "0.25rem",
+            "spacing-xs": "0.5rem",
+            "spacing-sm": "0.75rem",
+            "spacing-md": "1rem",
+            "spacing-lg": "1.5rem",
+            "spacing-xl": "2rem",
+            "spacing-2xl": "3rem",
+            "spacing-3xl": "4rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem"
+          },
+          "fontFamily": {
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "caption-hangul": ["10px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-aura {
+      box-shadow: 0 4px 24px -2px rgba(99, 142, 203, 0.10), 0 2px 8px -1px rgba(34, 38, 47, 0.04);
+    }
+    .floating-pill-shadow {
+      box-shadow: 0 8px 24px -4px rgba(99, 142, 203, 0.18);
+    }
+    .subtle-border {
+      border: 1px solid rgba(99, 142, 203, 0.15);
+    }
+    .checker-pattern {
+      background-image: radial-gradient(rgba(99, 142, 203, 0.15) 1px, transparent 0);
+      background-size: 8px 8px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-32">
+<!-- TOP APP BAR (Shared Component JSON Blueprint) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin-mobile py-spacing-xs bg-surface/90 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-spacing-xs">
+<button aria-label="Community Hub" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-primary hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="diversity_1">diversity_1</span>
+</button>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md text-primary dark:text-inverse-primary tracking-tight font-bold">KakiConnect</span>
+<span class="text-caption-hangul font-caption-hangul text-on-surface-variant flex items-center gap-1">
+<span class="">싱가포르 케어 허브</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">Community Match</span>
+</span>
+</div>
+</div>
+<!-- Desktop Global Nav Links -->
+<nav class="hidden md:flex items-center gap-spacing-lg">
+<a class="text-on-surface-variant hover:text-primary text-label-md font-label-md transition-colors" href="#">Activities</a>
+<a class="text-primary font-bold text-label-md font-label-md transition-colors border-b-2 border-primary pb-0.5" href="#">Matches</a>
+<a class="text-on-surface-variant hover:text-primary text-label-md font-label-md transition-colors" href="#">Volunteer</a>
+<a class="text-on-surface-variant hover:text-primary text-label-md font-label-md transition-colors" href="#">Care Hub</a>
+</nav>
+<!-- Urgent SOS Action Badge -->
+<div class="flex items-center gap-spacing-xs">
+<button aria-label="Urgent SOS" class="flex items-center gap-1.5 bg-error-container text-error px-3 py-1.5 rounded-full hover:bg-error hover:text-on-error transition-all duration-200 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="emergency" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="text-label-md font-label-md font-bold">SOS</span>
+</button>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="max-w-4xl mx-auto px-margin-mobile pt-24 pb-12">
+<!-- Hero Status & Dignified AI Announcement -->
+<section class="text-center mb-spacing-xl">
+<!-- Soft Korean Stationery Tag -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container/60 subtle-border mb-spacing-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-on-secondary-container font-semibold tracking-wide">COORDINATED DUAL-MATCH // 듀얼 매치</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg md:text-display-lg md:font-display-lg text-primary tracking-tight font-bold mb-spacing-2xs">
+        Your Outing is Ready!
+      </h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-xl mx-auto">
+        We found wonderful kakis and a friendly volunteer companion to join you for a gentle, sunlit afternoon.
+      </p>
+</section>
+<!-- BENTO GRID ARCHITECTURE -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-spacing-lg items-start">
+<!-- LEFT / MAIN COLUMN: Activity Hero & Support Match (md:col-span-7) -->
+<div class="md:col-span-7 flex flex-col gap-spacing-lg">
+<!-- ACTIVITY HERO CARD -->
+<article class="bg-surface-container-lowest rounded-3xl p-6 soft-aura subtle-border relative overflow-hidden">
+<!-- Playful subtle checker corner flourish -->
+<div class="absolute top-0 right-0 w-24 h-24 checker-pattern rounded-bl-3xl opacity-60 pointer-events-none"></div>
+<div class="flex items-center justify-between mb-spacing-sm relative z-10">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="water">water</span>
+              Reservoir Leisure
+            </span>
+<span class="text-caption-hangul font-caption-hangul text-outline tracking-wider font-semibold">// 01 OUTING TICKET</span>
+</div>
+<!-- Activity Cover Image (Korean Aesthetic Gentle Sunset Horizon) -->
+<div class="relative w-full h-44 rounded-2xl overflow-hidden mb- spacing-md shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A tranquil, luminous photograph of Bedok Reservoir boardwalk in Singapore during the golden hour. The soft warm sunlight reflects gracefully over serene ripples of water, with elderly patrons and companions enjoying a peaceful lakeside stroll. The aesthetic is clean, calming, warm-toned, bathed in soft cornflower blue and honey yellow tones, captured with clean airy Japanese-Korean lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOx6pKxhKGEoXWFtem8MhF4nwu3Y6KdUhyJb0Zyn-Yf83lGahoTgEXovzWgGxFzj5Lk6kx3SpcZo3W3ruAvGn_c6lSrX4uDEOH1TLVDol9Ao21fiPcPeRYYj6eZQ92SwZr5ZXET-SfWIuhLmL3GegI8P0dds3QFIgvspjFJKFRTj6oOkjpfeoO17bxF08Fe8NoVQ2fNY0m3UExBiZv3gEf9ZjieGlE9e5BQgR1KOGSPn-FIfB4S8vhrA">
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm text-primary font-semibold flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="wb_twilight">wb_twilight</span>
+              Breezy &amp; Shaded
+            </div>
+</div>
+<div class="relative z-10">
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold mb-1">
+              Sunset Fishing &amp; Kopi Gathering
+            </h2>
+<div class="flex items-start gap-2 text-body-md font-body-md text-on-surface-variant mt-2">
+<span class="material-symbols-outlined text-primary text-base mt-0.5" data-icon="schedule">schedule</span>
+<span class="">Tomorrow · 4:00 PM – 6:00 PM</span>
+</div>
+<div class="flex items-start gap-2 text-body-md font-body-md text-on-surface-variant mt-1.5">
+<span class="material-symbols-outlined text-primary text-base mt-0.5" data-icon="location_on">location_on</span>
+<span class="font-medium text-on-surface">Bedok Reservoir Jetty <span class="text-on-surface-variant font-normal">(Sheltered Pavilion A)</span></span>
+</div>
+</div>
+</article>
+<!-- SECTION 2: SUPPORT MATCH · VERIFIED VOLUNTEER COMPANION -->
+<article class="bg-surface-container-lowest rounded-3xl p-6 soft-aura subtle-border relative">
+<!-- Card Header & Dual-Tone Badge -->
+<div class="flex items-center justify-between border-b border-surface-container-high pb-spacing-sm mb-spacing-md">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-sm" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">
+                Support Match · Verified Companion
+              </h3>
+</div>
+<span class="text-caption-hangul font-caption-hangul text-on-surface-variant font-semibold">1-TO-1 SUPPORT // 든든한 동행</span>
+</div>
+<!-- Volunteer Profile Bento Component -->
+<div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-surface-container-low/80 p-4 rounded-2xl subtle-border mb-spacing-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-2xl object-cover ring-2 ring-surface-container-lowest shadow-sm" data-alt="A warm, reassuring portrait of a young Singaporean woman volunteer in her late twenties with a friendly, welcoming smile. She wears a neat periwinkle polo tee in a soft daylight setting with a pleasant green community garden background. Clean Korean stationery-inspired clarity, soft pastels, respectful and approachable vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-ikj-AZs3rRnS0UiUzL0GHDsEzlC0fNFsy369v9bNoddjc7ExWzYmUlT6Gs0YkxTZHUSmZ-DUqSewbKywFzY8GaT8ganO3Y5C_teNnTc0fLq0G66iZUYicJ5Nm0VMdg14SCD2FHvc-0NBiCfT3xuOUXhKvlWm2K4CNSLyByvK750iSQxnXXDpNzB110llnVwrw94av6xcsnfhJ8J1eswp49_bMOMwCjJXx6a6BBTjYxVG8gr6j4Ad1w">
+<div class="absolute -bottom-1 -right-1 bg-secondary text-surface w-5 h-5 rounded-full flex items-center justify-center text-xs shadow" title="Certified Companion">
+<span class="material-symbols-outlined text-xs" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold">Rachel Lin</h4>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2.5 py-0.5 rounded-full font-medium">Age 28 · Tampines Central</span>
+</div>
+<!-- Verification Badges -->
+<div class="flex flex-wrap items-center gap-1.5 mt-2">
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest text-primary px-2 py-0.5 rounded-full text-label-sm font-label-sm border border-primary/20 font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="health_and_safety">health_and_safety</span>
+                  Fei Yue FSC &amp; Silver Generation Verified
+                </span>
+</div>
+</div>
+</div>
+<!-- Role Designation Details -->
+<div class="mb-spacing-md">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-label-md font-label-md text-primary font-bold">Role: General Volunteer Support</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center text-label-sm font-label-sm text-on-surface-variant">
+<div class="bg-surface-container px-2 py-2 rounded-xl flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-base" data-icon="favorite">favorite</span>
+<span class="">Companionship</span>
+</div>
+<div class="bg-surface-container px-2 py-2 rounded-xl flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-base" data-icon="directions_subway">directions_subway</span>
+<span class="">Travelling Together</span>
+</div>
+<div class="bg-surface-container px-2 py-2 rounded-xl flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-base" data-icon="explore">explore</span>
+<span class="">Jetty Navigation</span>
+</div>
+</div>
+</div>
+<!-- Reassuring Supportive Meetup Banner -->
+<div class="bg-primary-fixed/40 border border-primary/20 p-3.5 rounded-2xl flex items-start gap-3 mb-spacing-md">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5" data-icon="handshake">handshake</span>
+<p class="text-body-md font-body-md text-on-primary-fixed font-medium leading-relaxed">
+              "Rachel will accompany you to the activity and travel with you directly from <strong class="font-bold text-primary">Bedok MRT (Exit B Passenger Service)</strong>."
+            </p>
+</div>
+<!-- Interactive Audio Note Button -->
+<button class="w-full flex items-center justify-between px-4 py-3 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed rounded-2xl font-label-md transition-all active:scale-[0.98] shadow-sm" id="voiceNoteBtn">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-xl" data-icon="volume_up">volume_up</span>
+<span class="font-bold">Listen to Rachel's voice note (0:15s)</span>
+</div>
+<span class="material-symbols-outlined text-lg" data-icon="play_circle" id="voiceNoteIcon">play_circle</span>
+</button>
+</article>
+</div>
+<!-- RIGHT COLUMN: Social Match Kakis & Accessibility (md:col-span-5) -->
+<div class="md:col-span-5 flex flex-col gap-spacing-lg">
+<!-- SECTION 1: SOCIAL MATCH · YOUR FRIENDLY KAKIS -->
+<article class="bg-surface-container-lowest rounded-3xl p-6 soft-aura subtle-border">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-spacing-sm mb-spacing-md">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="diversity_3">diversity_3</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary font-bold">
+                Social Match · Your Kakis
+              </h3>
+</div>
+<span class="text-label-sm font-label-sm bg-primary-container text-on-primary-container px-2.5 py-0.5 rounded-full font-bold">
+              3 Joining
+            </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-spacing-md">
+            Matched based on gentle walking pace, East-side neighborhood, and morning kopi preferences.
+          </p>
+<!-- Kakis List Stack -->
+<div class="space-y-3.5">
+<!-- Kaki 1: Ahmad -->
+<div class="p-3.5 bg-surface-container-low rounded-2xl subtle-border flex items-start gap-3 hover:bg-surface-container transition-colors">
+<img class="w-12 h-12 rounded-xl object-cover ring-1 ring-surface-variant" data-alt="A smiling, warm senior Malay grandfather in his early seventies wearing a comfortable batik patterned casual shirt and songkok, sitting in a serene bright Singapore community garden pavilion. Natural high-key soft daylight, cheerful aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJeNQ-_hX7ZYHc7vtYEx6OiY5Rigqs0RMk91VC8aP9eVJwQx9NXmfyAAoeMoXqVgI9e_RRLlrg1BGpONWo0X1_19baoJZPjJaQtUGu0XpieKRoLk8KSx8GD2uioqvx91xp-BSWx_LxinNYHBHiFdo6RdDH1Asu20AtJjEzKvvQFGaXFURyi53R4GAoe5I_PPAcBVFhjCkkvYoCENrVscU0yW0GskRMtcqt6Cvno0bkl8Y3mN5nRGmMog">
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">Ahmad, 71</h4>
+<span class="text-caption-hangul font-caption-hangul bg-surface-container-lowest px-2 py-0.5 rounded-md border border-outline-variant/30 text-on-surface-variant font-medium">Bedok North</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Loves jetty fishing &amp; afternoon Teh-C kosong</p>
+<div class="flex gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container text-caption-hangul font-caption-hangul font-semibold">Malay</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/60 text-primary text-caption-hangul font-caption-hangul font-semibold">English</span>
+</div>
+</div>
+</div>
+<!-- Kaki 2: Susan -->
+<div class="p-3.5 bg-surface-container-low rounded-2xl subtle-border flex items-start gap-3 hover:bg-surface-container transition-colors">
+<img class="w-12 h-12 rounded-xl object-cover ring-1 ring-surface-variant" data-alt="A friendly senior Singaporean Chinese woman in her late sixties wearing a tasteful periwinkle cardigan and glasses, laughing softly with joyful crinkles around her eyes. Bright warm aesthetic, light stationery mood, welcoming demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzz7wk3tg831nV5ShhH0LByOGJ-I-YVFa8vOwOI9XeyE-vV1DFvTLn79LRZszFxK0or4ki4yb3KtQSEXvQNsZ3QkWsyTnGIm-0j08tUKpXEfycyVKQQx7mBTWKUZPmaAqJ_Mccg-1c4kcmQXUlF50xvQSbvREvyzp_Z3iX6okBT_1J2cC48CwXieeFPaZpCqoi3OEknuVDDiyF7cJxxyyYU5YiKyhx-MuXDtSF_I2U6YhgFaGWL0L7hQ">
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">Susan, 67</h4>
+<span class="text-caption-hangul font-caption-hangul bg-surface-container-lowest px-2 py-0.5 rounded-md border border-outline-variant/30 text-on-surface-variant font-medium">Tampines</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Sings 70s Teresa Teng oldies &amp; loves floral walks</p>
+<div class="flex gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container text-caption-hangul font-caption-hangul font-semibold">Hokkien</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/60 text-primary text-caption-hangul font-caption-hangul font-semibold">English</span>
+</div>
+</div>
+</div>
+<!-- Kaki 3: Mr Tan -->
+<div class="p-3.5 bg-surface-container-low rounded-2xl subtle-border flex items-start gap-3 hover:bg-surface-container transition-colors">
+<img class="w-12 h-12 rounded-xl object-cover ring-1 ring-surface-variant" data-alt="A vigorous, cheerful 68-year-old Chinese uncle wearing a wide-brim sun hat and neutral outdoors polo, holding a bamboo fishing rod by a freshwater lake. Bright airy natural light, gentle Korean-stationery pastel accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJnXz0bXJYu8OWdGfK7b7UM_07fKchqUUb-rUV2B_ofps7ajlawdVoncb4YBn5g0QFAe3YOb14A1KMFkSD6rWSHkX4AIjPhHWBCX25_hG75yXMqrk2u4EKsOUZZzln2oIW_UN5stPfvcJypW8ZQbyNe92hGxBmc_D42jfSQ0L3HIq2_JeOJw9noQ461ZdGlPXEm1uqWvKsEntOKFTPO3O_-hLpIwZSm9jwKwVlnMChM-yK5XH2OF4Y8w">
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">Mr Tan, 68</h4>
+<span class="text-caption-hangul font-caption-hangul bg-surface-container-lowest px-2 py-0.5 rounded-md border border-outline-variant/30 text-on-surface-variant font-medium">Bedok South</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Avid reservoir fisherman with 30 years experience</p>
+<div class="flex gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container text-caption-hangul font-caption-hangul font-semibold">Hokkien</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/60 text-primary text-caption-hangul font-caption-hangul font-semibold">Malay</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- ACCESSIBILITY & DIGNITY GUARANTEE -->
+<article class="bg-surface-container-lowest rounded-3xl p-6 soft-aura subtle-border">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Accessibility &amp; Dignity Guarantee</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+            Audited specifically for elderly physical ease and comfort before every outing.
+          </p>
+<!-- Checklist Pills -->
+<div class="space-y-2.5">
+<div class="flex items-center gap-2.5 p-2.5 bg-surface-container-low rounded-xl text-body-md font-body-md text-on-surface">
+<span class="w-6 h-6 rounded-full bg-primary text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+</span>
+<span class="font-medium">Step-free &amp; ramp access verified</span>
+</div>
+<div class="flex items-center gap-2.5 p-2.5 bg-surface-container-low rounded-xl text-body-md font-body-md text-on-surface">
+<span class="w-6 h-6 rounded-full bg-primary text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+</span>
+<span class="font-medium">Ample shaded bench seating available</span>
+</div>
+<div class="flex items-center gap-2.5 p-2.5 bg-surface-container-low rounded-xl text-body-md font-body-md text-on-surface">
+<span class="w-6 h-6 rounded-full bg-primary text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xs" data-icon="check">check</span>
+</span>
+<span class="font-medium">Clean wheelchair-friendly restroom 50m away</span>
+</div>
+</div>
+</article>
+<!-- CALL TO ACTION ACTIONS DOCK -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 soft-aura subtle-border flex flex-col gap-3">
+<button class="w-full py-4 px-6 rounded-full bg-primary text-on-primary font-headline-sm text-center font-bold tracking-wide hover:bg-primary-container transition-all active:scale-[0.97] floating-pill-shadow flex items-center justify-center gap-2" id="joinActivityBtn">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+<span class="">Join Activity</span>
+</button>
+<button class="w-full py-3 px-6 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-center font-bold transition-all active:scale-[0.97] border border-outline-variant/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="">Message Rachel or Group</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BOTTOM NAVIGATION BAR (Shared Component JSON Blueprint) -->
+<!-- Contextual State: "Matches" destination is strictly ACTIVE for this Coordinated Match screen -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-spacing-xs bg-surface-container-lowest dark:bg-surface border-t border-outline-variant/30 shadow-md">
+<!-- Destination 1: Activities (Inactive) -->
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-spacing-sm py-spacing-2xs shadow-sm active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="event" data-weight="fill" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="text-label-sm font-label-sm font-bold mt-0.5">Activities</span>
+</a>
+<!-- Destination 2: Matches (ACTIVE - Matches Screen Context) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-spacing-sm py-spacing-2xs hover:bg-surface-container-low transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="diversity_3">diversity_3</span>
+<span class="text-label-sm font-label-sm mt-0.5">Buddies</span>
+</a>
+<!-- Destination 3: Volunteer (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-spacing-sm py-spacing-2xs hover:bg-surface-container-low transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="text-label-sm font-label-sm mt-0.5">Volunteer</span>
+</a>
+<!-- Destination 4: Care Hub (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-spacing-sm py-spacing-2xs hover:bg-surface-container-low transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="health_and_safety">health_and_safety</span>
+<span class="text-label-sm font-label-sm mt-0.5">Care Hub</span>
+</a>
+</nav>
+<!-- Interactive Feedback Script -->
+<script>
+    // Micro-interaction for Voice Note simulation
+    const voiceBtn = document.getElementById('voiceNoteBtn');
+    const voiceIcon = document.getElementById('voiceNoteIcon');
+    let isPlaying = false;
+
+    if (voiceBtn && voiceIcon) {
+      voiceBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          voiceIcon.textContent = 'pause_circle';
+          voiceBtn.classList.add('ring-2', 'ring-secondary');
+          setTimeout(() => {
+            voiceIcon.textContent = 'play_circle';
+            voiceBtn.classList.remove('ring-2', 'ring-secondary');
+            isPlaying = false;
+          }, 4000);
+        } else {
+          voiceIcon.textContent = 'play_circle';
+          voiceBtn.classList.remove('ring-2', 'ring-secondary');
+        }
+      });
+    }
+
+    // Confirmation Toast microinteraction
+    const joinBtn = document.getElementById('joinActivityBtn');
+    if (joinBtn) {
+      joinBtn.addEventListener('click', () => {
+        const originalText = joinBtn.innerHTML;
+        joinBtn.innerHTML = '<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span><span>Spot Confirmed! Rachel Notified</span>';
+        joinBtn.classList.replace('bg-primary', 'bg-tertiary-container');
+        setTimeout(() => {
+          joinBtn.innerHTML = originalText;
+          joinBtn.classList.replace('bg-tertiary-container', 'bg-primary');
+        }, 3000);
+      });
+    }
+  </script>
+
+
+
+
+</body></html>

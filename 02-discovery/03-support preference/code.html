@@ -1,0 +1,344 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Support Selection - KakiConnect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#fbf9f5",
+            "surface-container-low": "#f5f3ef",
+            "secondary-fixed": "#ffe17a",
+            "primary-fixed": "#d4e3ff",
+            "error": "#ba1a1a",
+            "on-background": "#1b1c1a",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-primary-fixed": "#001c3a",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#e4c451",
+            "primary-container": "#4a76b1",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "tertiary-fixed": "#d2e4ff",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e4e2de",
+            "on-secondary-container": "#766100",
+            "inverse-on-surface": "#f2f0ec",
+            "inverse-surface": "#30312e",
+            "on-secondary-fixed-variant": "#554500",
+            "secondary-container": "#ffdd67",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#c2c6d1",
+            "surface-dim": "#dbdad6",
+            "primary": "#2f5d97",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e4e2de",
+            "surface-container": "#f0eeea",
+            "on-surface": "#1b1c1a",
+            "background": "#fbf9f5",
+            "surface-container-high": "#eae8e4",
+            "inverse-primary": "#a5c8ff",
+            "on-tertiary-container": "#fdfcff",
+            "on-error": "#ffffff",
+            "tertiary": "#315e8e",
+            "secondary": "#715c00",
+            "on-primary-container": "#fefcff",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#4b77a9",
+            "surface-tint": "#325f99",
+            "on-primary-fixed-variant": "#124780",
+            "on-tertiary-fixed": "#001d36",
+            "primary-fixed-dim": "#a5c8ff",
+            "on-surface-variant": "#424750",
+            "surface-bright": "#fbf9f5",
+            "outline": "#737781"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-xs": "0.5rem",
+            "spacing-xl": "2rem",
+            "margin-mobile": "1.25rem",
+            "spacing-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "spacing-md": "1rem",
+            "spacing-3xl": "4rem",
+            "spacing-sm": "0.75rem",
+            "margin-desktop": "2.5rem",
+            "spacing-2xl": "3rem",
+            "spacing-2xs": "0.25rem",
+            "gutter-desktop": "1.5rem"
+          },
+          "fontFamily": {
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .korean-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .korean-floating-shadow {
+      box-shadow: 0 8px 24px -4px rgba(99, 142, 203, 0.16);
+    }
+    .subtle-border {
+      border: 1px solid rgba(99, 142, 203, 0.14);
+    }
+    .selected-border {
+      border: 2px solid #2f5d97;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TOP APP BAR -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin-mobile py-spacing-xs bg-surface/90 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-spacing-sm">
+<button aria-label="Go back" class="p-spacing-xs rounded-full hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 active:scale-95 text-on-surface">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-spacing-2xs">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="diversity_1">diversity_1</span>
+<span class="text-headline-md font-headline-md text-primary tracking-tight font-bold">KakiConnect</span>
+</div>
+</div>
+<!-- SOS / Support Action -->
+<div class="flex items-center gap-spacing-xs">
+<button class="inline-flex items-center gap-1 bg-error-container text-on-error-container px-3 py-1.5 rounded-full font-label-md text-label-md active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-base" data-icon="emergency">emergency</span>
+<span class="">SOS</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="w-full max-w-2xl mx-auto px-margin-mobile pt-20 pb-28 flex flex-col gap-spacing-lg">
+<!-- ACTIVITY CONTEXT BANNER (Recap Card) -->
+<section class="bg-surface-container-lowest rounded-[20px] p- spacing-md p-5 korean-card-shadow subtle-border flex items-start gap-4 relative overflow-hidden">
+<!-- Playful Korean Stationery corner accent -->
+<div class="absolute -right-4 -top-4 w-12 h-12 bg-secondary-container rounded-full opacity-60 pointer-events-none"></div>
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="phishing">phishing</span>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-center justify-between gap-2">
+<span class="text-caption-hangul font-caption-hangul text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-full font-semibold">SELECTED OUTING</span>
+<span class="text-caption-hangul font-caption-hangul text-outline">// SG-6800</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mt-1 font-bold">Bedok Reservoir Fishing &amp; Kopi</h2>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-3 text-body-sm font-body-sm text-on-surface-variant mt-1">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="schedule">schedule</span>
+            Tomorrow · 4:00 PM – 6:00 PM
+          </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="groups">groups</span>
+            Organized by Bedok Kakis
+          </span>
+</div>
+</div>
+</section>
+<!-- HEADLINE & AUDIO ASSISTANCE -->
+<section class="flex flex-col gap-spacing-sm">
+<div class="flex flex-col gap-1">
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">
+          Would you like some help joining this activity?
+        </h1>
+<p class="text-body-md font-body-md text-on-surface-variant">
+          Choose what feels most comfortable for you. We adapt to your pace for every outing.
+        </p>
+</div>
+<!-- Audio Assistance Pill -->
+<div class="pt-1">
+<button class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-md text-label-md active:scale-95 transition-all duration-150 hover:bg-secondary-fixed shadow-sm">
+<span class="material-symbols-outlined text-lg animate-pulse" data-icon="volume_up">volume_up</span>
+<span class="font-bold">Tap to listen in Hokkien / Mandarin / English</span>
+<span class="text-xs bg-white/50 px-1.5 py-0.5 rounded-full font-semibold">福建話 · 华语</span>
+</button>
+</div>
+</section>
+<!-- SUPPORT OPTIONS SELECTION LIST -->
+<fieldset aria-label="Support options" class="flex flex-col gap-spacing-md" role="radiogroup">
+<!-- Option 1: Independent -->
+<label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border korean-card-shadow cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+<input class="sr-only peer" name="support_level" type="radio" value="independent">
+<div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0">
+<div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div>
+</div>
+<div class="flex-grow flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold">No, I can go myself</span>
+</div>
+
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            I am comfortable walking or taking MRT/bus independently
+          </p>
+</div>
+</label>
+<!-- Option 2: Pre-selected with Checkmark (General Volunteer Support) -->
+<label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] selected-border korean-floating-shadow cursor-pointer transition-all duration-200 min-h-[58px] bg-primary-fixed/10">
+<input checked="" class="sr-only peer" name="support_level" type="radio" value="travel_partner">
+<div class="w-6 h-6 rounded-full border-2 border-primary bg-primary mt-1 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-white text-base font-bold" data-icon="check">check</span>
+</div>
+<div class="flex-grow flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+
+<span class="text-headline-sm font-headline-sm text-primary font-bold">Someone to travel with me</span>
+</div>
+
+</div>
+<p class="text-body-md font-body-md text-on-surface font-medium">
+            Meet up nearby and take the bus/train together as a pair
+          </p>
+<div class="flex items-center gap-2 mt-1 text-primary text-caption-hangul font-caption-hangul font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+<span class="">Recommended for relaxed, friendly companionship</span>
+</div>
+</div>
+</label>
+<!-- Option 3: Mobility Assistance -->
+<label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border korean-card-shadow cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+<input class="sr-only peer" name="support_level" type="radio" value="mobility">
+<div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0">
+<div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div>
+</div>
+<div class="flex-grow flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold">Mobility assistance</span>
+</div>
+
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            Step-free routes, gentle arm-hold or wheelchair ramp navigation
+          </p>
+</div>
+</label>
+<!-- Option 4: Volunteer / Caregiver Escort -->
+<label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border korean-card-shadow cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+<input class="sr-only peer" name="support_level" type="radio" value="escort">
+<div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0">
+<div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div>
+</div>
+<div class="flex-grow flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold">A volunteer/caregiver to accompany me</span>
+</div>
+
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            Dedicated door-to-door escort from home and throughout the activity
+          </p>
+</div>
+</label>
+<!-- Option 5: Virtual Companion -->
+<label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border korean-card-shadow cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+<input class="sr-only peer" name="support_level" type="radio" value="virtual">
+<div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0">
+<div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div>
+</div>
+<div class="flex-grow flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+
+<span class="text-headline-sm font-headline-sm text-on-surface font-semibold">I would rather join from home</span>
+</div>
+
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            Connect via tablet video call or virtual kopi group
+          </p>
+</div>
+</label>
+</fieldset>
+<!-- DIGNITY & SAFETY NOTE -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-3 border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-2xl flex-shrink-0" data-icon="verified_user">verified_user</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+        Support is matched per activity with our verified community volunteers and Fei Yue FSC befrienders.
+      </p>
+</div>
+</main>
+<!-- STICKY ACTION FOOTER -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface/95 backdrop-blur-md px-margin-mobile py-spacing-sm shadow-md z-40">
+<div class="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="hidden sm:flex flex-col text-body-sm font-body-sm text-on-surface-variant">
+<span class="font-bold text-on-surface">Changeable anytime</span>
+<span class="">Your choice only applies to this outing</span>
+</div>
+<button class="w-full sm:w-auto flex-grow sm:flex-grow-0 inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-headline-sm text-headline-sm px-spacing-xl py-3.5 rounded-full hover:bg-primary-container active:scale-[0.98] transition-all duration-150 shadow-md">
+<span class="">Continue to Match Social Kakis &amp; Support</span>
+<span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</footer>
+<script>
+    // Radio button dynamic active-styling script
+    const radioLabels = document.querySelectorAll('fieldset label');
+    const radioInputs = document.querySelectorAll('input[type="radio"][name="support_level"]');
+
+    radioInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        radioLabels.forEach(label => {
+          label.classList.remove('selected-border', 'korean-floating-shadow', 'bg-primary-fixed/10');
+          label.classList.add('subtle-border', 'korean-card-shadow');
+          const title = label.querySelector('h3, span.font-semibold, span.font-bold');
+          if (title && !label.contains(input)) {
+            title.classList.remove('text-primary');
+            title.classList.add('text-on-surface');
+          }
+        });
+
+        const activeLabel = input.closest('label');
+        activeLabel.classList.remove('subtle-border', 'korean-card-shadow');
+        activeLabel.classList.add('selected-border', 'korean-floating-shadow', 'bg-primary-fixed/10');
+      });
+    });
+  </script>
+
+
+</body></html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KakiConnect - Neighbourhood Discovery for Seniors</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#231b00",
+            "on-primary-container": "#fefcff",
+            "primary": "#2f5d97",
+            "tertiary-container": "#4b77a9",
+            "surface-container-high": "#eae8e4",
+            "outline": "#737781",
+            "on-surface-variant": "#424750",
+            "primary-fixed": "#d4e3ff",
+            "tertiary": "#315e8e",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container-highest": "#e4e2de",
+            "error": "#ba1a1a",
+            "surface-container": "#f0eeea",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#f2f0ec",
+            "primary-container": "#4a76b1",
+            "secondary": "#715c00",
+            "secondary-fixed-dim": "#e4c451",
+            "tertiary-fixed": "#d2e4ff",
+            "inverse-surface": "#30312e",
+            "on-background": "#1b1c1a",
+            "surface-tint": "#325f99",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "on-tertiary-fixed": "#001d36",
+            "surface-container-low": "#f5f3ef",
+            "on-primary-fixed": "#001c3a",
+            "outline-variant": "#c2c6d1",
+            "secondary-fixed": "#ffe17a",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#766100",
+            "surface-bright": "#fbf9f5",
+            "on-primary-fixed-variant": "#124780",
+            "inverse-primary": "#a5c8ff",
+            "on-tertiary-fixed-variant": "#154977",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#554500",
+            "primary-fixed-dim": "#a5c8ff",
+            "surface-variant": "#e4e2de",
+            "surface-dim": "#dbdad6",
+            "surface": "#fbf9f5",
+            "on-surface": "#1b1c1a",
+            "secondary-container": "#ffdd67",
+            "background": "#fbf9f5",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-xs": "0.5rem",
+            "gutter-mobile": "1rem",
+            "margin-desktop": "2.5rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-3xl": "4rem",
+            "gutter-desktop": "1.5rem",
+            "spacing-sm": "0.75rem",
+            "spacing-md": "1rem",
+            "spacing-2xl": "3rem",
+            "spacing-lg": "1.5rem",
+            "spacing-xl": "2rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "caption-hangul": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-32 selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- Top App Bar (Shared Components Anchor with Semantic Shell Styling) -->
+<header class="bg-surface sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+<div class="flex items-center gap-spacing-xs">
+<button aria-label="Go back" class="p-spacing-xs rounded-full hover:bg-surface-container-high transition-all active:scale-95 text-primary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-primary text-[28px]">arrow_back</span>
+</button>
+<span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</span>
+</div>
+<div class="flex items-center gap-spacing-xs">
+<a class="inline-flex items-center gap-1.5 bg-error-container text-error px-spacing-md py-spacing-xs rounded-full text-label-md font-label-md shadow-sm active:scale-95 transition-all" href="#emergency-sos">
+<span class="material-symbols-outlined text-[20px] text-error" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="text-error font-bold">SOS</span>
+</a>
+</div>
+</div>
+</header>
+<main class="max-w-lg mx-auto px-margin-mobile pt-spacing-sm flex flex-col gap-spacing-xl">
+<!-- Greeting & Weather Section -->
+<section class="bg-surface-container-lowest p-spacing-lg rounded-[24px] shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] border border-primary/10">
+<div class="flex items-start justify-between gap-spacing-sm">
+<div>
+<span class="inline-flex items-center gap-1.5 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container-low text-primary text-label-sm font-label-sm mb-spacing-xs"><span class="material-symbols-outlined text-[16px]">location_on</span>
+            Bedok North Ave 3</span>
+<h1 class="text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">Good morning, Uncle Tan!</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+            Bright &amp; breezy today • 29°C
+          </p>
+</div>
+<div aria-label="Profile Avatar" class="w-14 h-14 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center text-headline-sm font-headline-sm shadow-inner shrink-0">
+          陈
+        </div>
+</div>
+<!-- Quick Audio Assist Button for Accessibility -->
+<div class="mt-spacing-md pt-spacing-md border-t border-surface-container">
+<button class="w-full flex items-center justify-center gap-spacing-sm bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md py-spacing-md px-spacing-lg rounded-full active:scale-98 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+<span class="">Listen to today's activities</span>
+</button>
+</div>
+</section>
+<!-- Quick "How are you feeling today?" Activity Filter Bar -->
+<section aria-labelledby="activity-categories">
+<div class="flex items-center justify-between mb-spacing-sm">
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold" id="activity-categories">What would you like to do?</h2>
+<span class="text-label-sm font-label-sm text-primary font-semibold">Swipe for more</span>
+</div>
+<div class="flex gap-spacing-xs overflow-x-auto pb-spacing-2xs no-scrollbar -mx-margin-mobile px-margin-mobile">
+<button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm active:scale-95 transition-all" type="button">
+<span class="">All Activities</span>
+</button>
+<button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all" type="button">
+<span class="">☕ Kopitiam &amp; Hawker</span>
+</button>
+<button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all" type="button">
+<span class="">🎤 Karaoke</span>
+</button>
+<button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all" type="button">
+<span class="">🌳 Morning Walks</span>
+</button>
+<button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all" type="button">
+<span class="">♟️ Board Games</span>
+</button>
+<button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all" type="button">
+<span class="">🧘 Gentle Exercise</span>
+</button>
+</div>
+</section>
+<!-- AI Picked Highlight Banner (Gentle, Welcoming & High Contrast) -->
+<section class="relative bg-gradient-to-br from-primary to-tertiary text-on-primary rounded-[28px] p-spacing-lg shadow-[0_8px_24px_-4px_rgba(99,142,203,0.25)] overflow-hidden">
+<div class="flex items-center justify-between gap-2 mb-spacing-md">
+<span class="inline-flex items-center gap-1.5 px-spacing-md py-spacing-2xs rounded-full bg-secondary-container text-on-secondary-fixed text-label-md font-label-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+          Specially picked for you today
+        </span>
+<span class="text-on-primary/80 text-caption-hangul font-caption-hangul tracking-wide">BEDOK RESERVOIR</span>
+</div>
+<div class="flex flex-col gap-spacing-sm">
+<h3 class="text-headline-lg font-headline-lg text-on-primary font-bold leading-tight">Sunset Fishing &amp; Kopi Gathering</h3>
+<p class="text-body-md font-body-md text-on-primary/90 flex items-center gap-1"><span class="material-symbols-outlined text-[20px]">meeting_room</span>
+          Bedok Reservoir Jetty • Floating Deck</p>
+<!-- Kaki Companions & Volunteers Tag -->
+<div class="bg-surface-container-lowest/15 backdrop-blur-sm p-spacing-md rounded-2xl flex items-center gap-spacing-md my-spacing-xs">
+<div class="flex -space-x-2 shrink-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-bold text-label-md ring-2 ring-surface-container-lowest" title="Uncle Teo">张</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-label-md ring-2 ring-surface-container-lowest" title="Auntie Lucy">L</div>
+<div class="w-10 h-10 rounded-full bg-on-secondary text-primary flex items-center justify-center font-bold text-label-md ring-2 ring-surface-container-lowest" title="Volunteer Buddy">
+<span class="material-symbols-outlined text-[20px]">volunteer_activism</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-primary"><p class="font-semibold text-body-md font-body-md">2 Kakis joining:</p>
+<p class="text-on-primary/90">Uncle Raymond &amp; Auntie Mei Ling + 1 Volunteer Buddy accompanying</p></div>
+</div>
+<!-- Accessibility / Distance Badges -->
+<div class="flex flex-wrap gap-spacing-xs py-spacing-2xs"><span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 px-spacing-sm py-spacing-2xs rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">wb_shade</span> Breezy &amp; Shaded
+          </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 px-spacing-sm py-spacing-2xs rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">accessible_forward</span> Step-free &amp; Ramp Access
+          </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 px-spacing-sm py-spacing-2xs rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Starts 4:30 PM
+          </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 px-spacing-sm py-spacing-2xs rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">chair</span> Ample Rest Benches
+          </span></div>
+<!-- Big Primary CTA -->
+<button class="mt-spacing-sm w-full min-h-[58px] bg-secondary-container hover:bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm rounded-full flex items-center justify-center gap-spacing-xs shadow-md active:scale-98 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">group_add</span>
+<span class="">Join this Kaki Group</span>
+</button>
+</div>
+</section>
+<!-- Reassuring Family Peace of Mind Note -->
+<section class="bg-surface-container-low border border-outline-variant/30 rounded-[20px] p-spacing-md flex items-start gap-spacing-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-primary font-bold">Family peace of mind active</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+          Your daughter Sarah will be automatically notified when your group gathers safely at the location.
+        </p>
+</div>
+</section>
+<!-- 'Happening Near You' Activities Feed -->
+<section aria-labelledby="feed-heading" class="flex flex-col gap-spacing-md">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-lg font-headline-lg text-on-surface font-bold" id="feed-heading">Happening Near You</h2>
+<a class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" href="#all">
+          View all (8)
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Activity Card 1 -->
+<article class="bg-surface-container-lowest p-spacing-lg rounded-[24px] border border-surface-container-high shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] flex flex-col gap-spacing-md">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-spacing-sm py-spacing-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Tomorrow • 9:30 AM</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">4 Kakis attending</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface font-bold mt-spacing-xs">Morning Teh-C &amp; Rummy / Chess</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">store</span>
+              Chong Boon Market &amp; Food Centre • Table 12
+            </p>
+</div>
+<span class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center text-[24px]">☕</span>
+</div>
+<div class="flex flex-wrap gap-spacing-xs">
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">accessible</span> Wheelchair Friendly
+          </span>
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">record_voice_over</span> Dialect: Hokkien / English
+          </span>
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">near_me</span> 450m
+          </span>
+</div>
+<button class="w-full min-h-[56px] rounded-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-spacing-xs active:scale-98 transition-all" type="button">
+<span class="">View &amp; Join Group</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+<!-- Activity Card 2 -->
+<article class="bg-surface-container-lowest p-spacing-lg rounded-[24px] border border-surface-container-high shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] flex flex-col gap-spacing-md">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-spacing-sm py-spacing-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Thursday • 8:00 AM</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">6 Kakis attending</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface font-bold mt-spacing-xs">Gentle Park Walk &amp; Bird Watching</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">park</span>
+              Bishan-AMK Park • Meeting at River Plains Café
+            </p>
+</div>
+<span class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center text-[24px]">🐦</span>
+</div>
+<div class="flex flex-wrap gap-spacing-xs">
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">assist_walker</span> Slow Paced
+          </span>
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">handshake</span> Arm-hold Volunteer Available
+          </span>
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">wb_shade</span> Shaded Benches
+          </span>
+</div>
+<button class="w-full min-h-[56px] rounded-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-spacing-xs active:scale-98 transition-all" type="button">
+<span class="">View &amp; Join Group</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+<!-- Activity Card 3 -->
+<article class="bg-surface-container-lowest p-spacing-lg rounded-[24px] border border-surface-container-high shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] flex flex-col gap-spacing-md">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-spacing-sm py-spacing-2xs rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">Friday • 2:30 PM</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">3 Kakis attending</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface font-bold mt-spacing-xs">Chinatown Herbal Tea &amp; Storytelling</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">local_cafe</span>
+              Chinatown Heritage Centre Tea House
+            </p>
+</div>
+<span class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center text-[24px]">🍵</span>
+</div>
+<div class="flex flex-wrap gap-spacing-xs">
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">ac_unit</span> Indoor Aircon
+          </span>
+<span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">train</span> AMK MRT Group Pickup (1:45 PM)
+          </span>
+</div>
+<button class="w-full min-h-[56px] rounded-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-spacing-xs active:scale-98 transition-all" type="button">
+<span class="">View &amp; Join Group</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+</section>
+<!-- Emergency SOS Contact Quick Drawer -->
+<section class="bg-surface-container-lowest border-2 border-error/20 rounded-[24px] p-spacing-lg shadow-sm" id="emergency-sos">
+<div class="flex items-center gap-spacing-md">
+<div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">phone_in_talk</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Need assistance right now?</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Reach Silver Generation Ambassador or emergency response hotline with one tap.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-spacing-sm mt-spacing-md">
+<button class="min-h-[52px] px-spacing-md bg-error text-on-error rounded-full text-label-md font-label-md font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span class="">Call 995</span>
+</button>
+<button class="min-h-[52px] px-spacing-md bg-surface-container text-on-surface rounded-full text-label-md font-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">contact_phone</span>
+<span class="">Call Sarah</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Execution of Shared Component with 4 items: Activities, Buddies, Care Hub, Profile) -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-spacing-xs bg-surface-container-lowest shadow-[0_-4px_16px_rgba(0,0,0,0.04)]">
+<!-- Item 1: Activities (Active Destination) -->
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-spacing-md py-spacing-xs min-h-[56px] transition-all duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px] text-on-primary" style="font-variation-settings: 'FILL' 1;">accessibility_new</span>
+<span class="text-label-md font-label-md font-bold text-on-primary">Activities</span>
+</a>
+<!-- Item 2: Buddies -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[56px] rounded-full hover:bg-surface-container-low transition-all duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="text-label-md font-label-md">Buddies</span>
+</a>
+<!-- Item 3: Care Hub -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[56px] rounded-full hover:bg-surface-container-low transition-all duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">health_and_safety</span>
+<span class="text-label-md font-label-md">Care Hub</span>
+</a>
+<!-- Item 4: Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[56px] rounded-full hover:bg-surface-container-low transition-all duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+<span class="text-label-md font-label-md">Profile</span>
+</a>
+</nav>
+
+
+
+
+
+
+</body></html>

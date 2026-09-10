@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KakiConnect - Support Match Expanded</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#e4e2de",
+            "surface-container-highest": "#e4e2de",
+            "outline-variant": "#c2c6d1",
+            "on-tertiary-fixed-variant": "#154977",
+            "surface-dim": "#dbdad6",
+            "surface-tint": "#325f99",
+            "on-primary-container": "#fefcff",
+            "inverse-primary": "#a5c8ff",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#9fcaff",
+            "surface-container": "#f0eeea",
+            "tertiary": "#315e8e",
+            "primary-container": "#4a76b1",
+            "surface": "#fbf9f5",
+            "primary-fixed": "#d4e3ff",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#001d36",
+            "primary": "#2f5d97",
+            "on-secondary-fixed-variant": "#554500",
+            "on-primary-fixed": "#001c3a",
+            "on-surface": "#1b1c1a",
+            "surface-container-high": "#eae8e4",
+            "outline": "#737781",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#30312e",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#d2e4ff",
+            "on-background": "#1b1c1a",
+            "secondary-fixed": "#ffe17a",
+            "on-tertiary-container": "#fdfcff",
+            "background": "#fbf9f5",
+            "secondary": "#715c00",
+            "tertiary-container": "#4b77a9",
+            "secondary-fixed-dim": "#e4c451",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f5f3ef",
+            "on-surface-variant": "#424750",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#a5c8ff",
+            "on-primary-fixed-variant": "#124780",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#ffdd67",
+            "inverse-on-surface": "#f2f0ec",
+            "surface-bright": "#fbf9f5",
+            "on-secondary-container": "#766100",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "spacing-xs": "0.5rem",
+            "spacing-2xl": "3rem",
+            "margin-mobile": "1.25rem",
+            "spacing-3xl": "4rem",
+            "gutter-desktop": "1.5rem",
+            "gutter-mobile": "1rem",
+            "spacing-sm": "0.75rem",
+            "spacing-md": "1rem",
+            "margin-desktop": "2.5rem",
+            "spacing-xl": "2rem",
+            "spacing-2xs": "0.25rem",
+            "spacing-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "caption-hangul": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(99, 142, 203, 0.08), 0 2px 6px -1px rgba(34, 38, 47, 0.03);
+    }
+    .gentle-pill-shadow {
+      box-shadow: 0 8px 24px -4px rgba(99, 142, 203, 0.16);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-low text-on-surface antialiased min-h-screen flex flex-col font-body-md">
+<!-- Top App Bar (Shared Component Anchor) -->
+<header class="sticky top-0 z-40 bg-surface w-full shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+<div class="flex items-center gap-spacing-xs">
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</span>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-error-container text-error hover:bg-red-200 transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="text-label-md font-label-md font-bold">SOS</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-lg mx-auto px-margin-mobile pt-spacing-md pb-36 space-y-spacing-md">
+<!-- Progress Step Indicator -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">View 2 of 3</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">Support Match Review</span>
+</div>
+<div class="flex gap-1.5">
+<span class="w-6 h-1.5 rounded-full bg-primary"></span>
+<span class="w-6 h-1.5 rounded-full bg-primary"></span>
+<span class="w-6 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+<!-- Hero Mini-Summary Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-spacing-md soft-card-shadow border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary-fixed/20 pointer-events-none"></div>
+<div class="flex items-start gap-spacing-md">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">phishing</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-primary text-label-sm font-label-sm font-semibold">Tomorrow</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 4:00 PM – 6:00 PM
+            </span>
+</div>
+<h1 class="text-headline-sm font-headline-sm text-on-surface font-bold truncate">Sunset Fishing &amp; Kopi Gathering</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+            Bedok Reservoir Jetty
+          </p>
+</div>
+</div>
+</div>
+<!-- SECTION 1: SUPPORT MATCH (EXPANDED) -->
+<section class="bg-surface-container-lowest rounded-2xl soft-card-shadow border-2 border-primary/40 overflow-hidden transition-all duration-200">
+<!-- Section Header / Expand Trigger -->
+<button class="w-full p-spacing-md flex items-center justify-between bg-primary/5 text-left border-b border-outline-variant/20 hover:bg-primary/10 transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-primary">Support Match • Verified Companion</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Matched for your safety and comfort</p>
+</div>
+</div>
+<span class="flex items-center gap-1 text-label-md font-label-md text-primary font-bold bg-surface px-2.5 py-1 rounded-full border border-primary/20">
+          Collapse ▴
+        </span>
+</button>
+<!-- Section Body (Expanded Content) -->
+<div class="p-spacing-md space-y-spacing-md">
+<!-- Volunteer Profile Card -->
+<div class="flex flex-col sm:flex-row gap-spacing-md bg-surface-container-low rounded-xl p-spacing-md border border-outline-variant/30">
+<div class="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-surface-container-high border-2 border-surface-container-lowest self-center sm:self-start">
+<img class="w-full h-full object-cover" data-alt="A friendly, warm portrait of Rachel, a 28-year-old female Singaporean community volunteer wearing a gentle cornflower blue polo shirt. She has a genuine, comforting smile with natural warm morning sunlight illuminating her cheerful face. Clean, modern aesthetic with soft creamy background tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHdeEllww6dNKymXi5M9fMB7XVXZW1Bsg7XQodMml1xMsPBKUM6QCP-2Uy4t3rpmdo7zTZ4XA3ejTf_hLoq9qUQ5RVw3RpGaP91wsppYXGcyzay-7VmQ8gqsl6j9YAgGL3N7t8z99JyC62FMuN_BA8V00xcQD-k0gW2gsEn9M87zXrftLGr8j8mbPA08RqusNy1VsG3Su6g80ltjK45q-J-h36EVZjG8MdAXhK-cL_jJejXYFta1Jt_Q">
+<div class="absolute bottom-0 right-0 bg-secondary-container text-on-secondary-container p-1 rounded-tl-lg">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<div class="flex-1 space-y-1.5">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<h3 class="text-headline-sm font-headline-sm font-bold text-on-surface">Rachel Lin</h3>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-semibold">Age 28 • Tampines Central</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Fei Yue FSC &amp; Silver Generation Office Verified
+            </p>
+<div class="pt-1 flex flex-wrap gap-1.5">
+<span class="text-label-sm font-label-sm bg-surface-container-lowest px-2.5 py-1 rounded-full text-on-surface border border-outline-variant/40 font-medium">
+                🤝 Companionship
+              </span>
+<span class="text-label-sm font-label-sm bg-surface-container-lowest px-2.5 py-1 rounded-full text-on-surface border border-outline-variant/40 font-medium">
+                🚇 Travelling Together
+              </span>
+<span class="text-label-sm font-label-sm bg-surface-container-lowest px-2.5 py-1 rounded-full text-on-surface border border-outline-variant/40 font-medium">
+                🎣 Jetty Navigation
+              </span>
+</div>
+</div>
+</div>
+<!-- Dedicated Meeting Note Callout -->
+<div class="bg-surface-container-lowest rounded-xl p-spacing-md border-l-4 border-primary border-t border-r border-b border-outline-variant/30 space-y-1">
+<div class="flex items-center gap-2 text-primary font-bold text-label-md font-label-md">
+<span class="material-symbols-outlined text-[20px]">meeting_room</span>
+            Dedicated Meeting Arrangement
+          </div>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed">
+            Rachel will accompany you to the activity and travel with you directly from <strong class="text-primary font-semibold">Bedok MRT (Exit B Passenger Service)</strong>.
+          </p>
+</div>
+<!-- Audio Feature: Big Yellow Tactile Button -->
+<div class="pt-1">
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container py-3.5 px-spacing-md rounded-2xl flex items-center justify-between font-bold gentle-pill-shadow transition-all duration-150 active:scale-[0.98] border border-secondary-fixed-dim/40">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-on-secondary-container text-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<div class="text-left">
+<p class="text-body-md font-body-md font-bold text-on-secondary-fixed leading-tight">Listen to Rachel's voice greeting</p>
+<p class="text-label-sm font-label-sm text-on-secondary-fixed-variant opacity-80">Duration: 0:15s • Warm &amp; clear</p>
+</div>
+</div>
+<div class="flex items-center gap-1 pr-1 text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[24px]">graphic_eq</span>
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</div>
+</button>
+</div>
+<!-- Direct Contact Options -->
+<div class="grid grid-cols-2 gap-spacing-sm pt-1">
+<button class="flex items-center justify-center gap-2 py-2.5 px-spacing-sm rounded-xl border-2 border-primary text-primary bg-surface-container-lowest hover:bg-primary/5 font-label-md text-label-md font-bold transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">call</span>
+            Call Rachel directly
+          </button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-spacing-sm rounded-xl border border-outline-variant text-on-surface-variant bg-surface-container-lowest hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-error">phone_in_talk</span>
+            Safety hotline
+          </button>
+</div>
+</div>
+</section>
+<!-- SECTION 2: SOCIAL MATCH (COLLAPSED) -->
+<section class="bg-surface-container-lowest rounded-2xl soft-card-shadow border border-outline-variant/30 overflow-hidden">
+<button class="w-full p-spacing-md flex items-center justify-between text-left hover:bg-surface-container-high/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">group</span>
+</div>
+<div>
+<h2 class="text-body-lg font-body-lg font-bold text-on-surface">Social Match: 3 Kaki Friends</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Ahmad, Susan, Mr Tan attending</p>
+</div>
+</div>
+<span class="flex items-center gap-1 text-label-md font-label-md text-primary font-bold bg-surface-container-low px-3 py-1.5 rounded-full">
+          Expand ▾
+        </span>
+</button>
+</section>
+<!-- SECTION 3: ACCESSIBILITY & DIGNITY (COLLAPSED) -->
+<section class="bg-surface-container-lowest rounded-2xl soft-card-shadow border border-outline-variant/30 overflow-hidden">
+<button class="w-full p-spacing-md flex items-center justify-between text-left hover:bg-surface-container-high/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">accessibility_new</span>
+</div>
+<div>
+<h2 class="text-body-lg font-body-lg font-bold text-on-surface">Accessibility &amp; Dignity Guarantee</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Step-free path, rest benches &amp; pacing verified</p>
+</div>
+</div>
+<span class="flex items-center gap-1 text-label-md font-label-md text-primary font-bold bg-surface-container-low px-3 py-1.5 rounded-full">
+          Expand ▾
+        </span>
+</button>
+</section>
+</main>
+<!-- Dual Bottom Bars Container (Fixed) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant/20 shadow-lg">
+<!-- Action Bar (Task Actions) -->
+<div class="max-w-lg mx-auto px-margin-mobile pt-3 pb-2 flex items-center gap-3 bg-surface-container-lowest">
+<button class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/5 transition-all duration-150 active:scale-95 flex-shrink-0" title="Message Volunteer">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+</button>
+<button class="flex-1 bg-primary hover:bg-primary-container text-on-primary py-3.5 px-spacing-md rounded-full font-bold text-body-lg font-body-lg flex items-center justify-center gap-2 gentle-pill-shadow transition-all duration-150 active:scale-[0.98]">
+<span class="">Confirm &amp; Join Activity</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (Context Shell Anchor: Matches is Active) -->
+<nav class="max-w-lg mx-auto px-margin-mobile py-spacing-xs flex justify-around items-center border-t border-surface-container bg-surface-container-lowest">
+<!-- Activities Nav Item -->
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-spacing-md py-spacing-xs min-h-[52px] transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="text-label-sm font-label-sm font-bold mt-0.5">Activities</span>
+</a>
+<!-- Matches Nav Item (ACTIVE MATCH TO CONTEXT) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[52px] hover:text-on-surface transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">handshake</span>
+<span class="text-label-sm font-label-sm mt-0.5">Matches</span>
+</a>
+<!-- Care Hub Nav Item -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[52px] hover:text-on-surface transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">health_and_safety</span>
+<span class="text-label-sm font-label-sm mt-0.5">Care Hub</span>
+</a>
+<!-- Profile Nav Item -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[52px] hover:text-on-surface transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

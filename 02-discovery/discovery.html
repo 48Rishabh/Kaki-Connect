@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>KakiConnect – Discovery</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-surface": "#1b1c1a", "surface-container-low": "#f5f3ef",
+          "on-primary": "#ffffff", "primary-fixed-dim": "#a5c8ff",
+          "secondary-fixed": "#ffe17a", "primary-container": "#4a76b1",
+          "on-primary-container": "#fefcff", "on-primary-fixed": "#001c3a",
+          "tertiary": "#315e8e", "outline-variant": "#c2c6d1",
+          "on-tertiary-fixed": "#001d36", "inverse-primary": "#a5c8ff",
+          "secondary-container": "#ffdd67", "on-secondary-container": "#766100",
+          "inverse-on-surface": "#f2f0ec", "on-error": "#ffffff",
+          "on-surface-variant": "#424750", "surface-container-highest": "#e4e2de",
+          "inverse-surface": "#30312e", "surface-tint": "#325f99",
+          "error-container": "#ffdad6", "on-tertiary": "#ffffff",
+          "secondary": "#715c00", "on-background": "#1b1c1a",
+          "surface-container-lowest": "#ffffff", "surface-bright": "#fbf9f5",
+          "outline": "#737781", "on-secondary-fixed": "#231b00",
+          "surface-variant": "#e4e2de", "error": "#ba1a1a",
+          "primary-fixed": "#d4e3ff", "surface-container-high": "#eae8e4",
+          "tertiary-fixed": "#d2e4ff", "on-error-container": "#93000a",
+          "on-secondary": "#ffffff", "surface-container": "#f0eeea",
+          "on-primary-fixed-variant": "#124780", "background": "#fbf9f5",
+          "secondary-fixed-dim": "#e4c451", "tertiary-fixed-dim": "#9fcaff",
+          "primary": "#2f5d97", "tertiary-container": "#4b77a9",
+          "on-tertiary-container": "#fdfcff", "surface-dim": "#dbdad6",
+          "on-tertiary-fixed-variant": "#154977", "surface": "#fbf9f5",
+          "on-secondary-fixed-variant": "#554500",
+        },
+        borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.25rem", "3xl": "1.75rem", "full": "9999px" },
+        spacing: {
+          "gutter-mobile": "1rem", "spacing-2xl": "3rem", "spacing-2xs": "0.25rem",
+          "margin-mobile": "1.25rem", "margin-desktop": "2.5rem", "spacing-sm": "0.75rem",
+          "spacing-lg": "1.5rem", "spacing-xs": "0.5rem", "spacing-3xl": "4rem",
+          "spacing-xl": "2rem", "gutter-desktop": "1.5rem", "spacing-md": "1rem"
+        },
+        fontFamily: {
+          "caption-hangul": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"],
+          "display-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"],
+          "display-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"]
+        },
+        fontSize: {
+          "caption-hangul": ["10px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+          "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+          "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+          "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+          "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+          "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; display:inline-block; vertical-align:middle; line-height:1; }
+  .tactile-card   { box-shadow: 0 4px 20px -2px rgba(99,142,203,0.08), 0 2px 6px -1px rgba(34,38,47,0.03); }
+  .tactile-hi     { box-shadow: 0 8px 28px -4px rgba(99,142,203,0.18), 0 3px 8px -2px rgba(118,97,0,0.06); }
+  .float-shadow   { box-shadow: 0 8px 24px -4px rgba(99,142,203,0.16); }
+  .subtle-border  { border: 1px solid rgba(99,142,203,0.14); }
+  .selected-border{ border: 2px solid #2f5d97; }
+  .soft-aura      { box-shadow: 0 4px 24px -2px rgba(99,142,203,0.10), 0 2px 8px -1px rgba(34,38,47,0.04); }
+  .checker-pattern{ background-image:radial-gradient(rgba(99,142,203,0.15) 1px,transparent 0); background-size:8px 8px; }
+
+  /* Screen system */
+  .disc-screen        { display:none; min-height:100dvh; flex-direction:column; }
+  .disc-screen.active { display:flex; }
+
+  /* Progress bar */
+  #disc-prog-bar  { position:fixed;top:0;left:0;right:0;z-index:9999;height:3px;background:#e4e2de;pointer-events:none; }
+  #disc-prog-fill { height:100%;background:#2f5d97;transition:width 0.35s cubic-bezier(0.4,0,0.2,1); }
+
+  /* Transitions */
+  @keyframes slideInRight { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+  @keyframes slideInLeft  { from{transform:translateX(-100%);opacity:0} to{transform:translateX(0);opacity:1} }
+  .slide-in-right { animation:slideInRight 0.26s cubic-bezier(0.4,0,0.2,1); }
+  .slide-in-left  { animation:slideInLeft 0.26s cubic-bezier(0.4,0,0.2,1); }
+
+  body { font-family:'Plus Jakarta Sans',sans-serif; background:#fbf9f5; overflow-x:hidden; }
+
+  /* Accordion */
+  .accordion-body { max-height:0; overflow:hidden; transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease; opacity:0; }
+  .accordion-body.open { max-height:1200px; opacity:1; }
+
+  /* No scrollbar for filter strip */
+  .no-scrollbar { scrollbar-width:none; -ms-overflow-style:none; }
+  .no-scrollbar::-webkit-scrollbar { display:none; }
+
+  /* Ensure every screen can't cause body-level horizontal scroll */
+  .disc-screen > div { box-sizing:border-box; max-width:100%; }
+</style>
+</head>
+<body class="antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+
+<div id="disc-prog-bar"><div id="disc-prog-fill" style="width:14%"></div></div>
+
+<div id="disc-wrapper" class="w-full max-w-md mx-auto relative" style="overflow-x:hidden;">
+
+<!-- ============================  D1 – GO OUT VS STAY HOME  ============================ -->
+<div class="disc-screen active" id="disc-01">
+<div class="bg-surface text-on-surface flex flex-col min-h-dvh">
+  <header class="bg-surface border-b border-outline-variant/30 shadow-sm sticky top-0 z-40">
+    <div class="flex justify-between items-center w-full px-4 py-3 max-w-md mx-auto">
+      <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors active:scale-95 nav-btn" data-to="back">
+        <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+      </button>
+      <div class="flex flex-col items-center">
+        <span class="text-headline-sm font-bold text-on-surface tracking-tight">KakiConnect</span>
+        <div class="flex items-center gap-1 text-on-surface-variant text-label-sm">
+          <span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
+          <span>Bedok North</span>
+        </div>
+      </div>
+      <button class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-error-container text-error border border-error/20 hover:opacity-90 active:scale-95 transition-all shadow-sm" type="button">
+        <span class="material-symbols-outlined text-[18px] text-error" style="font-variation-settings:'FILL' 1;">emergency</span>
+        <span class="text-label-md font-bold tracking-wider">SOS</span>
+      </button>
+    </div>
+  </header>
+  <main class="flex-1 w-full max-w-md mx-auto px-spacing-md pt-spacing-md pb-28 flex flex-col gap-spacing-md">
+    <section class="flex flex-col gap-spacing-xs pt-1">
+      <div class="flex items-center justify-between">
+        <span class="text-label-md font-label-md text-primary font-bold tracking-wide uppercase">Today's Choice</span>
+        <span class="text-label-sm font-label-sm text-outline px-2.5 py-0.5 rounded-full bg-surface-container">Thursday Morning</span>
+      </div>
+      <h1 class="text-headline-lg font-headline-lg text-on-surface font-bold">What would you like to do today, Uncle Tan?</h1>
+      <button class="mt-1 w-full flex items-center justify-center gap-2.5 py-3 px-4 rounded-full bg-primary-fixed text-on-primary-fixed border border-primary/20 hover:bg-primary-fixed-dim active:scale-95 transition-all shadow-sm" type="button">
+        <span class="material-symbols-outlined text-[24px] text-primary" style="font-variation-settings:'FILL' 1;">volume_up</span>
+        <span class="text-label-md font-label-md font-bold text-on-primary-fixed">Tap to listen to options out loud</span>
+      </button>
+    </section>
+    <!-- Card 1: Go Out -->
+    <article class="tactile-card bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-5 flex flex-col justify-between relative overflow-hidden transition-all duration-200 hover:border-primary/40">
+      <div class="flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-primary border border-outline-variant/40 text-label-sm font-label-sm font-semibold">
+            <span class="material-symbols-outlined text-[15px]">nature_people</span>Fresh air &amp; walking
+          </span>
+          <div class="w-12 h-12 rounded-2xl bg-primary-fixed/40 flex items-center justify-center text-primary border border-primary/20 shadow-sm flex-shrink-0">
+            <span class="material-symbols-outlined text-[26px]" style="font-variation-settings:'FILL' 1;">park</span>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-headline-md font-headline-md text-on-surface font-bold leading-tight">Go out for an outdoor activity</h2>
+          <p class="text-body-md font-body-md text-on-surface-variant mt-2 leading-relaxed">Join a small group for Sunset Fishing &amp; Kopi, Dim Sum, or park strolls with a volunteer helper.</p>
+        </div>
+      </div>
+      <div class="mt-5 pt-3 border-t border-surface-variant/40">
+        <button class="w-full flex items-center justify-center gap-2 py-3.5 px-5 rounded-full bg-[#18181b] text-white font-bold text-label-md active:scale-95 transition-all shadow-sm hover:bg-black nav-btn" data-to="d02">
+          <span>Explore Outing Activities</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+      </div>
+    </article>
+    <!-- Card 2: Stay Home -->
+    <article class="tactile-hi bg-surface-container-lowest rounded-[24px] border-2 border-secondary-container p-5 flex flex-col justify-between relative overflow-hidden transition-all duration-200">
+      <div class="absolute -top-0.5 right-6 px-3 py-0.5 rounded-b-lg bg-secondary-container text-on-secondary-container font-label-sm font-bold shadow-xs">Recommended for today</div>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-2 mt-1">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEF7DC] text-on-secondary-container border border-secondary-fixed-dim text-label-sm font-label-sm font-semibold">
+            <span class="material-symbols-outlined text-[15px]" style="font-variation-settings:'FILL' 1;">cottage</span>Cozy &amp; relaxing at home
+          </span>
+          <div class="w-12 h-12 rounded-2xl bg-secondary-container text-on-secondary-container flex items-center justify-center border border-secondary-fixed shadow-sm flex-shrink-0">
+            <span class="material-symbols-outlined text-[26px]" style="font-variation-settings:'FILL' 1;">call</span>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-headline-md font-headline-md text-on-surface font-bold leading-tight">Stay home &amp; call a matched Kaki</h2>
+          <p class="text-body-md font-body-md text-on-surface-variant mt-2 leading-relaxed">Have a friendly 1-on-1 video kopi chat with Uncle Raymond (matched based on Hokkien &amp; gardening).</p>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container border border-outline-variant/30 mt-1">
+          <div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-headline-sm flex-shrink-0">R</div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="text-label-md font-label-md font-bold text-on-surface truncate">Uncle Raymond</span>
+              <span class="text-label-sm font-label-sm text-primary font-semibold">Online now</span>
+            </div>
+            <p class="text-body-sm font-body-sm text-on-surface-variant truncate">Shared: Community Gardens &amp; Oldies Kopi</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 pt-3 border-t border-surface-variant/40">
+        <button class="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#18181b] text-white font-bold text-label-md shadow-sm hover:bg-black active:scale-95 transition-all" type="button">
+          <span onclick="location.href='../03-buddies/01-call kaki/code.html'; event.stopPropagation();">Video Call Uncle Raymond</span>
+          <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+        </button>
+      </div>
+    </article>
+  </main>
+  <nav aria-label="Main Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg max-w-md mx-auto right-0">
+    <div class="w-full flex justify-around items-center py-2 px-3">
+      <a href="../02-discovery/discovery.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-3 py-1 min-h-[52px]"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings:'FILL' 1;">event</span><span class="text-label-sm font-semibold mt-0.5">Activity</span></a>
+      <a href="../03-buddies/01-call kaki/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">diversity_1</span><span class="text-label-sm font-semibold mt-0.5">Buddies</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="text-label-sm font-semibold mt-0.5">Care Hub</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">person</span><span class="text-label-sm font-semibold mt-0.5">Profile</span></a>
+    </div>
+  </nav>
+</div>
+</div>
+
+<!-- ============================  D2 – DISCOVER ACTIVITY  ============================ -->
+<div class="disc-screen" id="disc-02">
+<div class="bg-background text-on-surface flex flex-col min-h-dvh">
+  <header class="bg-surface sticky top-0 z-40 shadow-sm">
+    <div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+      <div class="flex items-center gap-spacing-xs">
+        <button class="p-spacing-xs rounded-full hover:bg-surface-container-high transition-all active:scale-95 text-primary flex items-center justify-center nav-btn" data-to="d01">
+          <span class="material-symbols-outlined text-primary text-[28px]">arrow_back</span>
+        </button>
+        <span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</span>
+      </div>
+      <button class="inline-flex items-center gap-1 bg-error-container text-error px-spacing-md py-spacing-xs rounded-full text-label-md font-label-md shadow-sm active:scale-95 transition-all" type="button">
+        <span class="material-symbols-outlined text-[20px] text-error" style="font-variation-settings:'FILL' 1;">emergency</span>
+        <span class="text-error font-bold">SOS</span>
+      </button>
+    </div>
+  </header>
+  <main class="w-full max-w-lg mx-auto px-margin-mobile pt-spacing-sm flex flex-col gap-spacing-xl pb-28 box-border">
+    <!-- Greeting card -->
+    <section class="bg-surface-container-lowest p-spacing-lg rounded-[24px] shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] border border-primary/10">
+      <div class="flex items-start justify-between gap-spacing-sm">
+        <div class="min-w-0 flex-1">
+          <span class="inline-flex items-center gap-1.5 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container-low text-primary text-label-sm font-label-sm mb-spacing-xs">
+            <span class="material-symbols-outlined text-[16px]">location_on</span>Bedok North Ave 3
+          </span>
+          <h1 class="text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">Good morning, Uncle Tan!</h1>
+          <p class="text-body-md font-body-md text-on-surface-variant mt-1 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">wb_sunny</span>
+            Bright &amp; breezy today • 29°C
+          </p>
+        </div>
+        <div class="w-14 h-14 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center text-headline-sm font-headline-sm shadow-inner shrink-0">陈</div>
+      </div>
+      <div class="mt-spacing-md pt-spacing-md border-t border-surface-container">
+        <button class="w-full flex items-center justify-center gap-spacing-sm bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md py-spacing-md px-spacing-lg rounded-full active:scale-95 transition-all shadow-sm" type="button">
+          <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings:'FILL' 1;">volume_up</span>
+          <span>Listen to today's activities</span>
+        </button>
+      </div>
+    </section>
+    <!-- Filter chips -->
+    <section>
+      <div class="flex items-center justify-between mb-spacing-sm">
+        <h2 class="text-headline-sm font-headline-sm text-on-surface font-bold">What would you like to do?</h2>
+        <span class="text-label-sm font-label-sm text-primary font-semibold">Swipe for more</span>
+      </div>
+      <div class="flex gap-spacing-xs overflow-x-auto pb-spacing-2xs no-scrollbar -mx-margin-mobile px-margin-mobile" id="d2-filters">
+        <button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm active:scale-95 transition-all filter-chip" data-filter="all" type="button">All Activities</button>
+        <button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all filter-chip" data-filter="kopitiam" type="button">☕ Kopitiam &amp; Hawker</button>
+        <button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all filter-chip" data-filter="karaoke" type="button">🎤 Karaoke</button>
+        <button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all filter-chip" data-filter="walks" type="button">🌳 Morning Walks</button>
+        <button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all filter-chip" data-filter="board" type="button">♟️ Board Games</button>
+        <button class="shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all filter-chip" data-filter="exercise" type="button">🧘 Gentle Exercise</button>
+      </div>
+    </section>
+    <!-- Hero banner -->
+    <section class="relative bg-gradient-to-br from-primary to-tertiary text-on-primary rounded-[28px] p-spacing-lg shadow-[0_8px_24px_-4px_rgba(99,142,203,0.25)] overflow-hidden">
+      <div class="flex items-center justify-between gap-2 mb-spacing-md">
+        <span class="inline-flex items-center gap-1.5 px-spacing-md py-spacing-2xs rounded-full bg-secondary-container text-on-secondary-fixed text-label-md font-label-md font-bold shadow-sm">
+          <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">stars</span>Specially picked for you today
+        </span>
+        <span class="text-on-primary/80 text-caption-hangul font-caption-hangul tracking-wide">BEDOK RESERVOIR</span>
+      </div>
+      <div class="flex flex-col gap-spacing-sm">
+        <h3 class="text-headline-lg font-headline-lg text-on-primary font-bold leading-tight">Sunset Fishing &amp; Kopi Gathering</h3>
+        <p class="text-body-md font-body-md text-on-primary/90 flex items-center gap-1">
+          <span class="material-symbols-outlined text-[20px]">meeting_room</span>Bedok Reservoir Jetty • Floating Deck
+        </p>
+        <div class="bg-surface-container-lowest/15 backdrop-blur-sm p-spacing-md rounded-2xl flex items-center gap-spacing-md my-spacing-xs">
+          <div class="flex -space-x-2 shrink-0">
+            <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-bold text-label-md ring-2 ring-surface-container-lowest">张</div>
+            <div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-label-md ring-2 ring-surface-container-lowest">L</div>
+            <div class="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center font-bold text-label-md ring-2 ring-surface-container-lowest">
+              <span class="material-symbols-outlined text-[20px]">volunteer_activism</span>
+            </div>
+          </div>
+          <div class="text-body-sm font-body-sm text-on-primary">
+            <p class="font-semibold text-body-md font-body-md">2 Kakis joining:</p>
+            <p class="text-on-primary/90">Uncle Raymond &amp; Auntie Mei Ling + 1 Volunteer Buddy accompanying</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-spacing-xs py-spacing-2xs">
+          <span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 px-spacing-sm py-spacing-2xs rounded-full text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px]">wb_shade</span>Breezy &amp; Shaded</span>
+          <span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 px-spacing-sm py-spacing-2xs rounded-full text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px]">accessible_forward</span>Step-free &amp; Ramp</span>
+          <span class="inline-flex items-center gap-1 bg-surface-container-lowest/20 px-spacing-sm py-spacing-2xs rounded-full text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px]">schedule</span>Starts 4:30 PM</span>
+        </div>
+        <button class="mt-spacing-sm w-full min-h-[58px] bg-secondary-container hover:bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm rounded-full flex items-center justify-center gap-spacing-xs shadow-md active:scale-95 transition-all nav-btn" data-to="d03" type="button">
+          <span class="material-symbols-outlined text-[24px]">group_add</span>
+          <span>Join this Kaki Group</span>
+        </button>
+      </div>
+    </section>
+    <!-- Family note -->
+    <section class="bg-surface-container-low border border-outline-variant/30 rounded-[20px] p-spacing-md flex items-start gap-spacing-md">
+      <div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-primary shrink-0 mt-0.5">
+        <span class="material-symbols-outlined text-[22px]" style="font-variation-settings:'FILL' 1;">shield</span>
+      </div>
+      <div>
+        <h4 class="text-label-md font-label-md text-primary font-bold">Family peace of mind active</h4>
+        <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Your daughter Sarah will be automatically notified when your group gathers safely at the location.</p>
+      </div>
+    </section>
+    <!-- Activity cards feed -->
+    <section class="flex flex-col gap-spacing-md">
+      <div class="flex items-center justify-between">
+        <h2 class="text-headline-lg font-headline-lg text-on-surface font-bold">Happening Near You</h2>
+        <span class="text-primary font-label-md text-label-md flex items-center gap-1 cursor-pointer">View all (8)<span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </div>
+      <!-- Card 1 -->
+      <article class="bg-surface-container-lowest p-spacing-lg rounded-[24px] border border-surface-container-high shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] flex flex-col gap-spacing-md">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-spacing-sm py-spacing-2xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Tomorrow • 9:30 AM</span>
+              <span class="text-body-sm font-body-sm text-on-surface-variant">4 Kakis attending</span>
+            </div>
+            <h3 class="text-headline-md font-headline-md text-on-surface font-bold mt-spacing-xs">Morning Teh-C &amp; Rummy / Chess</h3>
+            <p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+              <span class="material-symbols-outlined text-[18px] text-primary">store</span>Chong Boon Market &amp; Food Centre • Table 12
+            </p>
+          </div>
+          <span class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center text-[24px]">☕</span>
+        </div>
+        <div class="flex flex-wrap gap-spacing-xs">
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">accessible</span>Wheelchair Friendly</span>
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">record_voice_over</span>Hokkien / English</span>
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">near_me</span>450m</span>
+        </div>
+        <button class="w-full min-h-[56px] rounded-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-spacing-xs active:scale-95 transition-all nav-btn" data-to="d03" type="button">
+          <span>View &amp; Join Group</span><span class="material-symbols-outlined text-[20px]">chevron_right</span>
+        </button>
+      </article>
+      <!-- Card 2 -->
+      <article class="bg-surface-container-lowest p-spacing-lg rounded-[24px] border border-surface-container-high shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] flex flex-col gap-spacing-md">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-spacing-sm py-spacing-2xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Thursday • 8:00 AM</span>
+              <span class="text-body-sm font-body-sm text-on-surface-variant">6 Kakis attending</span>
+            </div>
+            <h3 class="text-headline-md font-headline-md text-on-surface font-bold mt-spacing-xs">Gentle Park Walk &amp; Bird Watching</h3>
+            <p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+              <span class="material-symbols-outlined text-[18px] text-primary">park</span>Bishan-AMK Park • River Plains Café
+            </p>
+          </div>
+          <span class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center text-[24px]">🐦</span>
+        </div>
+        <div class="flex flex-wrap gap-spacing-xs">
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">assist_walker</span>Slow Paced</span>
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">handshake</span>Arm-hold Volunteer</span>
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">wb_shade</span>Shaded Benches</span>
+        </div>
+        <button class="w-full min-h-[56px] rounded-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-spacing-xs active:scale-95 transition-all nav-btn" data-to="d03" type="button">
+          <span>View &amp; Join Group</span><span class="material-symbols-outlined text-[20px]">chevron_right</span>
+        </button>
+      </article>
+      <!-- Card 3 -->
+      <article class="bg-surface-container-lowest p-spacing-lg rounded-[24px] border border-surface-container-high shadow-[0_4px_20px_-2px_rgba(99,142,203,0.08)] flex flex-col gap-spacing-md">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-spacing-sm py-spacing-2xs rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">Friday • 2:30 PM</span>
+              <span class="text-body-sm font-body-sm text-on-surface-variant">3 Kakis attending</span>
+            </div>
+            <h3 class="text-headline-md font-headline-md text-on-surface font-bold mt-spacing-xs">Chinatown Herbal Tea &amp; Storytelling</h3>
+            <p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+              <span class="material-symbols-outlined text-[18px] text-primary">local_cafe</span>Chinatown Heritage Centre Tea House
+            </p>
+          </div>
+          <span class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center text-[24px]">🍵</span>
+        </div>
+        <div class="flex flex-wrap gap-spacing-xs">
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">ac_unit</span>Indoor Aircon</span>
+          <span class="inline-flex items-center gap-1 px-spacing-sm py-spacing-2xs rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">train</span>AMK MRT Group Pickup</span>
+        </div>
+        <button class="w-full min-h-[56px] rounded-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-spacing-xs active:scale-95 transition-all nav-btn" data-to="d03" type="button">
+          <span>View &amp; Join Group</span><span class="material-symbols-outlined text-[20px]">chevron_right</span>
+        </button>
+      </article>
+    </section>
+  </main>
+  <nav aria-label="Main Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg max-w-md mx-auto right-0">
+    <div class="w-full flex justify-around items-center py-2 px-3">
+      <a href="../02-discovery/discovery.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-3 py-1 min-h-[52px]"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings:'FILL' 1;">event</span><span class="text-label-sm font-semibold mt-0.5">Activity</span></a>
+      <a href="../03-buddies/01-call kaki/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">diversity_1</span><span class="text-label-sm font-semibold mt-0.5">Buddies</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="text-label-sm font-semibold mt-0.5">Care Hub</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">person</span><span class="text-label-sm font-semibold mt-0.5">Profile</span></a>
+    </div>
+  </nav>
+</div>
+</div>
+
+<!-- ============================  D3 – SUPPORT PREFERENCE  ============================ -->
+<div class="disc-screen" id="disc-03">
+<div class="bg-background text-on-surface font-body-md flex flex-col min-h-dvh justify-between">
+  <header class="fixed top-3 left-0 w-full z-50 flex items-center justify-between px-margin-mobile py-spacing-xs bg-surface/90 backdrop-blur-md shadow-sm max-w-md mx-auto right-0">
+    <div class="flex items-center gap-spacing-sm">
+      <button class="p-spacing-xs rounded-full hover:bg-surface-container transition-colors active:scale-95 text-on-surface nav-btn" data-to="d02">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <div class="flex items-center gap-spacing-2xs">
+        <span class="material-symbols-outlined text-primary text-2xl">diversity_1</span>
+        <span class="text-headline-md font-headline-md text-primary tracking-tight font-bold">KakiConnect</span>
+      </div>
+    </div>
+    <button class="inline-flex items-center gap-1 bg-error-container text-on-error-container px-3 py-1.5 rounded-full font-label-md text-label-md active:scale-95 transition-transform" type="button">
+      <span class="material-symbols-outlined text-base">emergency</span><span>SOS</span>
+    </button>
+  </header>
+  <main class="w-full max-w-2xl mx-auto px-margin-mobile pt-20 pb-28 flex flex-col gap-spacing-lg">
+    <!-- Activity recap -->
+    <section class="bg-surface-container-lowest rounded-[20px] p-5 tactile-card subtle-border flex items-start gap-4 relative overflow-hidden">
+      <div class="absolute -right-4 -top-4 w-12 h-12 bg-secondary-container rounded-full opacity-60 pointer-events-none"></div>
+      <div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+        <span class="material-symbols-outlined text-3xl">phishing</span>
+      </div>
+      <div class="flex flex-col flex-grow">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-caption-hangul font-caption-hangul text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-full font-semibold">SELECTED OUTING</span>
+          <span class="text-caption-hangul font-caption-hangul text-outline">// SG-6800</span>
+        </div>
+        <h2 class="text-headline-sm font-headline-sm text-on-surface mt-1 font-bold">Bedok Reservoir Fishing &amp; Kopi</h2>
+        <div class="flex flex-wrap items-center gap-y-1 gap-x-3 text-body-sm font-body-sm text-on-surface-variant mt-1">
+          <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span>Tomorrow · 4:00 PM – 6:00 PM</span>
+          <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">groups</span>Organized by Bedok Kakis</span>
+        </div>
+      </div>
+    </section>
+    <!-- Headline -->
+    <section class="flex flex-col gap-spacing-sm">
+      <div class="flex flex-col gap-1">
+        <h1 class="text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">Would you like some help joining this activity?</h1>
+        <p class="text-body-md font-body-md text-on-surface-variant">Choose what feels most comfortable for you. We adapt to your pace for every outing.</p>
+      </div>
+      <div class="pt-1">
+        <button class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-md text-label-md active:scale-95 transition-all hover:bg-secondary-fixed shadow-sm" type="button">
+          <span class="material-symbols-outlined text-lg animate-pulse">volume_up</span>
+          <span class="font-bold">Tap to listen in Hokkien / Mandarin / English</span>
+          <span class="text-xs bg-white/50 px-1.5 py-0.5 rounded-full font-semibold">福建話 · 华语</span>
+        </button>
+      </div>
+    </section>
+    <!-- Radio options -->
+    <fieldset aria-label="Support options" class="flex flex-col gap-spacing-md" id="d3-support-options" role="radiogroup">
+      <label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border tactile-card cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+        <input class="sr-only peer" name="support_level" type="radio" value="independent">
+        <div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0"><div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div></div>
+        <div class="flex-grow flex flex-col gap-1"><span class="text-headline-sm font-headline-sm text-on-surface font-semibold">No, I can go myself</span><p class="text-body-md font-body-md text-on-surface-variant">I am comfortable walking or taking MRT/bus independently</p></div>
+      </label>
+      <label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] selected-border float-shadow cursor-pointer transition-all duration-200 min-h-[58px] bg-primary-fixed/10">
+        <input checked class="sr-only peer" name="support_level" type="radio" value="travel_partner">
+        <div class="w-6 h-6 rounded-full border-2 border-primary bg-primary mt-1 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-white text-base font-bold">check</span></div>
+        <div class="flex-grow flex flex-col gap-1"><span class="text-headline-sm font-headline-sm text-primary font-bold">Someone to travel with me</span><p class="text-body-md font-body-md text-on-surface font-medium">Meet up nearby and take the bus/train together as a pair</p><div class="flex items-center gap-2 mt-1 text-primary text-caption-hangul font-caption-hangul font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span><span>Recommended for relaxed, friendly companionship</span></div></div>
+      </label>
+      <label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border tactile-card cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+        <input class="sr-only peer" name="support_level" type="radio" value="mobility">
+        <div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0"><div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div></div>
+        <div class="flex-grow flex flex-col gap-1"><span class="text-headline-sm font-headline-sm text-on-surface font-semibold">Mobility assistance</span><p class="text-body-md font-body-md text-on-surface-variant">Step-free routes, gentle arm-hold or wheelchair ramp navigation</p></div>
+      </label>
+      <label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border tactile-card cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+        <input class="sr-only peer" name="support_level" type="radio" value="escort">
+        <div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0"><div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div></div>
+        <div class="flex-grow flex flex-col gap-1"><span class="text-headline-sm font-headline-sm text-on-surface font-semibold">A volunteer/caregiver to accompany me</span><p class="text-body-md font-body-md text-on-surface-variant">Dedicated door-to-door escort from home and throughout the activity</p></div>
+      </label>
+      <label class="relative flex items-start gap-4 p-spacing-md bg-surface-container-lowest rounded-[20px] subtle-border tactile-card cursor-pointer transition-all duration-200 hover:bg-surface-container-low min-h-[58px]">
+        <input class="sr-only peer" name="support_level" type="radio" value="virtual">
+        <div class="w-6 h-6 rounded-full border-2 border-outline mt-1 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors flex-shrink-0"><div class="w-2.5 h-2.5 bg-surface-container-lowest rounded-full hidden peer-checked:block"></div></div>
+        <div class="flex-grow flex flex-col gap-1"><span class="text-headline-sm font-headline-sm text-on-surface font-semibold">I would rather join from home</span><p class="text-body-md font-body-md text-on-surface-variant">Connect via tablet video call or virtual kopi group</p></div>
+      </label>
+    </fieldset>
+    <div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-3 border border-outline-variant/30">
+      <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0">verified_user</span>
+      <p class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed">Support is matched per activity with our verified community volunteers and Fei Yue FSC befrienders.</p>
+    </div>
+  </main>
+  <footer class="fixed bottom-0 left-0 w-full bg-surface/95 backdrop-blur-md px-margin-mobile py-spacing-sm shadow-md z-40 max-w-md mx-auto right-0">
+    <button class="w-full flex-grow inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-headline-sm text-headline-sm px-spacing-xl py-3.5 rounded-full hover:bg-primary-container active:scale-[0.98] transition-all shadow-md nav-btn" data-to="d06">
+      <span>Continue to Booking Overview</span>
+      <span class="material-symbols-outlined text-xl">arrow_forward</span>
+    </button>
+  </footer>
+</div>
+</div>
+
+<!-- ============================  D4 – SUPPORT COMPANION  ============================ -->
+<div class="disc-screen" id="disc-04">
+<div class="bg-surface-container-low text-on-surface flex flex-col min-h-dvh font-body-md">
+  <header class="sticky top-0 z-40 bg-surface w-full shadow-sm">
+    <div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+      <div class="flex items-center gap-spacing-xs">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-all active:scale-95 nav-btn" data-to="d03">
+          <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+        </button>
+        <span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</span>
+      </div>
+      <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-error-container text-error hover:bg-red-200 transition-all active:scale-95" type="button">
+        <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">emergency</span>
+        <span class="text-label-md font-label-md font-bold">SOS</span>
+      </button>
+    </div>
+  </header>
+  <main class="flex-1 w-full max-w-lg mx-auto px-margin-mobile pt-spacing-md pb-36 space-y-spacing-md">
+    <div class="flex items-center justify-between px-1">
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">View 2 of 3</span>
+        <span class="text-body-sm font-body-sm text-on-surface-variant font-medium">Support Match Review</span>
+      </div>
+      <div class="flex gap-1.5">
+        <span class="w-6 h-1.5 rounded-full bg-primary"></span>
+        <span class="w-6 h-1.5 rounded-full bg-primary"></span>
+        <span class="w-6 h-1.5 rounded-full bg-outline-variant"></span>
+      </div>
+    </div>
+    <!-- Hero activity summary -->
+    <div class="bg-surface-container-lowest rounded-2xl p-spacing-md tactile-card border border-outline-variant/30 relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary-fixed/20 pointer-events-none"></div>
+      <div class="flex items-start gap-spacing-md">
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings:'FILL' 1;">phishing</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-2 py-0.5 rounded bg-primary-fixed text-primary text-label-sm font-label-sm font-semibold">Tomorrow</span>
+            <span class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span>4:00 PM – 6:00 PM</span>
+          </div>
+          <h1 class="text-headline-sm font-headline-sm text-on-surface font-bold truncate">Sunset Fishing &amp; Kopi Gathering</h1>
+          <p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-[16px] text-primary">location_on</span>Bedok Reservoir Jetty</p>
+        </div>
+      </div>
+    </div>
+    <!-- Volunteer section expanded -->
+    <section class="bg-surface-container-lowest rounded-2xl tactile-card border-2 border-primary/40 overflow-hidden">
+      <button class="w-full p-spacing-md flex items-center justify-between bg-primary/5 text-left border-b border-outline-variant/20 hover:bg-primary/10 transition-colors">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[18px]">verified_user</span></div>
+          <div>
+            <h2 class="text-headline-sm font-headline-sm font-bold text-primary">Support Match • Verified Companion</h2>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">Matched for your safety and comfort</p>
+          </div>
+        </div>
+        <span class="flex items-center gap-1 text-label-md font-label-md text-primary font-bold bg-surface px-2.5 py-1 rounded-full border border-primary/20">Expanded ▴</span>
+      </button>
+      <div class="p-spacing-md space-y-spacing-md">
+        <div class="flex flex-col sm:flex-row gap-spacing-md bg-surface-container-low rounded-xl p-spacing-md border border-outline-variant/30">
+          <div class="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-surface-container-high border-2 border-surface-container-lowest self-center sm:self-start">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHdeEllww6dNKymXi5M9fMB7XVXZW1Bsg7XQodMml1xMsPBKUM6QCP-2Uy4t3rpmdo7zTZ4XA3ejTf_hLoq9qUQ5RVw3RpGaP91wsppYXGcyzay-7VmQ8gqsl6j9YAgGL3N7t8z99JyC62FMuN_BA8V00xcQD-k0gW2gsEn9M87zXrftLGr8j8mbPA08RqusNy1VsG3Su6g80ltjK45q-J-h36EVZjG8MdAXhK-cL_jJejXYFta1Jt_Q" alt="Rachel Lin">
+            <div class="absolute bottom-0 right-0 bg-secondary-container text-on-secondary-container p-1 rounded-tl-lg"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">stars</span></div>
+          </div>
+          <div class="flex-1 space-y-1.5">
+            <div class="flex items-center justify-between flex-wrap gap-1">
+              <h3 class="text-headline-sm font-headline-sm font-bold text-on-surface">Rachel Lin</h3>
+              <span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-semibold">Age 28 • Tampines Central</span>
+            </div>
+            <p class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5 font-medium"><span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span>Fei Yue FSC &amp; Silver Generation Office Verified</p>
+            <div class="pt-1 flex flex-wrap gap-1.5">
+              <span class="text-label-sm font-label-sm bg-surface-container-lowest px-2.5 py-1 rounded-full text-on-surface border border-outline-variant/40 font-medium">🤝 Companionship</span>
+              <span class="text-label-sm font-label-sm bg-surface-container-lowest px-2.5 py-1 rounded-full text-on-surface border border-outline-variant/40 font-medium">🚇 Travelling Together</span>
+              <span class="text-label-sm font-label-sm bg-surface-container-lowest px-2.5 py-1 rounded-full text-on-surface border border-outline-variant/40 font-medium">🎣 Jetty Navigation</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-spacing-md border-l-4 border-primary border-t border-r border-b border-outline-variant/30 space-y-1">
+          <div class="flex items-center gap-2 text-primary font-bold text-label-md font-label-md"><span class="material-symbols-outlined text-[20px]">meeting_room</span>Dedicated Meeting Arrangement</div>
+          <p class="text-body-md font-body-md text-on-surface leading-relaxed">Rachel will accompany you to the activity and travel with you directly from <strong class="text-primary font-semibold">Bedok MRT (Exit B Passenger Service)</strong>.</p>
+        </div>
+        <div class="pt-1">
+          <button class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container py-3.5 px-spacing-md rounded-2xl flex items-center justify-between font-bold float-shadow transition-all active:scale-[0.98] border border-secondary-fixed-dim/40" type="button">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-on-secondary-container text-secondary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[22px]" style="font-variation-settings:'FILL' 1;">play_arrow</span></div>
+              <div class="text-left"><p class="text-body-md font-body-md font-bold text-on-secondary-fixed leading-tight">Listen to Rachel's voice greeting</p><p class="text-label-sm font-label-sm text-on-secondary-fixed-variant opacity-80">Duration: 0:15s • Warm &amp; clear</p></div>
+            </div>
+            <div class="flex items-center gap-1 pr-1 text-on-secondary-fixed"><span class="material-symbols-outlined text-[24px]">graphic_eq</span><span class="material-symbols-outlined text-[20px]">volume_up</span></div>
+          </button>
+        </div>
+        <div class="grid grid-cols-2 gap-spacing-sm pt-1">
+          <button class="flex items-center justify-center gap-2 py-2.5 px-spacing-sm rounded-xl border-2 border-primary text-primary bg-surface-container-lowest hover:bg-primary/5 font-label-md text-label-md font-bold transition-all active:scale-95" type="button"><span class="material-symbols-outlined text-[18px]">call</span>Call Rachel directly</button>
+          <button class="flex items-center justify-center gap-2 py-2.5 px-spacing-sm rounded-xl border border-outline-variant text-on-surface-variant bg-surface-container-lowest hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all active:scale-95" type="button"><span class="material-symbols-outlined text-[18px] text-error">phone_in_talk</span>Safety hotline</button>
+        </div>
+      </div>
+    </section>
+    <!-- Social match collapsed -->
+    <section class="bg-surface-container-lowest rounded-2xl tactile-card border border-outline-variant/30 overflow-hidden">
+      <button class="w-full p-spacing-md flex items-center justify-between text-left hover:bg-surface-container-high/40 transition-colors" type="button">
+        <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[22px]">group</span></div><div><h2 class="text-body-lg font-body-lg font-bold text-on-surface">Social Match: 3 Kaki Friends</h2><p class="text-body-sm font-body-sm text-on-surface-variant">Ahmad, Susan, Mr Tan attending</p></div></div>
+        <span class="flex items-center gap-1 text-label-md font-label-md text-primary font-bold bg-surface-container-low px-3 py-1.5 rounded-full">Expand ▾</span>
+      </button>
+    </section>
+    <!-- Accessibility collapsed -->
+    <section class="bg-surface-container-lowest rounded-2xl tactile-card border border-outline-variant/30 overflow-hidden">
+      <button class="w-full p-spacing-md flex items-center justify-between text-left hover:bg-surface-container-high/40 transition-colors" type="button">
+        <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[22px]">accessibility_new</span></div><div><h2 class="text-body-lg font-body-lg font-bold text-on-surface">Accessibility &amp; Dignity Guarantee</h2><p class="text-body-sm font-body-sm text-on-surface-variant">Step-free path, rest benches &amp; pacing verified</p></div></div>
+        <span class="flex items-center gap-1 text-label-md font-label-md text-primary font-bold bg-surface-container-low px-3 py-1.5 rounded-full">Expand ▾</span>
+      </button>
+    </section>
+  </main>
+  <div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant/20 shadow-lg max-w-md mx-auto right-0">
+    <div class="max-w-lg mx-auto px-margin-mobile pt-3 pb-2 flex items-center gap-3 bg-surface-container-lowest">
+      <button class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary/5 transition-all active:scale-95 flex-shrink-0" title="Message Volunteer" type="button"><span class="material-symbols-outlined text-[24px]">chat</span></button>
+      <button class="flex-1 bg-primary hover:bg-primary-container text-on-primary py-3.5 px-spacing-md rounded-full font-bold text-body-lg font-body-lg flex items-center justify-center gap-2 float-shadow transition-all active:scale-[0.98] nav-btn" data-to="d05">
+        <span>Confirm &amp; Join Activity</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      </button>
+    </div>
+    <nav class="max-w-lg mx-auto px-margin-mobile py-spacing-xs flex justify-around items-center border-t border-surface-container bg-surface-container-lowest">
+      <button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-spacing-md py-spacing-xs min-h-[52px]" type="button"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings:'FILL' 1;">calendar_today</span><span class="text-label-sm font-label-sm font-bold mt-0.5">Activities</span></button>
+      <button class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[52px] hover:text-on-surface transition-colors active:scale-95" type="button"><span class="material-symbols-outlined text-[24px]">handshake</span><span class="text-label-sm font-label-sm mt-0.5">Matches</span></button>
+      <button class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[52px] hover:text-on-surface transition-colors active:scale-95" type="button"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="text-label-sm font-label-sm mt-0.5">Care Hub</span></button>
+      <button class="flex flex-col items-center justify-center text-on-surface-variant px-spacing-md py-spacing-xs min-h-[52px] hover:text-on-surface transition-colors active:scale-95" type="button"><span class="material-symbols-outlined text-[24px]">person</span><span class="text-label-sm font-label-sm mt-0.5">Profile</span></button>
+    </nav>
+  </div>
+</div>
+</div>
+
+<!-- ============================  D5 – OUTING DETAILS  ============================ -->
+<div class="disc-screen" id="disc-05">
+<div class="bg-background text-on-surface font-body-md min-h-dvh pb-44">
+  <header class="bg-surface sticky top-0 z-40 shadow-none">
+    <div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+      <div class="flex items-center gap-spacing-xs">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-high transition-all active:scale-95 text-primary nav-btn" data-to="d04">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</span>
+      </div>
+      <button class="bg-error-container text-error font-label-md text-label-md px-spacing-md py-spacing-xs rounded-full flex items-center gap-spacing-2xs shadow-sm hover:opacity-90 active:scale-95" type="button"><span class="w-2 h-2 rounded-full bg-error shrink-0"></span><span class="font-bold tracking-wide">SOS</span></button>
+    </div>
+  </header>
+  <main class="max-w-lg mx-auto px-margin-mobile pt-spacing-sm space-y-spacing-md">
+    <!-- Hero summary -->
+    <section class="bg-surface-container-lowest rounded-2xl p-spacing-md soft-aura border border-outline-variant/30 flex flex-col gap-spacing-xs">
+      <div class="flex items-center justify-between">
+        <span class="bg-surface-container-low text-primary px-spacing-sm py-spacing-2xs rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span>Tomorrow, 4:30 PM</span>
+        <span class="text-secondary font-label-sm text-label-sm font-semibold bg-secondary-container/40 px-spacing-sm py-spacing-2xs rounded-full">3 Spaces Left</span>
+      </div>
+      <div class="mt-1">
+        <h1 class="text-headline-md font-headline-md text-on-surface font-bold">Sunset Fishing &amp; Kopi Gathering</h1>
+        <div class="flex items-center gap-1 text-on-surface-variant text-body-md font-body-md mt-1">
+          <span class="material-symbols-outlined text-primary text-[18px]">location_on</span><span>Bedok Reservoir Jetty, Pier 2</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 pt-2 border-t border-surface-container">
+        <div class="flex -space-x-2">
+          <span class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-[11px] font-bold border-2 border-white">RL</span>
+          <span class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-[11px] font-bold border-2 border-white">AK</span>
+          <span class="w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-sm text-[11px] font-bold border-2 border-white">+3</span>
+        </div>
+        <span class="text-body-sm font-body-sm text-on-surface-variant">Care guide + 3 senior kakis ready</span>
+      </div>
+    </section>
+    <!-- Support match collapsed -->
+    <section class="bg-surface-container-lowest rounded-2xl p-spacing-md soft-aura border border-outline-variant/30">
+      <button class="w-full flex items-center justify-between text-left group" type="button">
+        <div class="flex items-center gap-spacing-sm">
+          <div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined">verified_user</span></div>
+          <div><div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Support Match: Rachel Lin</div><div class="text-body-sm font-body-sm text-on-surface-variant">Verified Companion • First-Aid Certified</div></div>
+        </div>
+        <div class="flex items-center gap-1 font-label-md text-label-md text-primary"><span>Expand</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div>
+      </button>
+    </section>
+    <!-- Social match expanded -->
+    <section class="bg-surface-container-lowest rounded-2xl p-spacing-md soft-aura border border-primary/20 space-y-spacing-md">
+      <div class="flex items-center justify-between pb-spacing-xs border-b border-surface-container">
+        <div class="flex items-center gap-spacing-xs"><span class="w-3 h-3 rounded-full bg-secondary-container ring-4 ring-secondary-container/30"></span><h2 class="text-headline-sm font-headline-sm font-bold text-on-surface">Social Match • Your 3 Kakis</h2></div>
+        <button class="flex items-center gap-1 font-label-md text-label-md text-primary hover:opacity-80 active:scale-95" type="button"><span>Collapse</span><span class="material-symbols-outlined text-[16px]">expand_less</span></button>
+      </div>
+      <div class="p-spacing-sm bg-surface-container-low rounded-xl flex items-start gap-spacing-sm"><span class="material-symbols-outlined text-primary text-[20px] mt-0.5">handshake</span><p class="text-body-sm font-body-sm text-on-surface leading-relaxed">Matched based on gentle walking pace, East-side neighbourhood, and morning kopi preferences.</p></div>
+      <div class="space-y-spacing-sm">
+        <article class="p-spacing-md rounded-xl bg-surface-bright border border-outline-variant/20 hover:border-primary/40 transition-colors">
+          <div class="flex items-start justify-between gap-spacing-sm"><div class="flex items-center gap-spacing-sm"><div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm font-bold text-lg shadow-sm">A</div><div><h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Ahmad, 71</h3><p class="text-body-sm font-body-sm text-primary font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">home_pin</span>Bedok North</p></div></div><span class="text-caption-hangul font-caption-hangul text-on-surface-variant font-medium bg-surface-variant/60 px-2 py-0.5 rounded-full">98% Fit</span></div>
+          <p class="mt-spacing-sm text-body-md font-body-md text-on-surface">"Loves jetty fishing &amp; afternoon Teh-C kosong"</p>
+          <div class="mt-spacing-sm flex flex-wrap gap-spacing-2xs"><span class="px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">Malay</span><span class="px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">English</span></div>
+        </article>
+        <article class="p-spacing-md rounded-xl bg-surface-bright border border-outline-variant/20 hover:border-primary/40 transition-colors">
+          <div class="flex items-start justify-between gap-spacing-sm"><div class="flex items-center gap-spacing-sm"><div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline-sm font-bold text-lg shadow-sm">S</div><div><h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Susan, 67</h3><p class="text-body-sm font-body-sm text-primary font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">home_pin</span>Tampines</p></div></div><span class="text-caption-hangul font-caption-hangul text-on-surface-variant font-medium bg-surface-variant/60 px-2 py-0.5 rounded-full">95% Fit</span></div>
+          <p class="mt-spacing-sm text-body-md font-body-md text-on-surface">"Sings 70s Teresa Teng oldies &amp; loves floral walks"</p>
+          <div class="mt-spacing-sm flex flex-wrap gap-spacing-2xs"><span class="px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">Hokkien</span><span class="px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">English</span></div>
+        </article>
+        <article class="p-spacing-md rounded-xl bg-surface-bright border border-outline-variant/20 hover:border-primary/40 transition-colors">
+          <div class="flex items-start justify-between gap-spacing-sm"><div class="flex items-center gap-spacing-sm"><div class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-headline-sm font-bold text-lg shadow-sm">T</div><div><h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Mr Tan, 68</h3><p class="text-body-sm font-body-sm text-primary font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">home_pin</span>Bedok South</p></div></div><span class="text-caption-hangul font-caption-hangul text-on-surface-variant font-medium bg-surface-variant/60 px-2 py-0.5 rounded-full">99% Fit</span></div>
+          <p class="mt-spacing-sm text-body-md font-body-md text-on-surface">"Avid reservoir fisherman with 30 years experience"</p>
+          <div class="mt-spacing-sm flex flex-wrap gap-spacing-2xs"><span class="px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">Hokkien</span><span class="px-2.5 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant">Malay</span></div>
+        </article>
+      </div>
+    </section>
+    <!-- Accessibility expanded -->
+    <section class="bg-surface-container-lowest rounded-2xl p-spacing-md soft-aura border border-primary/20 space-y-spacing-md">
+      <div class="flex items-center justify-between pb-spacing-xs border-b border-surface-container">
+        <div class="flex items-center gap-spacing-xs"><span class="w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20"></span><h2 class="text-headline-sm font-headline-sm font-bold text-on-surface">Accessibility &amp; Dignity Guarantee</h2></div>
+        <button class="flex items-center gap-1 font-label-md text-label-md text-primary hover:opacity-80 active:scale-95" type="button"><span>Collapse</span><span class="material-symbols-outlined text-[16px]">expand_less</span></button>
+      </div>
+      <div class="p-spacing-sm bg-primary-fixed/40 border border-primary-container/20 rounded-xl flex items-start gap-spacing-sm"><span class="material-symbols-outlined text-primary text-[22px] mt-0.5" style="font-variation-settings:'FILL' 1;">verified</span><div><div class="font-label-md text-label-md text-primary font-bold">Physical Ease Verification</div><p class="text-body-sm font-body-sm text-on-surface leading-relaxed mt-0.5">Audited specifically for senior physical ease and comfort before every outing.</p></div></div>
+      <div class="space-y-spacing-sm">
+        <div class="flex items-start gap-spacing-sm p-spacing-sm rounded-xl bg-surface-bright border border-outline-variant/20"><div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">accessible</span></div><div><p class="text-body-md font-body-md text-on-surface font-semibold">Wheelchair Friendly Restroom</p><p class="text-body-sm font-body-sm text-on-surface-variant">Barrier-free, wide door, grab bars verified near the jetty.</p></div></div>
+        <div class="flex items-start gap-spacing-sm p-spacing-sm rounded-xl bg-surface-bright border border-outline-variant/20"><div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">chair</span></div><div><p class="text-body-md font-body-md text-on-surface font-semibold">Shaded Bench Seating</p><p class="text-body-sm font-body-sm text-on-surface-variant">Rest benches every 50 meters along the route with ample shade.</p></div></div>
+        <div class="flex items-start gap-spacing-sm p-spacing-sm rounded-xl bg-surface-bright border border-outline-variant/20"><div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></div><div><p class="text-body-md font-body-md text-on-surface font-semibold">Step-Free Pathway</p><p class="text-body-sm font-body-sm text-on-surface-variant">Step-free ramp access verified from Bedok MRT bus stop to jetty.</p></div></div>
+      </div>
+    </section>
+  </main>
+  <div class="fixed bottom-[68px] left-0 right-0 z-30 px-margin-mobile max-w-md mx-auto">
+    <div class="bg-surface-container-lowest/95 backdrop-blur-md p-spacing-sm rounded-2xl float-shadow border border-outline-variant/30 flex flex-col gap-spacing-xs">
+      <button class="w-full bg-primary text-on-primary font-headline-sm text-headline-sm py-3 px-spacing-lg rounded-full font-bold shadow-md hover:opacity-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2 nav-btn" data-to="d06">
+        <span class="material-symbols-outlined">check</span>Join Activity
+      </button>
+      <button class="w-full bg-surface-container-low text-primary font-label-md text-label-md py-2.5 px-spacing-md rounded-full font-semibold border border-primary/20 hover:bg-surface-container active:scale-[0.98] transition-all flex items-center justify-center gap-1.5" type="button">
+        <span class="material-symbols-outlined text-[18px]">forum</span>Message Rachel or Group
+      </button>
+    </div>
+  </div>
+  <nav aria-label="Main Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg max-w-md mx-auto right-0">
+    <div class="w-full flex justify-around items-center py-2 px-3">
+      <a href="../02-discovery/discovery.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-3 py-1 min-h-[52px]"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings:'FILL' 1;">event</span><span class="text-label-sm font-semibold mt-0.5">Activity</span></a>
+      <a href="../03-buddies/01-call kaki/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">diversity_1</span><span class="text-label-sm font-semibold mt-0.5">Buddies</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="text-label-sm font-semibold mt-0.5">Care Hub</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">person</span><span class="text-label-sm font-semibold mt-0.5">Profile</span></a>
+    </div>
+  </nav>
+</div>
+</div>
+
+<!-- ============================  D6 – BOOKING CONFIRMATION (with inline accordion from D7)  ============================ -->
+<div class="disc-screen" id="disc-06">
+<div class="bg-surface text-on-surface min-h-dvh pb-44">
+  <header class="sticky top-0 z-40 bg-surface w-full shadow-sm">
+    <div class="flex justify-between items-center w-full px-margin-mobile py-spacing-sm max-w-lg mx-auto">
+      <button class="flex items-center justify-center w-11 h-11 rounded-full text-primary hover:bg-surface-container-high transition-transform active:scale-95 nav-btn" data-to="d03" type="button">
+        <span class="material-symbols-outlined text-headline-sm">arrow_back</span>
+      </button>
+      <h1 class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight">KakiConnect</h1>
+      <button class="flex items-center gap-spacing-2xs bg-error-container text-error px-spacing-md py-spacing-xs rounded-full font-label-md text-label-md shadow-sm active:scale-95 font-bold" type="button">
+        <span class="material-symbols-outlined text-base">sos</span><span>SOS</span>
+      </button>
+    </div>
+  </header>
+  <main class="max-w-lg mx-auto px-margin-mobile pt-spacing-xs pb-spacing-lg">
+    <!-- Hero article with image -->
+    <article class="bg-surface-container-lowest rounded-[20px] overflow-hidden tactile-card border border-outline-variant/30 mb-spacing-lg">
+      <div class="relative w-full h-48 bg-surface-container">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpklTqbulsu2q8l3kvM4KWGrVQ956wALNN9nJNIW7OvEAmDZb1jcrfJ6r0S7xGx16mWgSvEO6yN5-YbVvhJ-GH5OOXIvU3vLEv2sOEPTZH7PozDusIg18Dtd0eJi50bqc97tzNjqAXWvsGslLOpDQFD9IMaxD4__hlPPqrhn4P8Xp6q-JaMTpObVxJx9dR7tDA70Is4ep7cvJEcIRWyUV0luyhM5TcGJ3SvRk3_XgqX18ZYpLD6twHeg" alt="Bedok Reservoir at sunset">
+        <div class="absolute top-spacing-sm left-spacing-sm">
+          <span class="inline-flex items-center gap-1.5 bg-surface-container-lowest/95 backdrop-blur-sm px-spacing-md py-1 rounded-full text-primary font-label-md text-label-md font-bold shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>Confirmed • 4 Kakis &amp; 1 Volunteer
+          </span>
+        </div>
+      </div>
+      <div class="p-spacing-md">
+        <div class="flex items-start justify-between gap-spacing-sm mb-spacing-xs">
+          <div>
+            <span class="inline-block font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold mb-1">Upcoming Activity</span>
+            <h2 class="text-headline-md font-headline-md text-on-surface font-bold">Sunset Fishing &amp; Kopi Gathering</h2>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary flex-shrink-0">
+            <span class="material-symbols-outlined text-headline-sm">phishing</span>
+          </div>
+        </div>
+        <div class="space-y-spacing-xs pt-spacing-2xs border-t border-surface-container mt-spacing-xs">
+          <div class="flex items-center gap-spacing-xs text-on-surface-variant font-body-md text-body-md"><span class="material-symbols-outlined text-primary text-lg">location_on</span><span class="font-medium text-on-surface">Bedok Reservoir Jetty</span></div>
+          <div class="flex items-center gap-spacing-xs text-on-surface-variant font-body-md text-body-md"><span class="material-symbols-outlined text-primary text-lg">schedule</span><span>Tomorrow <strong class="font-semibold text-on-surface">4:00 PM – 6:00 PM</strong></span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Accordion section header -->
+    <div class="flex items-center justify-between mb-spacing-sm px-1">
+      <h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Matching &amp; Comfort Overview</h3>
+      <span class="font-label-sm text-label-sm text-primary font-semibold">Tap Details to expand</span>
+    </div>
+
+    <!-- Accordion cards -->
+    <div class="space-y-spacing-sm mb-spacing-md">
+
+      <!-- Accordion 1: Volunteer / Support Match -->
+      <div class="bg-surface-container-lowest rounded-2xl tactile-card border border-outline-variant/30 overflow-hidden transition-all" id="acc-vol">
+        <div class="flex items-center justify-between gap-spacing-xs p-spacing-sm">
+          <div class="flex items-center gap-spacing-sm min-w-0 cursor-pointer" id="acc-vol-head" onclick="toggleAccordion('vol')" style="cursor:pointer;">
+            <div class="relative flex-shrink-0">
+              <div class="w-11 h-11 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-body-lg">RL</div>
+              <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-secondary rounded-full border-2 border-surface-container-lowest" title="Available"></span>
+            </div>
+            <div class="min-w-0">
+              <div class="flex items-center gap-spacing-2xs flex-wrap">
+                <span class="font-body-lg text-body-lg font-bold text-on-surface truncate">Rachel Lin</span>
+                <span class="bg-primary-fixed/50 text-on-primary-fixed-variant text-[11px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">1-to-1 Support</span>
+              </div>
+              <p class="text-body-sm font-body-sm text-on-surface-variant truncate">Volunteer Companion • Certified First Aider</p>
+            </div>
+          </div>
+          <button class="flex-shrink-0 flex items-center gap-1 text-primary hover:bg-primary-fixed/30 px-3 py-1.5 rounded-xl bg-surface-container-low transition-all active:scale-95 acc-details-btn" data-target="vol" onclick="toggleAccordion('vol')" type="button">
+            <span class="font-label-md text-label-md font-bold" id="acc-vol-btn-text">Details</span>
+            <span class="material-symbols-outlined text-base font-bold" id="acc-vol-icon">expand_more</span>
+          </button>
+        </div>
+        <!-- Expanded body: Volunteer detail from D7 -->
+        <div class="accordion-body" id="acc-vol-body">
+          <div class="px-spacing-md pb-spacing-md pt-1 space-y-spacing-md border-t border-outline-variant/20">
+            <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-surface-container-low/80 p-4 rounded-2xl subtle-border">
+              <div class="relative">
+                <img class="w-16 h-16 rounded-2xl object-cover ring-2 ring-surface-container-lowest shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-ikj-AZs3rRnS0UiUzL0GHDsEzlC0fNFsy369v9bNoddjc7ExWzYmUlT6Gs0YkxTZHUSmZ-DUqSewbKywFzY8GaT8ganO3Y5C_teNnTc0fLq0G66iZUYicJ5Nm0VMdg14SCD2FHvc-0NBiCfT3xuOUXhKvlWm2K4CNSLyByvK750iSQxnXXDpNzB110llnVwrw94av6xcsnfhJ8J1eswp49_bMOMwCjJXx6a6BBTjYxVG8gr6j4Ad1w" alt="Rachel Lin">
+                <div class="absolute -bottom-1 -right-1 bg-secondary text-surface-container-lowest w-5 h-5 rounded-full flex items-center justify-center shadow" title="Certified"><span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">verified</span></div>
+              </div>
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-2"><h4 class="text-headline-sm font-headline-sm text-on-surface font-bold">Rachel Lin</h4><span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2.5 py-0.5 rounded-full font-medium">Age 28 · Tampines Central</span></div>
+                <div class="flex flex-wrap items-center gap-1.5 mt-2">
+                  <span class="inline-flex items-center gap-1 bg-surface-container-lowest text-primary px-2 py-0.5 rounded-full text-label-sm font-label-sm border border-primary/20 font-semibold"><span class="material-symbols-outlined text-xs">health_and_safety</span>Fei Yue FSC &amp; Silver Generation Verified</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-1.5"><span class="text-label-md font-label-md text-primary font-bold">Role: General Volunteer Support</span></div>
+              <div class="grid grid-cols-3 gap-2 text-center text-label-sm font-label-sm text-on-surface-variant">
+                <div class="bg-surface-container px-2 py-2 rounded-xl flex flex-col items-center gap-1"><span class="material-symbols-outlined text-primary text-base">favorite</span><span>Companionship</span></div>
+                <div class="bg-surface-container px-2 py-2 rounded-xl flex flex-col items-center gap-1"><span class="material-symbols-outlined text-primary text-base">directions_subway</span><span>Travelling Together</span></div>
+                <div class="bg-surface-container px-2 py-2 rounded-xl flex flex-col items-center gap-1"><span class="material-symbols-outlined text-primary text-base">explore</span><span>Jetty Navigation</span></div>
+              </div>
+            </div>
+            <div class="bg-primary-fixed/40 border border-primary/20 p-3.5 rounded-2xl flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">handshake</span>
+              <p class="text-body-md font-body-md text-on-primary-fixed font-medium leading-relaxed">"Rachel will accompany you to the activity and travel with you directly from <strong class="font-bold text-primary">Bedok MRT (Exit B Passenger Service)</strong>."</p>
+            </div>
+            <button class="w-full flex items-center justify-between px-4 py-3 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-fixed rounded-2xl font-label-md transition-all active:scale-[0.98] shadow-sm" id="d6-voice-btn" type="button">
+              <div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-xl">volume_up</span><span class="font-bold">Listen to Rachel's voice note (0:15s)</span></div>
+              <span class="material-symbols-outlined text-lg" id="d6-voice-icon">play_circle</span>
+            </button>
+            <div class="grid grid-cols-2 gap-spacing-sm">
+              <button class="flex items-center justify-center gap-2 py-2.5 px-spacing-sm rounded-xl border-2 border-primary text-primary bg-surface-container-lowest hover:bg-primary/5 font-label-md text-label-md font-bold transition-all active:scale-95" type="button"><span class="material-symbols-outlined text-[18px]">call</span>Call Rachel</button>
+              <button class="flex items-center justify-center gap-2 py-2.5 px-spacing-sm rounded-xl border border-outline-variant text-on-surface-variant bg-surface-container-lowest hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all active:scale-95" type="button"><span class="material-symbols-outlined text-[18px] text-error">phone_in_talk</span>Safety hotline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion 2: Kaki Details -->
+      <div class="bg-surface-container-lowest rounded-2xl tactile-card border border-outline-variant/30 overflow-hidden transition-all" id="acc-kaki">
+        <div class="flex items-center justify-between gap-spacing-xs p-spacing-sm">
+          <div class="flex items-center gap-spacing-sm min-w-0 cursor-pointer" id="acc-kaki-head" onclick="toggleAccordion('kaki')" style="cursor:pointer;">
+            <div class="flex -space-x-3.5 flex-shrink-0 items-center pl-1">
+              <div class="w-9 h-9 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center font-bold text-xs text-on-secondary-fixed">A</div>
+              <div class="w-9 h-9 rounded-full bg-primary-fixed border-2 border-surface-container-lowest flex items-center justify-center font-bold text-xs text-on-primary-fixed">S</div>
+              <div class="w-9 h-9 rounded-full bg-surface-variant border-2 border-surface-container-lowest flex items-center justify-center font-bold text-xs text-on-surface">T</div>
+            </div>
+            <div class="min-w-0">
+              <div class="flex items-center gap-1.5 flex-wrap"><span class="font-body-lg text-body-lg font-bold text-on-surface truncate">3 Kaki Friends</span><span class="text-body-sm font-body-sm text-on-surface-variant hidden md:inline">• Ahmad, Susan, Mr Tan</span></div>
+              <p class="text-body-sm font-body-sm text-on-surface-variant truncate">East-side morning kopi kakis</p>
+            </div>
+          </div>
+          <button class="flex-shrink-0 flex items-center gap-1 text-primary hover:bg-primary-fixed/30 px-3 py-1.5 rounded-xl bg-surface-container-low transition-all active:scale-95 acc-details-btn" data-target="kaki" onclick="toggleAccordion('kaki')" type="button">
+            <span class="font-label-md text-label-md font-bold" id="acc-kaki-btn-text">Details</span>
+            <span class="material-symbols-outlined text-base font-bold" id="acc-kaki-icon">expand_more</span>
+          </button>
+        </div>
+        <!-- Expanded body: Kaki details from D7 -->
+        <div class="accordion-body" id="acc-kaki-body">
+          <div class="px-spacing-md pb-spacing-md pt-1 space-y-3 border-t border-outline-variant/20">
+            <p class="text-body-sm font-body-sm text-on-surface-variant">Matched based on gentle walking pace, East-side neighborhood, and morning kopi preferences.</p>
+            <!-- Kaki cards -->
+            <div class="p-3.5 bg-surface-container-low rounded-2xl subtle-border flex items-start gap-3 hover:bg-surface-container transition-colors">
+              <img class="w-12 h-12 rounded-xl object-cover ring-1 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJeNQ-_hX7ZYHc7vtYEx6OiY5Rigqs0RMk91VC8aP9eVJwQx9NXmfyAAoeMoXqVgI9e_RRLlrg1BGpONWo0X1_19baoJZPjJaQtUGu0XpieKRoLk8KSx8GD2uioqvx91xp-BSWx_LxinNYHBHiFdo6RdDH1Asu20AtJjEzKvvQFGaXFURyi53R4GAoe5I_PPAcBVFhjCkkvYoCENrVscU0yW0GskRMtcqt6Cvno0bkl8Y3mN5nRGmMog" alt="Ahmad">
+              <div class="flex-1"><div class="flex items-center justify-between"><h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">Ahmad, 71</h4><span class="text-caption-hangul font-caption-hangul bg-surface-container-lowest px-2 py-0.5 rounded-md border border-outline-variant/30 text-on-surface-variant font-medium">Bedok North</span></div><p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Loves jetty fishing &amp; afternoon Teh-C kosong</p><div class="flex gap-1.5 mt-2"><span class="px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container text-caption-hangul font-caption-hangul font-semibold">Malay</span><span class="px-2 py-0.5 rounded-full bg-primary-fixed/60 text-primary text-caption-hangul font-caption-hangul font-semibold">English</span></div></div>
+            </div>
+            <div class="p-3.5 bg-surface-container-low rounded-2xl subtle-border flex items-start gap-3 hover:bg-surface-container transition-colors">
+              <img class="w-12 h-12 rounded-xl object-cover ring-1 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzz7wk3tg831nV5ShhH0LByOGJ-I-YVFa8vOwOI9XeyE-vV1DFvTLn79LRZszFxK0or4ki4yb3KtQSEXvQNsZ3QkWsyTnGIm-0j08tUKpXEfycyVKQQx7mBTWKUZPmaAqJ_Mccg-1c4kcmQXUlF50xvQSbvREvyzp_Z3iX6okBT_1J2cC48CwXieeFPaZpCqoi3OEknuVDDiyF7cJxxyyYU5YiKyhx-MuXDtSF_I2U6YhgFaGWL0L7hQ" alt="Susan">
+              <div class="flex-1"><div class="flex items-center justify-between"><h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">Susan, 67</h4><span class="text-caption-hangul font-caption-hangul bg-surface-container-lowest px-2 py-0.5 rounded-md border border-outline-variant/30 text-on-surface-variant font-medium">Tampines</span></div><p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Sings 70s Teresa Teng oldies &amp; loves floral walks</p><div class="flex gap-1.5 mt-2"><span class="px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container text-caption-hangul font-caption-hangul font-semibold">Hokkien</span><span class="px-2 py-0.5 rounded-full bg-primary-fixed/60 text-primary text-caption-hangul font-caption-hangul font-semibold">English</span></div></div>
+            </div>
+            <div class="p-3.5 bg-surface-container-low rounded-2xl subtle-border flex items-start gap-3 hover:bg-surface-container transition-colors">
+              <img class="w-12 h-12 rounded-xl object-cover ring-1 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJnXz0bXJYu8OWdGfK7b7UM_07fKchqUUb-rUV2B_ofps7ajlawdVoncb4YBn5g0QFAe3YOb14A1KMFkSD6rWSHkX4AIjPhHWBCX25_hG75yXMqrk2u4EKsOUZZzln2oIW_UN5stPfvcJypW8ZQbyNe92hGxBmc_D42jfSQ0L3HIq2_JeOJw9noQ461ZdGlPXEm1uqWvKsEntOKFTPO3O_-hLpIwZSm9jwKwVlnMChM-yK5XH2OF4Y8w" alt="Mr Tan">
+              <div class="flex-1"><div class="flex items-center justify-between"><h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">Mr Tan, 68</h4><span class="text-caption-hangul font-caption-hangul bg-surface-container-lowest px-2 py-0.5 rounded-md border border-outline-variant/30 text-on-surface-variant font-medium">Bedok South</span></div><p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Avid reservoir fisherman with 30 years experience</p><div class="flex gap-1.5 mt-2"><span class="px-2 py-0.5 rounded-full bg-secondary-container/70 text-on-secondary-container text-caption-hangul font-caption-hangul font-semibold">Hokkien</span><span class="px-2 py-0.5 rounded-full bg-primary-fixed/60 text-primary text-caption-hangul font-caption-hangul font-semibold">Malay</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion 3: Accessibility -->
+      <div class="bg-surface-container-lowest rounded-2xl tactile-card border border-outline-variant/30 overflow-hidden transition-all" id="acc-access">
+        <div class="flex items-center justify-between gap-spacing-xs p-spacing-sm">
+          <div class="flex items-center gap-spacing-sm min-w-0 cursor-pointer" id="acc-access-head" onclick="toggleAccordion('access')" style="cursor:pointer;">
+            <div class="w-11 h-11 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary flex-shrink-0">
+              <span class="material-symbols-outlined text-headline-sm" style="font-variation-settings:'FILL' 1;">verified_user</span>
+            </div>
+            <div class="min-w-0">
+              <span class="font-body-lg text-body-lg font-bold text-on-surface truncate block">Accessibility &amp; Dignity Guarantee</span>
+              <p class="text-body-sm font-body-sm text-on-surface-variant truncate">Step-free route, shaded benches, accessible restroom</p>
+            </div>
+          </div>
+          <button class="flex-shrink-0 flex items-center gap-1 text-primary hover:bg-primary-fixed/30 px-3 py-1.5 rounded-xl bg-surface-container-low transition-all active:scale-95 acc-details-btn" data-target="access" onclick="toggleAccordion('access')" type="button">
+            <span class="font-label-md text-label-md font-bold" id="acc-access-btn-text">Details</span>
+            <span class="material-symbols-outlined text-base font-bold" id="acc-access-icon">expand_more</span>
+          </button>
+        </div>
+        <div class="accordion-body" id="acc-access-body">
+          <div class="px-spacing-md pb-spacing-md pt-1 border-t border-outline-variant/20 space-y-spacing-sm">
+            <!-- Verification badge -->
+            <div class="p-spacing-sm bg-primary-fixed/40 border border-primary-container/20 rounded-xl flex items-start gap-spacing-sm mt-2">
+              <span class="material-symbols-outlined text-primary text-[22px] mt-0.5" style="font-variation-settings:'FILL' 1;">verified</span>
+              <div>
+                <div class="font-label-md text-label-md text-primary font-bold">Physical Ease Verification</div>
+                <p class="text-body-sm font-body-sm text-on-surface leading-relaxed mt-0.5">Audited specifically for senior physical ease and comfort before every outing.</p>
+              </div>
+            </div>
+            <!-- Checklist items -->
+            <div class="flex items-start gap-spacing-sm p-spacing-sm rounded-xl bg-surface-bright border border-outline-variant/20">
+              <div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">accessible</span>
+              </div>
+              <div>
+                <p class="text-body-md font-body-md text-on-surface font-semibold">Wheelchair Friendly Restroom</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Barrier-free, wide door, grab bars verified near the jetty.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-spacing-sm p-spacing-sm rounded-xl bg-surface-bright border border-outline-variant/20">
+              <div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[18px]">chair</span>
+              </div>
+              <div>
+                <p class="text-body-md font-body-md text-on-surface font-semibold">Shaded Bench Seating</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Rest benches every 50 meters along the route with ample shade.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-spacing-sm p-spacing-sm rounded-xl bg-surface-bright border border-outline-variant/20">
+              <div class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+              </div>
+              <div>
+                <p class="text-body-md font-body-md text-on-surface font-semibold">Step-Free Pathway</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Step-free ramp access verified from Bedok MRT bus stop to jetty.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Helper notice -->
+    <div class="flex items-center gap-spacing-xs bg-surface-container-low border border-outline-variant/40 rounded-xl p-spacing-sm text-on-surface-variant mb-spacing-lg">
+      <span class="material-symbols-outlined text-primary flex-shrink-0 text-xl">info</span>
+      <p class="font-body-sm text-body-sm">Tap any section or the <strong>Details</strong> button to see full information, voice notes, and meeting instructions. Tap the heading to collapse.</p>
+    </div>
+  </main>
+  <!-- Sticky CTAs -->
+  <div class="fixed bottom-[64px] left-0 right-0 z-30 bg-surface/95 backdrop-blur-md px-margin-mobile py-spacing-xs max-w-lg mx-auto border-t border-surface-container">
+    <div class="flex flex-col gap-2">
+      <button class="w-full h-[56px] bg-primary text-on-primary rounded-full font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-spacing-xs shadow-md active:scale-[0.98] transition-transform" id="d6-join-btn" type="button">
+        <span class="material-symbols-outlined text-2xl">check_circle</span><span>Join Activity</span>
+      </button>
+      <button class="w-full h-11 bg-surface-container-low text-primary border border-outline-variant/60 rounded-full font-label-md text-label-md font-bold flex items-center justify-center gap-spacing-xs hover:bg-surface-container active:scale-[0.98] transition-transform" type="button">
+        <span class="material-symbols-outlined text-lg">chat</span><span>Message Rachel or Group</span>
+      </button>
+    </div>
+  </div>
+  <nav aria-label="Main Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg max-w-md mx-auto right-0">
+    <div class="w-full flex justify-around items-center py-2 px-3">
+      <a href="../02-discovery/discovery.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-3 py-1 min-h-[52px]"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings:'FILL' 1;">event</span><span class="text-label-sm font-semibold mt-0.5">Activity</span></a>
+      <a href="../03-buddies/01-call kaki/code.html" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">diversity_1</span><span class="text-label-sm font-semibold mt-0.5">Buddies</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">health_and_safety</span><span class="text-label-sm font-semibold mt-0.5">Care Hub</span></a>
+      <a href="#" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 min-h-[52px] rounded-xl hover:bg-surface-container active:scale-95"><span class="material-symbols-outlined text-[24px]">person</span><span class="text-label-sm font-semibold mt-0.5">Profile</span></a>
+    </div>
+  </nav>
+</div>
+</div>
+
+</div><!-- /#disc-wrapper -->
+
+<script>
+// ── Screen navigation ────────────────────────────────────────────────
+const DISC_TOTAL = 6;
+let currentDisc = 1;
+
+function discPad(n) { return String(n).padStart(2,'0'); }
+
+function showDisc(n, direction) {
+  if (n === 'back') {
+    if (currentDisc <= 1) { window.location.href = '../01-onboarding/index.html'; return; }
+    n = currentDisc - 1;
+    direction = 'back';
+  }
+  const prev = document.getElementById('disc-' + discPad(currentDisc));
+  const next = document.getElementById('disc-' + discPad(n));
+  if (!next || n === currentDisc) return;
+  prev.classList.remove('active');
+  next.classList.add('active');
+  const cls = direction === 'back' ? 'slide-in-left' : 'slide-in-right';
+  next.classList.add(cls);
+  next.addEventListener('animationend', () => next.classList.remove(cls), { once: true });
+  currentDisc = n;
+  document.getElementById('disc-prog-fill').style.width = ((n / DISC_TOTAL) * 100) + '%';
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+// Map data-to values
+function resolveTarget(to) {
+  const map = { d01:1, d02:2, d03:3, d04:4, d05:5, d06:6, back:'back' };
+  return map[to] !== undefined ? map[to] : parseInt(to);
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.nav-btn');
+  if (!btn) return;
+  const raw = btn.dataset.to;
+  if (!raw) return;
+  const target = resolveTarget(raw);
+  const dir = (target === 'back' || (typeof target === 'number' && target < currentDisc)) ? 'back' : 'forward';
+  showDisc(target, dir);
+});
+
+// ── D2 Filter chips ──────────────────────────────────────────────────
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.filter-chip').forEach(c => {
+      c.className = 'shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-surface-container-lowest text-on-surface border border-surface-container-highest hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-all filter-chip';
+    });
+    chip.className = 'shrink-0 min-h-[52px] px-spacing-lg py-spacing-xs rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm active:scale-95 transition-all filter-chip';
+  });
+});
+
+// ── D3 Support radio dynamic highlight ──────────────────────────────
+const d3Labels = document.querySelectorAll('#d3-support-options label');
+const d3Inputs = document.querySelectorAll('input[name="support_level"]');
+d3Inputs.forEach(input => {
+  input.addEventListener('change', () => {
+    d3Labels.forEach(label => {
+      label.classList.remove('selected-border','float-shadow','bg-primary-fixed/10');
+      label.classList.add('subtle-border','tactile-card');
+    });
+    const al = input.closest('label');
+    al.classList.remove('subtle-border','tactile-card');
+    al.classList.add('selected-border','float-shadow','bg-primary-fixed/10');
+  });
+});
+
+// ── D6 Accordion ────────────────────────────────────────────────────
+const accState = { vol: false, kaki: false, access: false };
+
+function toggleAccordion(key) {
+  accState[key] = !accState[key];
+  const body  = document.getElementById('acc-' + key + '-body');
+  const icon  = document.getElementById('acc-' + key + '-icon');
+  const btnTxt= document.getElementById('acc-' + key + '-btn-text');
+  if (accState[key]) {
+    body.classList.add('open');
+    icon.textContent = 'expand_less';
+    if (btnTxt) btnTxt.textContent = 'Details';
+  } else {
+    body.classList.remove('open');
+    icon.textContent = 'expand_more';
+    if (btnTxt) btnTxt.textContent = 'Details';
+  }
+}
+
+// ── D6 Voice note toggle ─────────────────────────────────────────────
+const d6VoiceBtn  = document.getElementById('d6-voice-btn');
+const d6VoiceIcon = document.getElementById('d6-voice-icon');
+let d6Playing = false;
+if (d6VoiceBtn) {
+  d6VoiceBtn.addEventListener('click', () => {
+    d6Playing = !d6Playing;
+    if (d6Playing) {
+      d6VoiceIcon.textContent = 'pause_circle';
+      d6VoiceBtn.classList.add('ring-2','ring-secondary');
+      setTimeout(() => { d6VoiceIcon.textContent = 'play_circle'; d6VoiceBtn.classList.remove('ring-2','ring-secondary'); d6Playing = false; }, 4000);
+    } else {
+      d6VoiceIcon.textContent = 'play_circle';
+      d6VoiceBtn.classList.remove('ring-2','ring-secondary');
+    }
+  });
+}
+
+// ── D6 Join button micro-interaction ────────────────────────────────
+const d6JoinBtn = document.getElementById('d6-join-btn');
+if (d6JoinBtn) {
+  d6JoinBtn.addEventListener('click', () => {
+    const orig = d6JoinBtn.innerHTML;
+    d6JoinBtn.innerHTML = '<span class="material-symbols-outlined text-2xl">task_alt</span><span>Spot Confirmed! Rachel Notified</span>';
+    d6JoinBtn.classList.replace('bg-primary','bg-tertiary-container');
+    setTimeout(() => { d6JoinBtn.innerHTML = orig; d6JoinBtn.classList.replace('bg-tertiary-container','bg-primary'); }, 3000);
+  });
+}
+</script>
+</body>
+</html>
